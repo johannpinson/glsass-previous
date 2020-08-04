@@ -135,7 +135,11 @@ export const views = () =>
           ],
           { cwd: `${__dirname}/${destDir}/`, read: false },
         ),
-        { removeTags: true },
+        {
+          removeTags: true,
+          addRootSlash: env.production,
+          addPrefix: env.production ? 'glsass' : false,
+        },
       ),
     )
     .pipe(
