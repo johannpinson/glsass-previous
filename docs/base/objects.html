@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/29f421cf.css">
+    <script src="/assets/index.65baf025.js"></script>
+  </head>
+  <body>
+    <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div>
+    <div class="p-docs">
+      <div class="p-docs__sidebar u-bg-light u-pt-3">
+        <ul class="o-list-bare">
+          <li class="o-list-bare__item">Getting started
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/getting-started/introduction.html">Introduction</a></li>
+              <li class="o-list-bare__item"><a href="/getting-started/installation.html">Installation</a></li>
+              <li class="o-list-bare__item"><a href="/getting-started/architecture.html">Architecture ITCSS</a></li>
+              <li class="o-list-bare__item"><a href="/getting-started/about.html">More about it</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="/settings/overview.html">Settings</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/settings/overview.html">Overview</a></li>
+              <li class="o-list-bare__item"><a href="/settings/core.html">Core</a></li>
+              <li class="o-list-bare__item"><a href="/settings/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="/settings/icons.html">Icons</a></li>
+              <li class="o-list-bare__item"><a href="/settings/ui.html">UI</a></li>
+              <li class="o-list-bare__item"><a href="/settings/variables.html">Variables</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Base
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/base/generic.html">Generic</a></li>
+              <li class="o-list-bare__item"><a href="/base/elements.html">Elements</a></li>
+              <li class="o-list-bare__item"><a href="/base/objects.html">Objects</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Layout
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/layout/grid.html">Grid</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="/components">Components</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/components/alert.html">Alert</a></li>
+              <li class="o-list-bare__item"><a href="/components/badge.html">Badge</a></li>
+              <li class="o-list-bare__item"><a href="/components/button.html">Button</a></li>
+              <li class="o-list-bare__item"><a href="/components/callout.html">Callout</a></li>
+              <li class="o-list-bare__item"><a href="/components/card.html">Card</a></li>
+              <lo class="o-list-bare__item"><a href="/components/form.html">Form</a></lo>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Tools
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/tools/concept.html">Concept</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Utilities
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/utilities/concept-api.html">Concept / API</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/borders.html">Borders</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/columns.html">Columns</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/displays.html">Displays</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/flex.html">Flex</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/headings.html">Headings</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/overflows.html">Overflows</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/sizings.html">Sizings</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/spacings.html">Spacings</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/texts.html">Texts</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/print.html">Print</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/debug.html">Debug</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="p-docs__content">
+        <div class="o-layout u-pt-3 u-mb-5">
+          <h1>Objects</h1>
+          <p>The <code>objects</code> layer contains class-based selectors to provide blocks with no aesthetics.<br> If components are UI blocks, you can consider than objects are UX blocks.</p>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-comment">// OBJECTS</span>
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.divider"</span>;
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.layout"</span>;
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.link"</span>;
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.list-bare"</span>;
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.list-inline"</span>;
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.media"</span>;
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.overlay"</span>;
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects/objects.table"</span>;
+
+<span class="hljs-comment">/* Or import all of objects */</span>
+
+<span class="hljs-comment">// OBJECTS</span>
+<span class="hljs-keyword">@forward</span> <span class="hljs-string">"~glsass/src/objects"</span>;
+</code></pre>
+          <p>
+            Since objects are low CSS code, you can use all of them by importing the folder. But you can improve your loading charge by use only which ones you need.</p>
+          <p>The folder doesn't contain very simple objects like <code>box</code> or <code>block</code> like you can see in others framework, since you can achieve these layouts by playing with utilities classes.</p>
+          <h2>Divider - <em>_objects.divider.scss</em></h2>
+          <p>Since the <code>&lt;hr&gt;</code> tag have a semantic value, the divider object allows to add a separating element between blocks.</p>
+          <div class="p-example">
+            <div class="o-divider"></div>
+            <div class="u-mb-3"></div>
+            <div class="o-divider o-divider--content">you can add content inside</div>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-divider o-divider--content"</span>&gt;</span>you can add content inside<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+          <h2>Layout - <em>_objects.layout.scss</em></h2>
+          <p>The grid layout system is explained in a <a href="/layout/grid.html">dedicated page</a>.</p>
+          <h2>Link - <em>_objects.link.scss</em></h2>
+          <p>
+            The link object can be used to have the opposite behavior compared to a default link (it's not underlined by default, and it becomes on hover).</p>
+          <div class="p-example">
+            <p><a class="o-link" href="/">Link to the home</a></p><a class="o-link" href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Link to MDN homepage</a>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Link to the home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://developer.mozilla.org/"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"noopener noreferrer"</span>&gt;</span>Link to MDN homepage<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+          <p>
+            This behavior cannot be reproduced easily with utilities classes, since it defines a unique state, without interaction detection (hover, focus, etc.). And it can avoid you to create a component for a
+             footer menu (which contains a lot of links) for example.
+          </p>
+          <h2>List bare - 
+            <en>_objects.list-bare.scss</en>
+          </h2>
+          <p>The list bare object erase the <em>list style</em> to a list (bullet and indentation).<br>Depending of the default list styling, the 
+            <item></item> class might not be necessary.
+             Especially if you follow the reset from the <a href="/base/elements.html">elements layer</a>.
+          </p>
+          <div class="p-example">
+            <ul class="o-list-bare">
+              <li class="o-list-bare__item">Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Sed do eiusmod tempor incididun</li>
+            </ul>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-list-bare"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-list-bare__item"</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Consectetur adipiscing elit<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Sed do eiusmod tempor incididunt<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+          <h2>List inline - 
+            <en>_objects.list-inline.scss</en>
+          </h2>
+          <p>Similar to the list bare, but it displays the list in one line.</p>
+          <div class="p-example">
+            <ul class="o-list-inline">
+              <li class="o-list-inline__item">Lorem ipsum dolor sit amet</li>
+              <li class="o-list-inline__item">Consectetur adipiscing elit</li>
+              <li class="o-list-inline__item">Sed do eiusmod tempor incididunt</li>
+            </ul>
+          </div>
+          <pre class="code" data-lang="HTML"><code> <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-list-inline"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-list-inline__item"</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-list-inline__item"</span>&gt;</span>Consectetur adipiscing elit<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-list-inline__item"</span>&gt;</span>Sed do eiusmod tempor incididunt<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+          <h2>Media - <em>_objects.media.scss</em></h2>
+          <p>The media object is a legacy of OOCSS, but the old syntax was made with a <code>float</code> display. In Glsass, the display is managed with <code>flex</code>.</p>
+          <div class="p-example">
+            <div class="o-row u-mb-3">
+              <div class="o-col u-12 u-6@md">
+                <div class="o-media">
+                  <div class="o-media__image">
+                    <svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder image: 70x70" role="img" focusable="false" style="text-anchor:middle">
+                      <title>Placeholder image</title>
+                      <rect width="100%" height="100%" fill="#212121"></rect>
+                      <text x="50%" y="50%" fill="#dee2e6" dy=".3em">70x70</text>
+                    </svg>
+                  </div>
+                  <div class="o-media__body"><b>This is the default layout of the media object</b>. Lorem ipsum dolor sit amet,
+                     consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-3">
+              <div class="o-col u-12 u-6@md">
+                <div class="o-media o-media--reverse">
+                  <div class="o-media__image">
+                    <svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder image: 70x70" role="img" focusable="false" style="text-anchor:middle">
+                      <title>Placeholder image</title>
+                      <rect width="100%" height="100%" fill="#212121"></rect>
+                      <text x="50%" y="50%" fill="#dee2e6" dy=".3em">70x70</text>
+                    </svg>
+                  </div>
+                  <div class="o-media__body"><b>But it also can been reversed</b>. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                     Curabitur ac nisl quis massa vulputate adipiscing.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row">
+              <div class="o-col u-12 u-6@md">
+                <div class="o-media o-media--center">
+                  <div class="o-media__image">
+                    <svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder image: 70x70" role="img" focusable="false" style="text-anchor:middle">
+                      <title>Placeholder image</title>
+                      <rect width="100%" height="100%" fill="#212121"></rect>
+                      <text x="50%" y="50%" fill="#dee2e6" dy=".3em">70x70</text>
+                    </svg>
+                  </div>
+                  <div class="o-media__body"><b>Or the media can be vertically centered</b>. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                     Curabitur ac nisl quis massa vulputate adipiscing. Vivamus sit amet risus ligula. Nunc eu pulvinar augue.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media__image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/data/media-example.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"media image"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Also work with a SVG tag --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media__body"</span>&gt;</span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media o-media--reverse"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media__image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/data/media-example.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"media image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media__body"</span>&gt;</span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media o-media--center"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media__image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/data/media-example.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"media image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-media__body"</span>&gt;</span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+          <h2>Overlay - <em>_objects.overlay.scss</em></h2>
+          <p>This optional object can be used with a modal system. Some JavaScript is added for the demo below.</p>
+          <div class="p-example">
+            <p>Click the button to enable the overlay, then with the escape or space key.</p>
+            <button class="c-button c-button--primary js-overlay">Toggle overlay</button>
+            <div class="o-overlay"></div>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-overlay"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-overlay is-visible"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <script>
+            function handlerEscape(e, overlay) {
+              console.log('ok')
+              if (e.keyCode === 27) {
+                overlay.classList.remove('is-visible');
+                this.removeEventListener('keydown', handlerEscape);
+              }
+            }
+            
+            if (document.querySelector('.js-overlay')) {
+              document.querySelector('.js-overlay').addEventListener(
+                'click',
+                (e) => {
+                  e.preventDefault()
+                  const overlay = e.target.nextElementSibling
+                  overlay.classList.toggle('is-visible')
+                  document.body.addEventListener('keydown', (e) => handlerEscape(e, overlay))
+                },
+              )
+            }
+            
+            
+          </script>
+          <h2>Table - <em>_objects.table.scss</em></h2>
+          <p>The table object might be consider as a component since it add some aesthetics, like borders, but that's all.<br>If you need others options like a striped or hoverable rows, you can create your own component.</p>
+          <div class="p-example">
+            <table class="o-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Developer</th>
+                  <th scope="col">Release date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>The Last of Us Part II</td>
+                  <td>Naughty Dog</td>
+                  <td>19 June 2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>God of War</td>
+                  <td>Santa Monica Studio</td>
+                  <td>20 April 2018</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Death Stranding</td>
+                  <td>Kojima Productions</td>
+                  <td>8 November 2019</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-table"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>#<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>Developer<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>Release date<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"row"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>The Last of Us Part II<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Naughty Dog<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>19 June 2020<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"row"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>God of War<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Santa Monica Studio<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>20 April 2018<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"row"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Death Stranding<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Kojima Productions<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>8 November 2019<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+        </div>
+        <div class="o-layout">
+          <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

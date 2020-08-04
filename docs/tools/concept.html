@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/29f421cf.css">
+    <script src="/assets/index.65baf025.js"></script>
+  </head>
+  <body>
+    <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div>
+    <div class="p-docs">
+      <div class="p-docs__sidebar u-bg-light u-pt-3">
+        <ul class="o-list-bare">
+          <li class="o-list-bare__item">Getting started
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/getting-started/introduction.html">Introduction</a></li>
+              <li class="o-list-bare__item"><a href="/getting-started/installation.html">Installation</a></li>
+              <li class="o-list-bare__item"><a href="/getting-started/architecture.html">Architecture ITCSS</a></li>
+              <li class="o-list-bare__item"><a href="/getting-started/about.html">More about it</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="/settings/overview.html">Settings</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/settings/overview.html">Overview</a></li>
+              <li class="o-list-bare__item"><a href="/settings/core.html">Core</a></li>
+              <li class="o-list-bare__item"><a href="/settings/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="/settings/icons.html">Icons</a></li>
+              <li class="o-list-bare__item"><a href="/settings/ui.html">UI</a></li>
+              <li class="o-list-bare__item"><a href="/settings/variables.html">Variables</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Base
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/base/generic.html">Generic</a></li>
+              <li class="o-list-bare__item"><a href="/base/elements.html">Elements</a></li>
+              <li class="o-list-bare__item"><a href="/base/objects.html">Objects</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Layout
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/layout/grid.html">Grid</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="/components">Components</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/components/alert.html">Alert</a></li>
+              <li class="o-list-bare__item"><a href="/components/badge.html">Badge</a></li>
+              <li class="o-list-bare__item"><a href="/components/button.html">Button</a></li>
+              <li class="o-list-bare__item"><a href="/components/callout.html">Callout</a></li>
+              <li class="o-list-bare__item"><a href="/components/card.html">Card</a></li>
+              <lo class="o-list-bare__item"><a href="/components/form.html">Form</a></lo>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Tools
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/tools/concept.html">Concept</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Utilities
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="/utilities/concept-api.html">Concept / API</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/borders.html">Borders</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/columns.html">Columns</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/displays.html">Displays</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/flex.html">Flex</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/headings.html">Headings</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/overflows.html">Overflows</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/sizings.html">Sizings</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/spacings.html">Spacings</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/texts.html">Texts</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/print.html">Print</a></li>
+              <li class="o-list-bare__item"><a href="/utilities/debug.html">Debug</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="p-docs__content">
+        <div class="o-layout u-pt-3 u-mb-5">
+          <h1>Tools</h1>
+          <p>The <code>tools</code> folder contains Sass mixins and functions used inside the whole codebase.<br>Of course, all this code can be used standalone, or for writing your own components or patterns.</p>
+          <h2>Breakpoints - <em>_tools.breakpoints.scss </em></h2>
+          <h3><em>suffix()</em></h3>
+          <p>
+            The responsive classes work with a suffix to determine the minimal breaking point to be actived. The <code>suffix</code> function returns the name of the breakpoint with the "@" in front.</p>
+          <pre class="code" data-lang="SCSS"><code>suffix(<span class="hljs-variable">$name</span>, <span class="hljs-variable">$breakpoints</span>: core.<span class="hljs-variable">$g-grid-breakpoints</span>);
+
+<span class="hljs-variable">$v</span>: suffix(<span class="hljs-string">"xs"</span>);
+<span class="hljs-comment">// Returns a blank string because it's the smallest breakpoint</span>
+
+<span class="hljs-variable">$v</span>: suffix(<span class="hljs-string">"md"</span>);
+<span class="hljs-comment">// Returns "\@sm"</span>
+</code></pre>
+          <h3><em>media-up()</em></h3>
+          <p>
+            This mixin includes the content inside a media queries rules with the breakpoint given. It's mainly used for the utilities generator and the grid layout.</p>
+          <pre class="code" data-lang="SCSS"><code>media-up(<span class="hljs-variable">$name</span>, <span class="hljs-variable">$breakpoints</span>: core.<span class="hljs-variable">$g-grid-breakpoints</span>);
+</code></pre>
+          <h2>Color - <em>_tools.color.scss</em></h2>
+          <h3><em>tint()</em> & <em>shade()</em></h3>
+          <p>
+            These two functions allow to lighten or darken a color. Regarding the Sass documentation, it uses the <code>color.shade()</code> instead of the regular <code>color.darken()</code> and
+             <code>color.lighten()</code> functions.
+          </p>
+          <pre class="code" data-lang="SCSS"><code>tint(<span class="hljs-variable">$color</span>, <span class="hljs-variable">$level</span>: <span class="hljs-number">1</span>, <span class="hljs-variable">$interval</span>: <span class="hljs-number">8%</span>);
+shade(<span class="hljs-variable">$color</span>, <span class="hljs-variable">$level</span>: <span class="hljs-number">1</span>, <span class="hljs-variable">$interval</span>: <span class="hljs-number">8%</span>);
+</code></pre>
+          <h3><em>yiq-contrast()</em></h3>
+          <p>
+            This function in one of the most used inside this framework. It calculate the best color choice for the text from the background color given.<br>The text color is generally "black" or "white". In Glsass, the black color is the default
+             text color (<code>#212121</code>) and the white is just white (<code>#fff</code>).
+          </p>
+          <pre class="code" data-lang="SCSS"><code>yiq-contrast(<span class="hljs-variable">$color</span>, <span class="hljs-variable">$dark</span>: colors.<span class="hljs-variable">$g-color-text</span>, <span class="hljs-variable">$light</span>: colors.<span class="hljs-variable">$g-color-white</span>);
+
+<span class="hljs-attribute">color</span>: yiq-contrast(red);
+<span class="hljs-comment">// Returns #fff</span>
+
+<span class="hljs-attribute">color</span>: yiq-contrast(yellow);
+<span class="hljs-comment">// Returns #212121</span>
+</code></pre>
+          <h2>Color variables - <em>_tools.cv.scss</em></h2>
+          <h3><em>cv()</em></h3>
+          <p>This function searchs for a color inside the theme palette from an name and a variation.</p>
+          <p>
+            The first parameter can be a string or a "color". By color, it means the name of the color, as example "white".
+             For example, "gray" is a real color, but also the name of one palette. So the fonction
+             allow the <code>gray</code> () and the <code>"gray"</code> values.
+          </p>
+          <p>
+            The second parameter is the variant level, it can be an index from 100
+              to 900 or a string (<code>base</code>, <code>light</code>, <code>dark</code>)
+          </p>
+          <p>You can see the actual palette in the&nbsp;<a href="/base/colors.html">base section</a>.</p>
+          <pre class="code" data-lang="SCSS"><code>cv(<span class="hljs-variable">$color</span>, <span class="hljs-variable">$variation</span>: <span class="hljs-string">"base"</span>);
+
+<span class="hljs-attribute">color</span>: cv(primary);
+<span class="hljs-comment">// Returns #0066d7</span>
+
+<span class="hljs-attribute">color</span>: cv(gray, dark);
+<span class="hljs-comment">// Returns #424242;</span>
+
+<span class="hljs-attribute">color</span> cv(white);
+<span class="hljs-comment">// Returns #fff;</span>
+</code></pre>
+          <h2>Fonts - <em>_tools.fonts.scss</em></h2>
+          <h3><em>import-google-fonts()</em></h3>
+          <p>The mixin is used to initialize default font if you use the Google Fonts service.</p>
+          <pre class="code" data-lang="SCSS"><code>import-google-fonts(<span class="hljs-variable">$families</span>);
+</code></pre>
+          <h2>Form - <em>_tools.form.scss</em></h2>
+          <p>This file contains a special mixin used to create dynamically the states classes for several components.</p>
+          <h2>Generators - <em>_tools.generators.scss</em></h2>
+          <p>This other file has the mixin used for the <a href="/utilities/concept-api.html">utilities classes</a>.</p>
+          <h2>Icons - <em>_tools.icons.scss</em></h2>
+          <h3><em>iv()</em></h3>
+          <p>This functions works sililarly like the 
+            <cv></cv> function. It returns the SVG code for the icon name passed.
+          </p>
+          <pre class="code" data-lang="SCSS"><code>iv(<span class="hljs-variable">$name</span>, <span class="hljs-variable">$variation</span>: <span class="hljs-string">"default"</span>, <span class="hljs-variable">$options</span>: ());
+
+<span class="hljs-attribute">background-image</span>: url(iv(<span class="hljs-string">"checkbox"</span>));
+</code></pre>
+          <h2>List - <em>_tools.list.scss</em></h2>
+          <p>This file contains multiple helpers functions for Sass lists.</p>
+          <h3><em>first()</em></h3>
+          <p>Retrieves the first element of a list.</p>
+          <pre class="code" data-lang="SCSS"><code>first(<span class="hljs-variable">$list</span>);
+
+first(("one", "two", "three"));
+<span class="hljs-comment">// Returns "one"</span>
+</code></pre>
+          <h3><em>last()</em></h3>
+          <p>Retrieves the last element of a list.</p>
+          <pre class="code" data-lang="SCSS"><code>last(<span class="hljs-variable">$list</span>);
+
+last(("one", "two", "three"));
+<span class="hljs-comment">// Returns "three"</span>
+</code></pre>
+          <h3><em>prepend()</em></h3>
+          <p>Add news values at beginning of the list - opposite logic of <code>list.append</code>.</p>
+          <pre class="code" data-lang="SCSS"><code>prepend(<span class="hljs-variable">$list</span>);
+
+prepend(("one", "two", "three"), "zero");
+<span class="hljs-comment">// Returns ("zero", "one", "two", "three")</span>
+</code></pre>
+          <h3><em>to-string()</em></h3>
+          <p>Convert a list into the string, with the ability to use a string to join elements with each others.</p>
+          <pre class="code" data-lang="SCSS"><code>to-string(<span class="hljs-variable">$list</span>, <span class="hljs-variable">$glue</span>: <span class="hljs-string">""</span>, <span class="hljs-variable">$is-nested</span>: false);
+
+to-string(("<span class="hljs-selector-tag">a</span>", "<span class="hljs-selector-tag">b</span>", "c"));
+<span class="hljs-comment">// Returns "abc"</span>
+
+to-string(("block", "element", "modifier"), "-");
+<span class="hljs-comment">// Returns "block-element-modifier"</span>
+</code></pre>
+          <h3><em>is-empty()</em></h3>
+          <p>Indicates if the list is empty.</p>
+          <pre class="code" data-lang="SCSS"><code>is-empty(<span class="hljs-variable">$list</span>);
+
+is-empty(("one", "two", "three"));
+<span class="hljs-comment">// Returns false</span>
+
+is-empty(());
+<span class="hljs-comment">// Returns true</span>
+</code></pre>
+          <h2>Map - <em>_tools.map.scss</em></h2>
+          <This>file contains multiple helpers functions for Sass maps.</This>
+          <h3><em>deep-get()</em></h3>
+          <p>Retrieves map keys from nested maps.</p>
+          <pre class="code" data-lang="SCSS"><code>deep-get(<span class="hljs-variable">$map</span>, <span class="hljs-variable">$keys</span>...);
+
+deep-get(("primary": (<span class="hljs-string">"100"</span>: <span class="hljs-string">"red"</span>, <span class="hljs-string">"200"</span>: <span class="hljs-string">"green"</span>, <span class="hljs-string">"300"</span>: <span class="hljs-string">"blue"</span> )) <span class="hljs-string">"primary"</span>, <span class="hljs-string">"300"</span>);
+<span class="hljs-comment">// Returns "blue";</span>
+</code></pre>
+          <h3><em>negativify-map()</em></h3>
+          <p>It turns maps into its negative variant. It prefixes the keys with `n` and makes the value negative.</p>
+          <pre class="code" data-lang="SCSS"><code>negativify-<span class="hljs-selector-tag">map</span>(<span class="hljs-variable">$map</span>);
+
+negativify-<span class="hljs-selector-tag">map</span>((0: <span class="hljs-number">5px</span>, <span class="hljs-number">1</span>: <span class="hljs-number">10px</span>, <span class="hljs-number">2</span>: <span class="hljs-number">30px</span>));
+<span class="hljs-comment">// Return ("n0": -5px, "n1": -10px, "n2": -30px)</span>
+</code></pre>
+          <h2>Media queries - <em>_tools.mq.scss</em></h2>
+          <h3><em>mq()</em></h3>
+          <p>The mixin can be used to write responsive rules inside any selector.</p>
+          <pre class="code" data-lang="SCSS"><code>mq(<span class="hljs-variable">$size</span>: md, <span class="hljs-variable">$max</span>: false);
+
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: blue;
+
+  <span class="hljs-keyword">@include</span> mq(xl) {
+    <span class="hljs-attribute">color</span>: red;
+  }
+}
+
+<span class="hljs-comment">// CSS</span>
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: blue;
+}
+
+<span class="hljs-keyword">@media</span> (min-width: <span class="hljs-number">1400px</span>) {
+  <span class="hljs-selector-tag">a</span> {
+    <span class="hljs-attribute">color</span>: red
+  }
+}
+</code></pre>
+          <h3><em>mq-max()</em></h3>
+          <p>This mixin is an alternative of the 
+            <mq></mq> mixin by setting the <code>$max</code> variable automatically at true.
+          </p>
+          <pre class="code" data-lang="SCSS"><code>mq-max(<span class="hljs-variable">$size</span>: md);
+
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: green;
+
+  <span class="hljs-keyword">@include</span> mq(xl) {
+    <span class="hljs-attribute">color</span>: yellow;
+  }
+}
+
+<span class="hljs-comment">// CSS</span>
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: green;
+}
+
+<span class="hljs-keyword">@media</span> (max-width: <span class="hljs-number">1399px</span>) {
+  <span class="hljs-selector-tag">a</span> {
+    <span class="hljs-attribute">color</span>: yellow
+  }
+}
+</code></pre>
+          <h2>Spacing - <em>_tools.spacing.scss</em></h2>
+          <h3><em>add-space()</em></h3>
+          <p>The function returns a value from the <code>$g-spacers</code> list. The goal is to use this functions when a margin is set to stay constant and preserve the vertical rhythm.</p>
+          <pre class="code" data-lang="SCSS"><code>add-space(<span class="hljs-variable">$unit-factor</span>: <span class="hljs-number">3</span>);
+
+<span class="hljs-attribute">margin-bottom</span>: add-space();
+<span class="hljs-comment">// Returns 1.5rem/24px</span>
+</code></pre>
+          <h3><em>vr()</em></h3>
+          <p>Also known as the "rhythm unit", the <code>vr()</code> function returns a size that respect the vertical rhythm. It required a number with a 0.5 precision as parameter, for example "0.5" or "1.5". If this condition is not respected
+             (for example with "0.4" or "1.2"), it will return 1vr
+          </p>
+          <pre class="code" data-lang="SCSS"><code>vr(<span class="hljs-variable">$unit-factor</span>: <span class="hljs-number">1</span>);
+
+<span class="hljs-attribute">height</span>: vr();
+<span class="hljs-comment">// Returns 1.5rem/24px</span>
+
+<span class="hljs-attribute">height</span>: vr(<span class="hljs-number">0.5</span>);
+<span class="hljs-comment">// Returns 0.75rem/12px</span>
+
+<span class="hljs-attribute">height</span>: vr(<span class="hljs-number">2</span>);
+<span class="hljs-comment">// Returns 3rem/48px</span>
+
+<span class="hljs-attribute">height</span>: vr(<span class="hljs-number">3.14</span>);
+<span class="hljs-comment">// Returns 1.5rem/24px</span>
+</code></pre>
+          <h3><em>adjust-vr()</em></h3>
+          <p>
+            To make different elements feel consistent, this function can be used to adjust the line-height, depending of the font-size and the margins.</p>
+          <pre class="code" data-lang="SCSS"><code>adjust-vr(<span class="hljs-variable">$vertical-rhythm</span>: <span class="hljs-number">1</span>, <span class="hljs-variable">$font-size</span>, <span class="hljs-variable">$spacings</span>);
+
+<span class="hljs-attribute">line-height</span>: adjust-vr(<span class="hljs-number">1</span>, <span class="hljs-number">0.875rem</span>, add-space(<span class="hljs-number">1</span>));
+<span class="hljs-comment">// Returns 1.2857142857 (the default line-height is 1.5)</span>
+</code></pre>
+          <h2>String - <em>_tools.string.scss</em></h2>
+          <h3><em>replace()</em></h3>
+          <p>The function search and replace occurence in the string given</p>
+          <pre class="code" data-lang="SCSS"><code>replace(<span class="hljs-variable">$string</span>, <span class="hljs-variable">$search</span>, <span class="hljs-variable">$replace</span>: <span class="hljs-string">""</span>);
+
+<span class="hljs-attribute">content</span>: replace(<span class="hljs-string">"Hello x!"</span>, <span class="hljs-string">"x"</span>, attr(data-name))
+// Returns <span class="hljs-string">"Hello world!"</span>
+</code></pre>
+          <h3><em>escape-svg()</em></h3>
+          <p>It use the mainly the <code>replace</code> function to escape characters in a SVG base64.</p>
+          <h2>Unit - <em>_tools.unit.scss</em></h2>
+          <h3><em>strip-unit</em></h3>
+          <p>Remove the unit of a length</p>
+          <pre class="code" data-lang="SCSS"><code>strip-unit(<span class="hljs-variable">$number</span>);
+
+<span class="hljs-variable">$v</span>: strip-unit(<span class="hljs-number">12px</span>);
+<span class="hljs-comment">// Returns 12</span>
+</code></pre>
+          <h3><em>convert-rem</em> & <em>convert-px</em></h3>
+          <p>It convert a <code>px</code> length in <code>rem</code> unit.<br>The <code>convert-px</code> does the opposite.</p>
+          <pre class="code" data-lang="SCSS"><code>convert-rem(<span class="hljs-variable">$variable</span>);
+convert-px(<span class="hljs-variable">$variable</span>);
+convert(<span class="hljs-variable">$variable</span>); <span class="hljs-comment">// Alias of "convert-rem"</span>
+
+<span class="hljs-attribute">font-size</span>: convert-rem(<span class="hljs-number">16px</span>);
+<span class="hljs-comment">// Returns 1rem</span>
+
+<span class="hljs-attribute">height</span>: convert-px(<span class="hljs-number">0</span>,<span class="hljs-number">375rem</span>);
+<span class="hljs-comment">// Returns 6px</span>
+</code></pre>
+          <h2>Global - <em>_tools.global.scss</em></h2>
+          <p>This file doesn't contain a function or mixin, it's just used to forward some functions, the most common :</p>
+          <ul>
+            <li><code>cv()</code></li>
+            <li><code>iv()</code></li>
+            <li><code>mq()</code></li>
+            <li><code>vr()</code></li>
+          </ul>
+          <p>By forwarding them, when the file is import with the <code>@use</code> rule, the namespace must be set at <code>*</code>. It will load the module without a namespace, and avoid to call some functions like 
+            <cv class="cv"></cv> form example.
+          </p>
+        </div>
+        <div class="o-layout">
+          <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
