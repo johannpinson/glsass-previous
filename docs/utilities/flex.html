@@ -1,18 +1,132 @@
-<!DOCTYPE html> <html lang="en"> <head> <title></title> <meta charset="utf-8"> <meta name="robots" content="index, follow"> <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> <meta http-equiv="x-ua-compatible" content="ie=edge"> <link rel="stylesheet" href="/glsass/assets/29f421cf.css"> <script src="/glsass/assets/index.65baf025.js"></script> </head> <body> <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div> <div class="p-docs"> <div class="p-docs__sidebar u-bg-light u-pt-3"> <ul class="o-list-bare"> <li class="o-list-bare__item">Getting started <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/getting-started/introduction.html">Introduction</a></li> <li class="o-list-bare__item"><a href="/getting-started/installation.html">Installation</a></li> <li class="o-list-bare__item"><a href="/getting-started/architecture.html">Architecture ITCSS</a></li> <li class="o-list-bare__item"><a href="/getting-started/about.html">More about it</a></li> </ul> </li> <li class="o-list-bare__item"><a href="/settings/overview.html">Settings</a> <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/settings/overview.html">Overview</a></li> <li class="o-list-bare__item"><a href="/settings/core.html">Core</a></li> <li class="o-list-bare__item"><a href="/settings/colors.html">Colors</a></li> <li class="o-list-bare__item"><a href="/settings/icons.html">Icons</a></li> <li class="o-list-bare__item"><a href="/settings/ui.html">UI</a></li> <li class="o-list-bare__item"><a href="/settings/variables.html">Variables</a></li> </ul> </li> <li class="o-list-bare__item">Base <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/base/generic.html">Generic</a></li> <li class="o-list-bare__item"><a href="/base/elements.html">Elements</a></li> <li class="o-list-bare__item"><a href="/base/objects.html">Objects</a></li> </ul> </li> <li class="o-list-bare__item">Layout <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/layout/grid.html">Grid</a></li> </ul> </li> <li class="o-list-bare__item"><a href="/components">Components</a> <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/components/alert.html">Alert</a></li> <li class="o-list-bare__item"><a href="/components/badge.html">Badge</a></li> <li class="o-list-bare__item"><a href="/components/button.html">Button</a></li> <li class="o-list-bare__item"><a href="/components/callout.html">Callout</a></li> <li class="o-list-bare__item"><a href="/components/card.html">Card</a></li> <lo class="o-list-bare__item"><a href="/components/form.html">Form</a></lo> </ul> </li> <li class="o-list-bare__item">Tools <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/tools/concept.html">Concept</a></li> </ul> </li> <li class="o-list-bare__item">Utilities <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/utilities/concept-api.html">Concept / API</a></li> <li class="o-list-bare__item"><a href="/utilities/borders.html">Borders</a></li> <li class="o-list-bare__item"><a href="/utilities/colors.html">Colors</a></li> <li class="o-list-bare__item"><a href="/utilities/columns.html">Columns</a></li> <li class="o-list-bare__item"><a href="/utilities/displays.html">Displays</a></li> <li class="o-list-bare__item"><a href="/utilities/flex.html">Flex</a></li> <li class="o-list-bare__item"><a href="/utilities/headings.html">Headings</a></li> <li class="o-list-bare__item"><a href="/utilities/overflows.html">Overflows</a></li> <li class="o-list-bare__item"><a href="/utilities/sizings.html">Sizings</a></li> <li class="o-list-bare__item"><a href="/utilities/spacings.html">Spacings</a></li> <li class="o-list-bare__item"><a href="/utilities/texts.html">Texts</a></li> <li class="o-list-bare__item"><a href="/utilities/print.html">Print</a></li> <li class="o-list-bare__item"><a href="/utilities/debug.html">Debug</a></li> </ul> </li> </ul> </div> <div class="p-docs__content"> <div class="o-layout u-pt-3 u-mb-5"> <h1>Flex</h1> <p> With the grid system based on flex, and the possibility to use the utilityclass <code>.u-d-f</code>, you are able to manage the layout simply.</p> <h2>Fill and grow</h2> <p>The <fill></fill> option will try to allocate the maximum width available between blocks.For the <grow></grow> class, it make the element as wide as possible. </p> <div class="p-example"> <div class="u-d-f"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f"</span>&gt;</span>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/29f421cf.css">
+    <script src="/assets/index.65baf025.js"></script>
+  </head>
+  <body>
+    <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div>
+    <div class="p-docs">
+      <div class="p-docs__sidebar u-bg-light u-pt-3">
+        <ul class="o-list-bare">
+          <li class="o-list-bare__item">Getting started
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../getting-started/introduction.html">Introduction</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/installation.html">Installation</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/architecture.html">Architecture ITCSS</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/about.html">More about it</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="../settings/overview.html">Settings</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../settings/overview.html">Overview</a></li>
+              <li class="o-list-bare__item"><a href="../settings/core.html">Core</a></li>
+              <li class="o-list-bare__item"><a href="../settings/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="../settings/icons.html">Icons</a></li>
+              <li class="o-list-bare__item"><a href="../settings/ui.html">UI</a></li>
+              <li class="o-list-bare__item"><a href="../settings/variables.html">Variables</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Base
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../base/generic.html">Generic</a></li>
+              <li class="o-list-bare__item"><a href="../base/elements.html">Elements</a></li>
+              <li class="o-list-bare__item"><a href="../base/objects.html">Objects</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Layout
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../layout/grid.html">Grid</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="../components">Components</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../components/alert.html">Alert</a></li>
+              <li class="o-list-bare__item"><a href="../components/badge.html">Badge</a></li>
+              <li class="o-list-bare__item"><a href="../components/button.html">Button</a></li>
+              <li class="o-list-bare__item"><a href="../components/callout.html">Callout</a></li>
+              <li class="o-list-bare__item"><a href="../components/card.html">Card</a></li>
+              <lo class="o-list-bare__item"><a href="../components/form.html">Form</a></lo>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Tools
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../tools/concept.html">Concept</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Utilities
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../utilities/concept-api.html">Concept / API</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/borders.html">Borders</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/columns.html">Columns</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/displays.html">Displays</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/flex.html">Flex</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/headings.html">Headings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/overflows.html">Overflows</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/sizings.html">Sizings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/spacings.html">Spacings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/texts.html">Texts</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/print.html">Print</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/debug.html">Debug</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="p-docs__content">
+        <div class="o-layout u-pt-3 u-mb-5">
+          <h1>Flex</h1>
+          <p>
+            With the grid system based on flex, and the possibility to use the utilityclass <code>.u-d-f</code>, you are able to manage the layout simply.</p>
+          <h2>Fill and grow</h2>
+          <p>The 
+            <fill></fill> option will try to allocate the maximum width available between blocks.For the 
+            <grow></grow> class, it make the element as wide as possible.
+          </p>
+          <div class="p-example">
+            <div class="u-d-f">
+              <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre> <div class="p-example"> <div class="u-d-f"> <div class="u-fx-fill u-bg-light u-p-1 u-bs">a flex item with more content</div> <div class="u-fx-fill u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-fx-fill u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f"</span>&gt;</span>
+</code></pre>
+          <div class="p-example">
+            <div class="u-d-f">
+              <div class="u-fx-fill u-bg-light u-p-1 u-bs">a flex item with more content</div>
+              <div class="u-fx-fill u-bg-light u-p-1 u-bs">a flex item</div>
+              <div class="u-fx-fill u-bg-light u-p-1 u-bs">a flex item</div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-fx-fill"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-fx-fill"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-fx-fill"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre> <div class="p-example"> <div class="u-d-f"> <div class="u-fx-grow u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f"</span>&gt;</span>
+</code></pre>
+          <div class="p-example">
+            <div class="u-d-f">
+              <div class="u-fx-grow u-bg-light u-p-1 u-bs">a flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+            </div>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-fx-grow"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   flex: (
     responsive: true,
     property: flex,
@@ -23,7 +137,31 @@
     ),
   ),
 );
-</code></pre> <h2>Directions</h2> <div class="p-example"> <div class="u-d-f u-fd-r u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-fd-rr u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-fd-c u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-fd-cr"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-fd-r"</span>&gt;</span>
+</code></pre>
+          <h2>Directions</h2>
+          <div class="p-example">
+            <div class="u-d-f u-fd-r u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-fd-rr u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-fd-c u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-fd-cr">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-fd-r"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -45,7 +183,8 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   flex-direction: (
     responsive: true,
     property: flex-direction,
@@ -58,7 +197,48 @@
     ),
   ),
 );
-</code></pre> <h2>Wrap</h2> <div class="p-example"> <div class="o-row u-mb-2"> <div class="o-col u-12 u-4@md"> <div class="u-d-f u-fw-n u-bg-light" style="width:10rem"> <div class="u-m-1 u-p-1 u-bs">1st flex item</div> <div class="u-m-1 u-p-1 u-bs">2nd flex item</div> <div class="u-m-1 u-p-1 u-bs">3rd flex item</div> <div class="u-m-1 u-p-1 u-bs">4th flex item</div> <div class="u-m-1 u-p-1 u-bs">5th flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-bg-light"> <div class="u-m-1 u-p-1 u-bs">1st flex item</div> <div class="u-m-1 u-p-1 u-bs">2nd flex item</div> <div class="u-m-1 u-p-1 u-bs">3rd flex item</div> <div class="u-m-1 u-p-1 u-bs">4th flex item</div> <div class="u-m-1 u-p-1 u-bs">5th flex item</div> <div class="u-m-1 u-p-1 u-bs">6th flex item</div> <div class="u-m-1 u-p-1 u-bs">7th flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-wr u-bg-light"> <div class="u-m-1 u-p-1 u-bs">1st flex item</div> <div class="u-m-1 u-p-1 u-bs">2nd flex item</div> <div class="u-m-1 u-p-1 u-bs">3rd flex item</div> <div class="u-m-1 u-p-1 u-bs">4th flex item</div> <div class="u-m-1 u-p-1 u-bs">5th flex item</div> <div class="u-m-1 u-p-1 u-bs">6th flex item</div> <div class="u-m-1 u-p-1 u-bs">7th flex item</div> </div> </div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-fw-n"</span>&gt;</span>
+</code></pre>
+          <h2>Wrap</h2>
+          <div class="p-example">
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-4@md">
+                <div class="u-d-f u-fw-n u-bg-light" style="width:10rem">
+                  <div class="u-m-1 u-p-1 u-bs">1st flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">2nd flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">3rd flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">4th flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">5th flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-bg-light">
+                  <div class="u-m-1 u-p-1 u-bs">1st flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">2nd flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">3rd flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">4th flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">5th flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">6th flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">7th flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-wr u-bg-light">
+                  <div class="u-m-1 u-p-1 u-bs">1st flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">2nd flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">3rd flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">4th flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">5th flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">6th flex item</div>
+                  <div class="u-m-1 u-p-1 u-bs">7th flex item</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-fw-n"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -77,7 +257,8 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   flex-wrap: (
     responsive: true,
     property: flex-wrap,
@@ -89,7 +270,44 @@
     ),
   ),
 );
-</code></pre> <h2>Aligments</h2> <p> For aligning items in a flex container, the utilities classes take the same logiclike <code>justify-content</code> or <code>align-items</code> property.</p> <h3>Justify content</h3> <div class="p-example"> <div class="u-d-f u-jc-c u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-jc-fs u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-jc-fe u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-jc-sb u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-jc-sa u-mb-3"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-jc-se"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-jc-c"</span>&gt;</span>
+</code></pre>
+          <h2>Aligments</h2>
+          <p>
+            For aligning items in a flex container, the utilities classes take the same logiclike <code>justify-content</code> or <code>align-items</code> property.</p>
+          <h3>Justify content</h3>
+          <div class="p-example">
+            <div class="u-d-f u-jc-c u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-jc-fs u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-jc-fe u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-jc-sb u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-jc-sa u-mb-3">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-jc-se">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-jc-c"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -123,7 +341,8 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   justify-content: (
     responsive: true,
     property: justify-content,
@@ -138,7 +357,36 @@
     ),
   ),
 );
-</code></pre> <h3>Align items</h3> <div class="p-example"> <div class="u-d-f u-ai-fs u-bg-light u-mb-3" style="min-height: 6rem"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-ai-fe u-bg-light u-mb-3" style="min-height: 6rem"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-ai-c u-bg-light u-mb-3" style="min-height: 6rem"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-ai-b u-bg-light u-mb-3" style="min-height: 6rem"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> <div class="u-d-f u-ai-s u-bg-light" style="min-height: 6rem"> <div class="u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-bg-light u-p-1 u-bs">3rd flex item</div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-ai-fs"</span>&gt;</span>
+</code></pre>
+          <h3>Align items</h3>
+          <div class="p-example">
+            <div class="u-d-f u-ai-fs u-bg-light u-mb-3" style="min-height: 6rem">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-ai-fe u-bg-light u-mb-3" style="min-height: 6rem">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-ai-c u-bg-light u-mb-3" style="min-height: 6rem">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-ai-b u-bg-light u-mb-3" style="min-height: 6rem">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+            <div class="u-d-f u-ai-s u-bg-light" style="min-height: 6rem">
+              <div class="u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-ai-fs"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -166,7 +414,8 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   align-items: (
     responsive: true,
     property: align-items,
@@ -180,7 +429,111 @@
     ),
   ),
 );
-</code></pre> <h3>Align content</h3> <p> Remember, this property has no effect on single line flex containers (i.e. ones with <code>flex-wrap: nowrap</code>).</p> <div class="p-example"> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-ac-fs u-bg-light" style="height: 9rem"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-ac-fe u-bg-light" style="height: 9rem"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-ac-c u-bg-light" style="height: 9rem"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-ac-sb u-bg-light" style="height: 9rem"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-ac-sa u-bg-light" style="height: 9rem"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-ac-se u-bg-light" style="height: 9rem"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> </div> <div class="o-row u-mb-2"> <div class="o-col u-12 u-6@md"> <div class="u-d-f u-fw-w u-ac-s u-bg-light" style="height: 9rem"> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> <div class="u-bg-light u-p-1 u-bs">a flex item</div> </div> </div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-fw-w u-ac-fs"</span>&gt;</span>
+</code></pre>
+          <h3>Align content</h3>
+          <p>
+            Remember, this property has no effect on single line flex containers (i.e. ones with <code>flex-wrap: nowrap</code>).</p>
+          <div class="p-example">
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-ac-fs u-bg-light" style="height: 9rem">
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-ac-fe u-bg-light" style="height: 9rem">
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-ac-c u-bg-light" style="height: 9rem">
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-ac-sb u-bg-light" style="height: 9rem">
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-ac-sa u-bg-light" style="height: 9rem">
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-ac-se u-bg-light" style="height: 9rem">
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                </div>
+              </div>
+            </div>
+            <div class="o-row u-mb-2">
+              <div class="o-col u-12 u-6@md">
+                <div class="u-d-f u-fw-w u-ac-s u-bg-light" style="height: 9rem">
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                  <div class="u-bg-light u-p-1 u-bs">a flex item</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-fw-w u-ac-fs"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   ...
@@ -220,7 +573,8 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   align-content: (
     responsive: true,
     property: align-content,
@@ -236,14 +590,30 @@
     ),
   ),
 );
-</code></pre> <h3>Align self</h3> <p>The <code>auto</code> option can be usefull if you want to reset the <code>align-self</code> property and follow the parent setting. Because if you use the <code>normal</code> value, it's will override the inherit value. </p> <div class="p-example"> <div class="u-d-f u-ai-c u-bg-light u-mb-3" style="min-height: 6rem"> <div class="u-as-fs u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div> <div class="u-as-c u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div> <div class="u-as-fe u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div> <div class="u-as-b u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div> <div class="u-as-s u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div> <div class="u-as-fs u-bg-light u-p-1 u-mx-2 u-bs u-as-auto@sm">a flex item</div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-ai-c"</span>&gt;</span>
+</code></pre>
+          <h3>Align self</h3>
+          <p>The <code>auto</code> option can be usefull if you want to reset the <code>align-self</code> property and follow the parent setting. Because if you use the <code>normal</code> value,
+             it's will override the inherit value.
+          </p>
+          <div class="p-example">
+            <div class="u-d-f u-ai-c u-bg-light u-mb-3" style="min-height: 6rem">
+              <div class="u-as-fs u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div>
+              <div class="u-as-c u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div>
+              <div class="u-as-fe u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div>
+              <div class="u-as-b u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div>
+              <div class="u-as-s u-bg-light u-p-1 u-mx-2 u-bs">a flex item</div>
+              <div class="u-as-fs u-bg-light u-p-1 u-mx-2 u-bs u-as-auto@sm">a flex item</div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f u-ai-c"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-as-fs"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-as-c"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-as-fe"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-as-b"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-as-s"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-as-fs u-as-auto@sm"</span>&gt;</span>a flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   align-self: (
     responsive: true,
     property: align-self,
@@ -258,11 +628,24 @@
     ),
   ),
 );
-</code></pre> <h2>Order</h2> <p>The order of items can be set between <code>0</code> and <code>5</code>.<br>There is special classes <code>.u-o-first</code> (to set it <code>-1</code>) and <code>.u-o-last</code> (for the <code>6</code>).<br>The <code>initial</code> option can reset the default order for an element. </p> <div class="p-example"> <div class="u-d-f u-mb-3"> <div class="u-o-3 u-bg-light u-p-1 u-bs">1st flex item</div> <div class="u-o-2 u-bg-light u-p-1 u-bs">2nd flex item</div> <div class="u-o-1 u-bg-light u-p-1 u-bs">3rd flex item</div> </div> </div> <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f "</span>&gt;</span>
+</code></pre>
+          <h2>Order</h2>
+          <p>The order of items can be set between <code>0</code> and <code>5</code>.<br>There is special classes <code>.u-o-first</code> (to set it <code>-1</code>)
+             and <code>.u-o-last</code> (for the <code>6</code>).<br>The <code>initial</code> option can reset the default order for an element.
+          </p>
+          <div class="p-example">
+            <div class="u-d-f u-mb-3">
+              <div class="u-o-3 u-bg-light u-p-1 u-bs">1st flex item</div>
+              <div class="u-o-2 u-bg-light u-p-1 u-bs">2nd flex item</div>
+              <div class="u-o-1 u-bg-light u-p-1 u-bs">3rd flex item</div>
+            </div>
+          </div>
+          <pre class="code u-mb-2" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-f "</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-o-3"</span>&gt;</span>1st flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-o-2"</span>&gt;</span>2nd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-o-1"</span>&gt;</span>3rd flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$u-flex</span>: (
   order: (
     responsive: true,
     property: order,
@@ -279,4 +662,12 @@
       last: <span class="hljs-number">6</span>,
     ),
   ),
-);</code></pre> </div> <div class="o-layout"> <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p> </div> </div> </div> </body> </html>
+);</code></pre>
+        </div>
+        <div class="o-layout">
+          <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,89 @@
-<!DOCTYPE html> <html lang="en"> <head> <title></title> <meta charset="utf-8"> <meta name="robots" content="index, follow"> <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> <meta http-equiv="x-ua-compatible" content="ie=edge"> <link rel="stylesheet" href="/glsass/assets/29f421cf.css"> <script src="/glsass/assets/index.65baf025.js"></script> </head> <body> <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div> <div class="p-docs"> <div class="p-docs__sidebar u-bg-light u-pt-3"> <ul class="o-list-bare"> <li class="o-list-bare__item">Getting started <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/getting-started/introduction.html">Introduction</a></li> <li class="o-list-bare__item"><a href="/getting-started/installation.html">Installation</a></li> <li class="o-list-bare__item"><a href="/getting-started/architecture.html">Architecture ITCSS</a></li> <li class="o-list-bare__item"><a href="/getting-started/about.html">More about it</a></li> </ul> </li> <li class="o-list-bare__item"><a href="/settings/overview.html">Settings</a> <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/settings/overview.html">Overview</a></li> <li class="o-list-bare__item"><a href="/settings/core.html">Core</a></li> <li class="o-list-bare__item"><a href="/settings/colors.html">Colors</a></li> <li class="o-list-bare__item"><a href="/settings/icons.html">Icons</a></li> <li class="o-list-bare__item"><a href="/settings/ui.html">UI</a></li> <li class="o-list-bare__item"><a href="/settings/variables.html">Variables</a></li> </ul> </li> <li class="o-list-bare__item">Base <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/base/generic.html">Generic</a></li> <li class="o-list-bare__item"><a href="/base/elements.html">Elements</a></li> <li class="o-list-bare__item"><a href="/base/objects.html">Objects</a></li> </ul> </li> <li class="o-list-bare__item">Layout <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/layout/grid.html">Grid</a></li> </ul> </li> <li class="o-list-bare__item"><a href="/components">Components</a> <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/components/alert.html">Alert</a></li> <li class="o-list-bare__item"><a href="/components/badge.html">Badge</a></li> <li class="o-list-bare__item"><a href="/components/button.html">Button</a></li> <li class="o-list-bare__item"><a href="/components/callout.html">Callout</a></li> <li class="o-list-bare__item"><a href="/components/card.html">Card</a></li> <lo class="o-list-bare__item"><a href="/components/form.html">Form</a></lo> </ul> </li> <li class="o-list-bare__item">Tools <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/tools/concept.html">Concept</a></li> </ul> </li> <li class="o-list-bare__item">Utilities <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/utilities/concept-api.html">Concept / API</a></li> <li class="o-list-bare__item"><a href="/utilities/borders.html">Borders</a></li> <li class="o-list-bare__item"><a href="/utilities/colors.html">Colors</a></li> <li class="o-list-bare__item"><a href="/utilities/columns.html">Columns</a></li> <li class="o-list-bare__item"><a href="/utilities/displays.html">Displays</a></li> <li class="o-list-bare__item"><a href="/utilities/flex.html">Flex</a></li> <li class="o-list-bare__item"><a href="/utilities/headings.html">Headings</a></li> <li class="o-list-bare__item"><a href="/utilities/overflows.html">Overflows</a></li> <li class="o-list-bare__item"><a href="/utilities/sizings.html">Sizings</a></li> <li class="o-list-bare__item"><a href="/utilities/spacings.html">Spacings</a></li> <li class="o-list-bare__item"><a href="/utilities/texts.html">Texts</a></li> <li class="o-list-bare__item"><a href="/utilities/print.html">Print</a></li> <li class="o-list-bare__item"><a href="/utilities/debug.html">Debug</a></li> </ul> </li> </ul> </div> <div class="p-docs__content"> <div class="o-layout u-pt-3 u-mb-5"> <h1>Concept & API</h1> <p>This layer contains the parameters use by the API (mixins) to generate the utilities classes.<br>All classes are built with the <code>utitilities</code> mixin from the <code>generators</code> tools.</p> <p>By convention, all utilities classes start with the <code>.u-*</code> prefix.<br>Moreover, to minimize and simplify the naming, most classes follow a logic similar from the <a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener noreferrer">Emmet abbreviations shortcuts</a>.</p> <pre class="code u-mb-0" data-lang="SCSS"><code>$utilities: (
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/29f421cf.css">
+    <script src="/assets/index.65baf025.js"></script>
+  </head>
+  <body>
+    <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div>
+    <div class="p-docs">
+      <div class="p-docs__sidebar u-bg-light u-pt-3">
+        <ul class="o-list-bare">
+          <li class="o-list-bare__item">Getting started
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../getting-started/introduction.html">Introduction</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/installation.html">Installation</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/architecture.html">Architecture ITCSS</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/about.html">More about it</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="../settings/overview.html">Settings</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../settings/overview.html">Overview</a></li>
+              <li class="o-list-bare__item"><a href="../settings/core.html">Core</a></li>
+              <li class="o-list-bare__item"><a href="../settings/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="../settings/icons.html">Icons</a></li>
+              <li class="o-list-bare__item"><a href="../settings/ui.html">UI</a></li>
+              <li class="o-list-bare__item"><a href="../settings/variables.html">Variables</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Base
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../base/generic.html">Generic</a></li>
+              <li class="o-list-bare__item"><a href="../base/elements.html">Elements</a></li>
+              <li class="o-list-bare__item"><a href="../base/objects.html">Objects</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Layout
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../layout/grid.html">Grid</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="../components">Components</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../components/alert.html">Alert</a></li>
+              <li class="o-list-bare__item"><a href="../components/badge.html">Badge</a></li>
+              <li class="o-list-bare__item"><a href="../components/button.html">Button</a></li>
+              <li class="o-list-bare__item"><a href="../components/callout.html">Callout</a></li>
+              <li class="o-list-bare__item"><a href="../components/card.html">Card</a></li>
+              <lo class="o-list-bare__item"><a href="../components/form.html">Form</a></lo>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Tools
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../tools/concept.html">Concept</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Utilities
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../utilities/concept-api.html">Concept / API</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/borders.html">Borders</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/columns.html">Columns</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/displays.html">Displays</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/flex.html">Flex</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/headings.html">Headings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/overflows.html">Overflows</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/sizings.html">Sizings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/spacings.html">Spacings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/texts.html">Texts</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/print.html">Print</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/debug.html">Debug</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="p-docs__content">
+        <div class="o-layout u-pt-3 u-mb-5">
+          <h1>Concept & API</h1>
+          <p>This layer contains the parameters use by the API (mixins) to generate the utilities classes.<br>All classes are built with the <code>utitilities</code> mixin from the <code>generators</code> tools.</p>
+          <p>By convention, all utilities classes start with the <code>.u-*</code> prefix.<br>Moreover, to minimize and simplify the naming, most classes follow a logic similar from the <a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener noreferrer">Emmet abbreviations shortcuts</a>.</p>
+          <pre class="code u-mb-0" data-lang="SCSS"><code>$utilities: (
   display: (
     property: display,
     class: d,
@@ -14,7 +99,8 @@
   ),
 );
 
-@include generators.utilities($utilities);</code></pre> <pre class="code" data-lang="CSS"><code><span class="hljs-comment">/* Output */</span>
+@include generators.utilities($utilities);</code></pre>
+          <pre class="code" data-lang="CSS"><code><span class="hljs-comment">/* Output */</span>
 <span class="hljs-selector-class">.u-d-n</span> {
   <span class="hljs-attribute">display</span>: none;
 }
@@ -36,7 +122,16 @@
 <span class="hljs-selector-class">.u-d-g</span> {
   <span class="hljs-attribute">display</span>: grid;
 }
-</code></pre> <p class="u-mb-2">The map passed as argument allows several options to generate the most appropriate CSS rules.</p> <ul> <li class="u-mb-2"><code>name</code>: this is the key for the group of utilities classes which will be created. This reference can be used to modify the parameters when you import the file.</li> <li class="u-mb-2"><code>property</code>: must be a name (string) of a real CSS property. It can be a list to generate multiple rules for one class (example for margins/paddings).</li> <li class="u-mb-2"><code>class</code> (optional): works as an alias to change the futur class name if you don't want to use the same as the property.</li> <li class="u-mb-2"><code>responsive</code> (optional): boolean indicating if classes with the responsive suffix will be generated. The parameters is set to <code>false</code> by default.</li> <li class="u-mb-2"><code>values</code>: it can be a list or map. If a list is provided, each entry will be the the class name and the value. If it's a map, the key will be used as name.</li> </ul> <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$utilities</span>: (
+</code></pre>
+          <p class="u-mb-2">The map passed as argument allows several options to generate the most appropriate CSS rules.</p>
+          <ul>
+            <li class="u-mb-2"><code>name</code>: this is the key for the group of utilities classes which will be created. This reference can be used to modify the parameters when you import the file.</li>
+            <li class="u-mb-2"><code>property</code>: must be a name (string) of a real CSS property. It can be a list to generate multiple rules for one class (example for margins/paddings).</li>
+            <li class="u-mb-2"><code>class</code> (optional): works as an alias to change the futur class name if you don't want to use the same as the property.</li>
+            <li class="u-mb-2"><code>responsive</code> (optional): boolean indicating if classes with the responsive suffix will be generated. The parameters is set to <code>false</code> by default.</li>
+            <li class="u-mb-2"><code>values</code>: it can be a list or map. If a list is provided, each entry will be the the class name and the value. If it's a map, the key will be used as name.</li>
+          </ul>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-variable">$utilities</span>: (
   <span class="hljs-string">"name"</span>: (
     property: string or list,
     class: string,
@@ -44,14 +139,25 @@
     values: list or map,
   )
 )
-</code></pre> <h2>Custom configurations</h2> <p>When you import a utility file, you can pass your own configuration to modify the classes generated.</p> <h3>Add utilities</h3> <p>You can easily add and generate your own utilities classes by using the generator.</p> <pre class="code" data-lang="SCSS"><code><span class="hljs-keyword">@use</span> <span class="hljs-string">"~glsass/src/tools/tools.generators"</span> as generators;
+</code></pre>
+          <h2>Custom configurations</h2>
+          <p>When you import a utility file, you can pass your own configuration to modify the classes generated.</p>
+          <h3>Add utilities</h3>
+          <p>You can easily add and generate your own utilities classes by using the generator.</p>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-keyword">@use</span> <span class="hljs-string">"~glsass/src/tools/tools.generators"</span> as generators;
 
 <span class="hljs-variable">$custom-utilities</span>: (
   // add your code here
 );
 
 <span class="hljs-keyword">@include</span> generators.utilities(<span class="hljs-variable">$custom-utilities</span>);
-</code></pre> <h3>Override existing utilities.</h3> <p> It's possible to modify an existing utility by passing a map with the same key when you import the file corresponding.<br><strong>Be careful when you pass the values,</strong> because it will replace the existing. If you want to keep some of them, you must add it to the new values list/map. </p> <pre class="code" data-lang="SCSS"><code><span class="hljs-keyword">@use</span> <span class="hljs-string">"~glsass/src/utilities/utilities.displays"</span> with (
+</code></pre>
+          <h3>Override existing utilities.</h3>
+          <p>
+            It's possible to modify an existing utility by passing a map with the same key when you import the file corresponding.<br><strong>Be careful when you pass the values,</strong> because it will replace the existing. If you want to keep some of them,
+             you must add it to the new values list/map.
+          </p>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-keyword">@use</span> <span class="hljs-string">"~glsass/src/utilities/utilities.displays"</span> with (
   <span class="hljs-variable">$u-displays</span>: (
     display: (
       property: display,
@@ -73,12 +179,31 @@
 <span class="hljs-selector-class">.u-d-t</span> {
   <span class="hljs-attribute">display</span>: table;
 }
-</code></pre> <h3>Remove utilities</h3> <p>When you import an utility file, but you don't need all of them, you can remove the ones aren't useful to you.</p> <pre class="code" data-lang="SCSS"><code><span class="hljs-keyword">@use</span> <span class="hljs-string">"~glsass/src/utilities/utilities.borders"</span> with (
+</code></pre>
+          <h3>Remove utilities</h3>
+          <p>When you import an utility file, but you don't need all of them, you can remove the ones aren't useful to you.</p>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-keyword">@use</span> <span class="hljs-string">"~glsass/src/utilities/utilities.borders"</span> with (
   <span class="hljs-variable">$u-borders</span>: (
     border-radius: null,
   ),
 );
-</code></pre> <h2>Create a card with utilities</h2> <p>This is an example about how to create a card "component" with only utilities classes.</p> <div class="p-example"> <div class="o-row"> <div class="o-col u-12 u-3@md"> <div class="u-bs u-br u-ov-h"><img class="u-d-b u-w-100" src="../assets/data/lake-1.jpg" alt="Photo by Adam Vradenburg on Unsplash" style="height:12rem"> <div class="u-p-3 u-h5">Card title</div> <div class="u-px-3"> <p class="u-mb-0">Add some text inside the card.</p> </div> <div class="u-p-3"><a class="u-d-ib u-p-2 u-br u-bg-primary u-c-white u-td-n" href="/components/card.html">Go the card component</a></div> </div> </div> </div> </div> <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-bs u-br"</span>&gt;</span>
+</code></pre>
+          <h2>Create a card with utilities</h2>
+          <p>This is an example about how to create a card "component" with only utilities classes.</p>
+          <div class="p-example">
+            <div class="o-row">
+              <div class="o-col u-12 u-3@md">
+                <div class="u-bs u-br u-ov-h"><img class="u-d-b u-w-100" src="../assets/data/lake-1.jpg" alt="Photo by Adam Vradenburg on Unsplash" style="height:12rem">
+                  <div class="u-p-3 u-h5">Card title</div>
+                  <div class="u-px-3">
+                    <p class="u-mb-0">Add some text inside the card.</p>
+                  </div>
+                  <div class="u-p-3"><a class="u-d-ib u-p-2 u-br u-bg-primary u-c-white u-td-n" href="../components/card.html">Go the card component</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-bs u-br"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-b u-w-100"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/data/lake-1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Photo by Adam Vradenburg on Unsplash"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height:12rem"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-p-3 u-h5"</span>&gt;</span>
     Card title
@@ -88,4 +213,20 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-p-3"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-d-ib u-p-2 u-br u-bg-primary u-c-white u-td-n"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"components/card.html"</span>&gt;</span>Go the card component<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre> <h2>Perfomance and controlling file size</h2> <p> Even if these classes can be usefull, be carefull about the "weight" price of your future CSS file.</p> <p>Depending of your stack, using a solution like <a href="https://purgecss.com/" target="_blank" rel="noopener noreferrer">PurceCSS</a> can be a good alternative by removing unused (so useless) CSS classes.<br>You may win a lot of <code>Ko</code>, especially when you remove responsive classes (like <code>.u-mb-3@xl</code>) if you don't use it. </p> <p> Another solution can also to remove unused breakpoints from the <code>$g-grid-breakpoints</code> variable.</p> </div> <div class="o-layout"> <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p> </div> </div> </div> </body> </html>
+</code></pre>
+          <h2>Perfomance and controlling file size</h2>
+          <p>
+            Even if these classes can be usefull, be carefull about the "weight" price of your future CSS file.</p>
+          <p>Depending of your stack, using a solution like <a href="https://purgecss.com/" target="_blank" rel="noopener noreferrer">PurceCSS</a> can be a good alternative by removing unused (so useless) CSS classes.<br>You may win a lot of <code>Ko</code>, especially when you remove responsive classes
+             (like <code>.u-mb-3@xl</code>) if you don't use it.
+          </p>
+          <p>
+            Another solution can also to remove unused breakpoints from the <code>$g-grid-breakpoints</code> variable.</p>
+        </div>
+        <div class="o-layout">
+          <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

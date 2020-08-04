@@ -1,7 +1,144 @@
-<!DOCTYPE html> <html lang="en"> <head> <title></title> <meta charset="utf-8"> <meta name="robots" content="index, follow"> <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> <meta http-equiv="x-ua-compatible" content="ie=edge"> <link rel="stylesheet" href="/glsass/assets/29f421cf.css"> <script src="/glsass/assets/index.65baf025.js"></script> </head> <body> <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div> <div class="p-docs"> <div class="p-docs__sidebar u-bg-light u-pt-3"> <ul class="o-list-bare"> <li class="o-list-bare__item">Getting started <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/getting-started/introduction.html">Introduction</a></li> <li class="o-list-bare__item"><a href="/getting-started/installation.html">Installation</a></li> <li class="o-list-bare__item"><a href="/getting-started/architecture.html">Architecture ITCSS</a></li> <li class="o-list-bare__item"><a href="/getting-started/about.html">More about it</a></li> </ul> </li> <li class="o-list-bare__item"><a href="/settings/overview.html">Settings</a> <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/settings/overview.html">Overview</a></li> <li class="o-list-bare__item"><a href="/settings/core.html">Core</a></li> <li class="o-list-bare__item"><a href="/settings/colors.html">Colors</a></li> <li class="o-list-bare__item"><a href="/settings/icons.html">Icons</a></li> <li class="o-list-bare__item"><a href="/settings/ui.html">UI</a></li> <li class="o-list-bare__item"><a href="/settings/variables.html">Variables</a></li> </ul> </li> <li class="o-list-bare__item">Base <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/base/generic.html">Generic</a></li> <li class="o-list-bare__item"><a href="/base/elements.html">Elements</a></li> <li class="o-list-bare__item"><a href="/base/objects.html">Objects</a></li> </ul> </li> <li class="o-list-bare__item">Layout <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/layout/grid.html">Grid</a></li> </ul> </li> <li class="o-list-bare__item"><a href="/components">Components</a> <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/components/alert.html">Alert</a></li> <li class="o-list-bare__item"><a href="/components/badge.html">Badge</a></li> <li class="o-list-bare__item"><a href="/components/button.html">Button</a></li> <li class="o-list-bare__item"><a href="/components/callout.html">Callout</a></li> <li class="o-list-bare__item"><a href="/components/card.html">Card</a></li> <lo class="o-list-bare__item"><a href="/components/form.html">Form</a></lo> </ul> </li> <li class="o-list-bare__item">Tools <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/tools/concept.html">Concept</a></li> </ul> </li> <li class="o-list-bare__item">Utilities <ul class="o-list-bare u-pl-2"> <li class="o-list-bare__item"><a href="/utilities/concept-api.html">Concept / API</a></li> <li class="o-list-bare__item"><a href="/utilities/borders.html">Borders</a></li> <li class="o-list-bare__item"><a href="/utilities/colors.html">Colors</a></li> <li class="o-list-bare__item"><a href="/utilities/columns.html">Columns</a></li> <li class="o-list-bare__item"><a href="/utilities/displays.html">Displays</a></li> <li class="o-list-bare__item"><a href="/utilities/flex.html">Flex</a></li> <li class="o-list-bare__item"><a href="/utilities/headings.html">Headings</a></li> <li class="o-list-bare__item"><a href="/utilities/overflows.html">Overflows</a></li> <li class="o-list-bare__item"><a href="/utilities/sizings.html">Sizings</a></li> <li class="o-list-bare__item"><a href="/utilities/spacings.html">Spacings</a></li> <li class="o-list-bare__item"><a href="/utilities/texts.html">Texts</a></li> <li class="o-list-bare__item"><a href="/utilities/print.html">Print</a></li> <li class="o-list-bare__item"><a href="/utilities/debug.html">Debug</a></li> </ul> </li> </ul> </div> <div class="p-docs__content"> <div class="o-layout u-pt-3 u-mb-5"> <h1>Settings</h1> <p> The settings are the "core" of the framework, because changing one unique variable can affect a lot of classes and rules.<br>The variables are separated in several files to organize by "categories". When you import it, there is the files in the folder: </p> <pre class="code" data-lang="SCSS"><code><span class="hljs-comment">// ~glsass/src/settings/_index.scss</span>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/29f421cf.css">
+    <script src="/assets/index.65baf025.js"></script>
+  </head>
+  <body>
+    <div class="p-debug c-button c-button--primary c-button--small js-debug">Toogle debug</div>
+    <div class="p-docs">
+      <div class="p-docs__sidebar u-bg-light u-pt-3">
+        <ul class="o-list-bare">
+          <li class="o-list-bare__item">Getting started
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../getting-started/introduction.html">Introduction</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/installation.html">Installation</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/architecture.html">Architecture ITCSS</a></li>
+              <li class="o-list-bare__item"><a href="../getting-started/about.html">More about it</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="../settings/overview.html">Settings</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../settings/overview.html">Overview</a></li>
+              <li class="o-list-bare__item"><a href="../settings/core.html">Core</a></li>
+              <li class="o-list-bare__item"><a href="../settings/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="../settings/icons.html">Icons</a></li>
+              <li class="o-list-bare__item"><a href="../settings/ui.html">UI</a></li>
+              <li class="o-list-bare__item"><a href="../settings/variables.html">Variables</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Base
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../base/generic.html">Generic</a></li>
+              <li class="o-list-bare__item"><a href="../base/elements.html">Elements</a></li>
+              <li class="o-list-bare__item"><a href="../base/objects.html">Objects</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Layout
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../layout/grid.html">Grid</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item"><a href="../components">Components</a>
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../components/alert.html">Alert</a></li>
+              <li class="o-list-bare__item"><a href="../components/badge.html">Badge</a></li>
+              <li class="o-list-bare__item"><a href="../components/button.html">Button</a></li>
+              <li class="o-list-bare__item"><a href="../components/callout.html">Callout</a></li>
+              <li class="o-list-bare__item"><a href="../components/card.html">Card</a></li>
+              <lo class="o-list-bare__item"><a href="../components/form.html">Form</a></lo>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Tools
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../tools/concept.html">Concept</a></li>
+            </ul>
+          </li>
+          <li class="o-list-bare__item">Utilities
+            <ul class="o-list-bare u-pl-2">
+              <li class="o-list-bare__item"><a href="../utilities/concept-api.html">Concept / API</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/borders.html">Borders</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/colors.html">Colors</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/columns.html">Columns</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/displays.html">Displays</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/flex.html">Flex</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/headings.html">Headings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/overflows.html">Overflows</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/sizings.html">Sizings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/spacings.html">Spacings</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/texts.html">Texts</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/print.html">Print</a></li>
+              <li class="o-list-bare__item"><a href="../utilities/debug.html">Debug</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="p-docs__content">
+        <div class="o-layout u-pt-3 u-mb-5">
+          <h1>Settings</h1>
+          <p>
+            The settings are the "core" of the framework, because changing one unique variable can affect a lot of classes and rules.<br>The variables are separated in several files to organize by "categories". When
+             you import it, there is the files in the folder:
+          </p>
+          <pre class="code" data-lang="SCSS"><code><span class="hljs-comment">// ~glsass/src/settings/_index.scss</span>
 <span class="hljs-keyword">@forward</span> <span class="hljs-string">"settings.core"</span>;
 <span class="hljs-keyword">@forward</span> <span class="hljs-string">"settings.colors"</span>;
 <span class="hljs-keyword">@forward</span> <span class="hljs-string">"settings.icons"</span>;
 <span class="hljs-keyword">@forward</span> <span class="hljs-string">"settings.ui"</span>;
 <span class="hljs-keyword">@forward</span> <span class="hljs-string">"settings.variables"</span>;
-</code></pre> <div class="o-row"> <div class="o-col u-12 u-4@md u-mb-3"> <div class="c-card"> <div class="c-card__header"> <div class="c-card__title u-h5 u-mb-0">Core</div> </div> <div class="c-card__footer"><a class="c-button c-button--primary" href="/settings/core.html">View</a></div> </div> </div> <div class="o-col u-12 u-4@md u-mb-3"> <div class="c-card"> <div class="c-card__header"> <div class="c-card__title u-h5 u-mb-0">Colors</div> </div> <div class="c-card__footer"><a class="c-button c-button--primary" href="/settings/colors.html">View</a></div> </div> </div> <div class="o-col u-12 u-4@md u-mb-3"> <div class="c-card"> <div class="c-card__header"> <div class="c-card__title u-h5 u-mb-0">Icons</div> </div> <div class="c-card__footer"><a class="c-button c-button--primary" href="/settings/icons.html">View</a></div> </div> </div> <div class="o-col u-12 u-4@md u-mb-3"> <div class="c-card"> <div class="c-card__header"> <div class="c-card__title u-h5 u-mb-0">UI</div> </div> <div class="c-card__footer"><a class="c-button c-button--primary" href="/settings/ui.html">View</a></div> </div> </div> <div class="o-col u-12 u-4@md u-mb-3"> <div class="c-card"> <div class="c-card__header"> <div class="c-card__title u-h5 u-mb-0">Variables</div> </div> <div class="c-card__footer"><a class="c-button c-button--primary" href="/settings/variables.html">View</a></div> </div> </div> </div> </div> <div class="o-layout"> <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p> </div> </div> </div> </body> </html>
+</code></pre>
+          <div class="o-row">
+            <div class="o-col u-12 u-4@md u-mb-3">
+              <div class="c-card">
+                <div class="c-card__header">
+                  <div class="c-card__title u-h5 u-mb-0">Core</div>
+                </div>
+                <div class="c-card__footer"><a class="c-button c-button--primary" href="../settings/core.html">View</a></div>
+              </div>
+            </div>
+            <div class="o-col u-12 u-4@md u-mb-3">
+              <div class="c-card">
+                <div class="c-card__header">
+                  <div class="c-card__title u-h5 u-mb-0">Colors</div>
+                </div>
+                <div class="c-card__footer"><a class="c-button c-button--primary" href="../settings/colors.html">View</a></div>
+              </div>
+            </div>
+            <div class="o-col u-12 u-4@md u-mb-3">
+              <div class="c-card">
+                <div class="c-card__header">
+                  <div class="c-card__title u-h5 u-mb-0">Icons</div>
+                </div>
+                <div class="c-card__footer"><a class="c-button c-button--primary" href="../settings/icons.html">View</a></div>
+              </div>
+            </div>
+            <div class="o-col u-12 u-4@md u-mb-3">
+              <div class="c-card">
+                <div class="c-card__header">
+                  <div class="c-card__title u-h5 u-mb-0">UI</div>
+                </div>
+                <div class="c-card__footer"><a class="c-button c-button--primary" href="../settings/ui.html">View</a></div>
+              </div>
+            </div>
+            <div class="o-col u-12 u-4@md u-mb-3">
+              <div class="c-card">
+                <div class="c-card__header">
+                  <div class="c-card__title u-h5 u-mb-0">Variables</div>
+                </div>
+                <div class="c-card__footer"><a class="c-button c-button--primary" href="../settings/variables.html">View</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="o-layout">
+          <p class="u-c-muted"><a href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer">GitHub</a> · Developed by <a href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer">Johannn Pinson</a> · Version 0.0.2</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
