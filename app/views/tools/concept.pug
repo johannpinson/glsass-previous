@@ -1,0 +1,404 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Tools
+
+  p The #[code tools] folder contains Sass mixins and functions used inside the whole codebase.
+    br
+    | Of course, all this code can be used standalone, or for writing your own components or patterns.
+
+  h2 Breakpoints - #[em _tools.breakpoints.scss ]
+
+  h3 #[em suffix()]
+
+  p The responsive classes work with a suffix to determine the minimal breaking point to be actived.
+    |  The #[code suffix] function returns the name of the breakpoint with the "@" in front.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        suffix($name, $breakpoints: core.$g-grid-breakpoints);
+
+        $v: suffix("xs");
+        // Returns a blank string because it's the smallest breakpoint
+
+        $v: suffix("md");
+        // Returns "\@sm"
+
+  h3 #[em media-up()]
+
+  p This mixin includes the content inside a media queries rules with the breakpoint given.
+    |  It's mainly used for the utilities generator and the grid layout.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        media-up($name, $breakpoints: core.$g-grid-breakpoints);
+
+  h2 Color - #[em _tools.color.scss]
+
+  h3 #[em tint()] & #[em shade()]
+
+  p These two functions allow to lighten or darken a color. Regarding the Sass documentation,
+    |  it uses the #[code color.shade()] instead of the regular #[code color.darken()] and
+    |  #[code color.lighten()] functions.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        tint($color, $level: 1, $interval: 8%);
+        shade($color, $level: 1, $interval: 8%);
+
+  h3 #[em yiq-contrast()]
+
+  p This function in one of the most used inside this framework. It calculate the
+    |  best color choice for the text from the background color given.
+    br
+    | The text color is generally "black" or "white". In Glsass, the black color is the default
+    |  text color (#[code #212121]) and the white is just white (#[code #fff]).
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        yiq-contrast($color, $dark: colors.$g-color-text, $light: colors.$g-color-white);
+
+        color: yiq-contrast(red);
+        // Returns #fff
+
+        color: yiq-contrast(yellow);
+        // Returns #212121
+
+  h2 Color variables - #[em _tools.cv.scss]
+
+  h3 #[em cv()]
+
+  p This function searchs for a color inside the theme palette from an name and a variation.
+  p
+    | The first parameter can be a string or a "color". By color, it means the name of the color, as example "white".
+    |  For example, "gray" is a real color, but also the name of one palette. So the fonction
+    |  allow the #[code gray] () and the #[code "gray"] values.
+  p
+    | The second parameter is the variant level, it can be an index from 100
+    |   to 900 or a string (#[code base], #[code light], #[code dark])
+
+  p You can see the actual palette in the&nbsp;
+    a(href="/base/colors.html") base section
+    | .
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        cv($color, $variation: "base");
+
+        color: cv(primary);
+        // Returns #0066d7
+
+        color: cv(gray, dark);
+        // Returns #424242;
+
+        color cv(white);
+        // Returns #fff;
+
+  h2 Fonts - #[em _tools.fonts.scss]
+
+  h3 #[em import-google-fonts()]
+
+  p The mixin is used to initialize default font if you use the Google Fonts service.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        import-google-fonts($families);
+
+  h2 Form - #[em _tools.form.scss]
+
+  p This file contains a special mixin used to create dynamically the states classes for several components.
+
+  h2 Generators - #[em _tools.generators.scss]
+
+  p This other file has the mixin used for the #{''}
+    a(href="/utilities/concept-api.html") utilities classes
+    | .
+
+  h2 Icons - #[em _tools.icons.scss]
+
+  h3 #[em iv()]
+
+  p This functions works sililarly like the #[cv] function. It returns the SVG code for the icon name passed.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        iv($name, $variation: "default", $options: ());
+
+        background-image: url(iv("checkbox"));
+
+  h2 List - #[em _tools.list.scss]
+
+  p This file contains multiple helpers functions for Sass lists.
+
+  h3 #[em first()]
+
+  p Retrieves the first element of a list.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        first($list);
+
+        first(("one", "two", "three"));
+        // Returns "one"
+
+  h3 #[em last()]
+
+  p Retrieves the last element of a list.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        last($list);
+
+        last(("one", "two", "three"));
+        // Returns "three"
+
+  h3 #[em prepend()]
+
+  p Add news values at beginning of the list - opposite logic of #[code list.append].
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        prepend($list);
+
+        prepend(("one", "two", "three"), "zero");
+        // Returns ("zero", "one", "two", "three")
+
+  h3 #[em to-string()]
+
+  p Convert a list into the string, with the ability to use a string to join elements with each others.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        to-string($list, $glue: "", $is-nested: false);
+
+        to-string(("a", "b", "c"));
+        // Returns "abc"
+
+        to-string(("block", "element", "modifier"), "-");
+        // Returns "block-element-modifier"
+
+  h3 #[em is-empty()]
+
+  p Indicates if the list is empty.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        is-empty($list);
+
+        is-empty(("one", "two", "three"));
+        // Returns false
+
+        is-empty(());
+        // Returns true
+
+  h2 Map - #[em _tools.map.scss]
+
+  This file contains multiple helpers functions for Sass maps.
+
+  h3 #[em deep-get()]
+
+  p Retrieves map keys from nested maps.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        deep-get($map, $keys...);
+
+        deep-get(("primary": ("100": "red", "200": "green", "300": "blue" )) "primary", "300");
+        // Returns "blue";
+
+  h3 #[em negativify-map()]
+
+  p It turns maps into its negative variant. It prefixes the keys with `n` and makes the value negative.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        negativify-map($map);
+
+        negativify-map((0: 5px, 1: 10px, 2: 30px));
+        // Return ("n0": -5px, "n1": -10px, "n2": -30px)
+
+  h2 Media queries - #[em _tools.mq.scss]
+
+  h3 #[em mq()]
+
+  p The mixin can be used to write responsive rules inside any selector.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        mq($size: md, $max: false);
+
+        a {
+          color: blue;
+
+          @include mq(xl) {
+            color: red;
+          }
+        }
+
+        // CSS
+        a {
+          color: blue;
+        }
+
+        @media (min-width: 1400px) {
+          a {
+            color: red
+          }
+        }
+
+  h3 #[em mq-max()]
+
+  p This mixin is an alternative of the #[mq()] mixin by setting the #[code $max] variable automatically at true.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        mq-max($size: md);
+
+        a {
+          color: green;
+
+          @include mq(xl) {
+            color: yellow;
+          }
+        }
+
+        // CSS
+        a {
+          color: green;
+        }
+
+        @media (max-width: 1399px) {
+          a {
+            color: yellow
+          }
+        }
+
+  h2 Spacing - #[em _tools.spacing.scss]
+
+  h3 #[em add-space()]
+
+  p The function returns a value from the #[code $g-spacers] list. The goal is
+    |  to use this functions when a margin is set to stay constant and preserve the vertical rhythm.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        add-space($unit-factor: 3);
+
+        margin-bottom: add-space();
+        // Returns 1.5rem/24px
+
+  h3 #[em vr()]
+
+  p Also known as the "rhythm unit", the #[code vr()] function returns a size that respect the vertical rhythm.
+    |  It required a number with a 0.5 precision as parameter, for example "0.5" or "1.5". If this condition is not respected
+    |  (for example with "0.4" or "1.2"), it will return 1vr
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        vr($unit-factor: 1);
+
+        height: vr();
+        // Returns 1.5rem/24px
+
+        height: vr(0.5);
+        // Returns 0.75rem/12px
+
+        height: vr(2);
+        // Returns 3rem/48px
+
+        height: vr(3.14);
+        // Returns 1.5rem/24px
+
+  h3 #[em adjust-vr()]
+
+  p To make different elements feel consistent, this function can be used to adjust the line-height,
+    |  depending of the font-size and the margins.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        adjust-vr($vertical-rhythm: 1, $font-size, $spacings);
+
+        line-height: adjust-vr(1, 0.875rem, add-space(1));
+        // Returns 1.2857142857 (the default line-height is 1.5)
+
+  h2 String - #[em _tools.string.scss]
+
+  h3 #[em replace()]
+
+  p The function search and replace occurence in the string given
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        replace($string, $search, $replace: "");
+
+        content: replace("Hello x!", "x", attr(data-name))
+        // Returns "Hello world!"
+
+  h3 #[em escape-svg()]
+
+  p It use the mainly the #[code replace] function to escape characters in a SVG base64.
+
+  h2 Unit - #[em _tools.unit.scss]
+
+  h3 #[em strip-unit]
+
+  p Remove the unit of a length
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        strip-unit($number);
+
+        $v: strip-unit(12px);
+        // Returns 12
+
+  h3 #[em convert-rem] & #[em convert-px]
+
+  p It convert a #[code px] length in #[code rem] unit.
+    br
+    | The #[code convert-px] does the opposite.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        convert-rem($variable);
+        convert-px($variable);
+        convert($variable); // Alias of "convert-rem"
+
+        font-size: convert-rem(16px);
+        // Returns 1rem
+
+        height: convert-px(0,375rem);
+        // Returns 6px
+
+  h2 Global - #[em _tools.global.scss]
+
+  p This file doesn't contain a function or mixin, it's just used to forward some functions, the most common :
+  ul
+    li #[code cv()]
+    li #[code iv()]
+    li #[code mq()]
+    li #[code vr()]
+
+  p By forwarding them, when the file is import with the #[code @use] rule, the namespace must be set at #[code *].
+    |  It will load the module without a namespace, and avoid to call some functions like #[cv.cv()] form example.

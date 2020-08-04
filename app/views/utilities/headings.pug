@@ -1,0 +1,56 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Headings
+
+  p These classes help you to match the styling of a heading, but without using the associated HTML tag.
+
+  .c-callout.c-callout--info
+    p.u-mb-0
+      | There is one differnce when using an heading utility: there is no
+      |  #[code margin-bottom] applied.
+      br
+      | Since the class can be used for a lot of elements, if you want to get the same margin,
+      |  you need to add the class #[code .u-mb-2].
+
+  .p-example
+    p.u-h1.u-mb-2 Heading 1
+    p.u-h2.u-mb-2 Heading 2
+    p.u-h3.u-mb-2 Heading 3
+    p.u-h4.u-mb-2 Heading 4
+    p.u-h5.u-mb-2 Heading 5
+    p.u-h6.u-mb-2 Heading 6
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <p class="u-h1 u-mb-2">Heading 1</p>
+        <p class="u-h2 u-mb-2">Heading 2</p>
+        <p class="u-h3 u-mb-2">Heading 3</p>
+        <p class="u-h4 u-mb-2">Heading 4</p>
+        <p class="u-h5 u-mb-2">Heading 5</p>
+        <p class="u-h6 u-mb-2">Heading 6</p>
+
+  p You can also use it on #[code hn] elements.
+    br
+    | For example, on a #[code #{'<h2>'}] element to render it as an #[code #{'<h5>'}]
+    |  with #[code #{'<h2 class="u-h5">Heading</h2>'}].
+
+  .p-example
+    h1.u-h6 Heading 1
+    h2.u-h5 Heading 2
+    h3.u-h4 Heading 3
+    h4.u-h3 Heading 4
+    h5.u-h2 Heading 5
+    h6.u-h1 Heading 6
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <h1 class="u-h6">Heading 1</h1>
+        <h2 class="u-h5">Heading 2</h2>
+        <h3 class="u-h4">Heading 3</h3>
+        <h4 class="u-h3">Heading 4</h4>
+        <h5 class="u-h2">Heading 5</h5>
+        <h6 class="u-h1">Heading 6</h6>
+
+  p The CSS properties as generated in the same way as the file #[code _elements.heading.scss]
+    |  and from the same variables (e.g. #[code $g-headings-*]).

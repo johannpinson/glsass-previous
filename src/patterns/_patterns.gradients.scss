@@ -1,0 +1,143 @@
+@use "tools/tools.global" as *;
+
+.p-gradient-header {
+  background-color: cv("white");
+  background-image: linear-gradient(
+    to bottom,
+    rgba(cv(primary), .8),
+    cv(primary),
+  );
+}
+
+.p-gradient-content {
+  @include mq {
+    overflow: hidden;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(#eee, .5),
+      rgba(cv("white"), .5) 45rem,
+    );
+
+    & > :first-child {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 3rem;
+        height: 100%;
+        background-color: cv(white);
+      }
+
+      &::before {
+        left: -3rem;
+      }
+
+      &::after {
+        right: -3rem;
+      }
+    }
+  }
+}
+
+.p-gradient-light {
+  background-color: cv("light");
+
+  @include mq(tb) {
+    background-image: linear-gradient(
+      to bottom,
+      cv(light) 20rem,
+      cv("white") 32rem,
+    );
+  }
+}
+
+.p-gradient-primarylight {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(cv(primary), .05),
+    rgba(cv(primary), .1),
+  );
+}
+
+.p-gradient-primary {
+  background-color: cv("white");
+  background-image: linear-gradient(
+    to bottom,
+    rgba(cv(primary), .8),
+    cv(primary),
+  );
+}
+
+.p-gradient-circle {
+  background-image: radial-gradient(
+    circle at top left,
+    #e0ecdf,
+    #9bc7d1,
+  );
+}
+
+.p-gradient-flag {
+  position: relative;
+  border-top: 2px solid cv("gray", 100);
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    height: 100%;
+  }
+
+  &::before {
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      #ececec,
+      rgba(cv("white"), .5) 25rem,
+    );
+    opacity: .7;
+
+    @include mq(tb) {
+      content: "";
+    }
+  }
+
+  &::after {
+    right: 0;
+    width: 16rem;
+    background-image: url("/assets/medias/bg-flag.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+
+    @include mq(tb) {
+      content: "";
+    }
+  }
+}
+
+.p-gradient-badge {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    display: block;
+    width: 355px;
+    height: 358px;
+    background-image: url("/assets/medias/badge-check.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}

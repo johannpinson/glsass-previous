@@ -1,0 +1,24 @@
+/*==========================================================================
+  #HEADINGS
+  ========================================================================== */
+
+@use "sass:map";
+
+@use "../settings/settings.core" as core;
+
+%_heading {
+  margin-bottom: core.$g-headings-margin-bottom;
+  color: core.$g-headings-color;
+  font-family: core.$g-headings-font-family;
+  font-weight: core.$g-headings-font-weight;
+  font-style: core.$g-headings-font-style;
+}
+
+@each $hn, $value in core.$g-headings-styles {
+  h#{$hn} {
+    @extend %_heading;
+
+    font-size: map.get($value, font-size);
+    line-height: map.get($value, line-height);
+  }
+}

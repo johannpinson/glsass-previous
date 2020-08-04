@@ -1,0 +1,12 @@
+/// This index file forward the all files
+/// It also allows a simple override management from the main style file
+/// instead of a one by one file configuration
+
+@forward "../../src/objects/objects.divider";
+@forward "../../src/objects/objects.layout";
+@forward "../../src/objects/objects.link";
+@forward "../../src/objects/objects.list-bare";
+@forward "../../src/objects/objects.list-inline";
+@forward "../../src/objects/objects.media";
+@forward "../../src/objects/objects.overlay";
+@forward "../../src/objects/objects.table";

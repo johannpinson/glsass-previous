@@ -1,0 +1,32 @@
+@use "sass:color";
+@use "sass:map";
+
+@use "../settings/settings.colors" as colors;
+
+// TODO replace by palette use
+@function tint($color, $level: 1, $interval: 8%) {
+  // @return color.mix(white, $color, $level * $interval);
+  @return color.scale($color, $lightness: $level * $interval);
+}
+
+@function shade($color, $level: 1, $interval: 8%) {
+  // @return color.mix(black, $color, $level * $interval);
+  @return color.scale($color, $lightness: -1 * $level * $interval);
+}
+
+// Color contrast
+@function yiq-contrast(
+  $color,
+  $dark: colors.$g-color-text,
+  $light: colors.$g-color-white
+) {
+  $r: color.red($color);
+  $g: color.green($color);
+  $b: color.blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  $_yiq-contrasted-threshold: 150;
+
+  @return if($yiq >= $_yiq-contrasted-threshold, $dark, $light);
+}

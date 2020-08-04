@@ -1,0 +1,35 @@
+@use "sass:math";
+
+@use "../settings/settings.core" as core;
+
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function convert-rem($variable) {
+  @if (math.unit($variable) == "px") {
+    $variable: $variable / core.$g-font-size-base * 1rem;
+  }
+
+  @return $variable;
+}
+
+@function convert-px($variable) {
+  @if (math.unit($variable) == "rem") {
+    $variable: $variable / 1rem * core.$g-font-size-base;
+  }
+
+  @return $variable;
+}
+
+@function convert($variable) {
+  @return convert-rem($variable);
+}

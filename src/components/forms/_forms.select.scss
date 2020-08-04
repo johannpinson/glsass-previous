@@ -1,0 +1,112 @@
+@use "../../settings/settings.ui" as ui;
+@use "../../settings/settings.core" as core;
+
+@use "../../tools/tools.color" as _color;
+@use "../../tools/tools.form" as form;
+@use "../../tools/tools.spacing" as spacing;
+@use "../../tools/tools.string" as str;
+@use "../../tools/tools.unit" as unit;
+@use "../../tools/tools.global" as *;
+
+$c-select-border-radius: ui.$g-form-border-radius !default;
+$c-select-border-width: unit.convert(ui.$g-form-border-width) !default;
+$c-select-border-color: ui.$g-form-border-color !default;
+
+$c-select-text-color: ui.$g-form-text-color !default;
+
+$c-select-font-size: core.$g-font-size-base-rem !default;
+$c-select-font-height: core.$g-font-line-height-base !default;
+
+$c-select-focus-border-color: ui.$g-form-focus-border-color !default;
+$c-select-focus-shadow-width: ui.$g-form-focus-shadow-width !default;
+$c-select-focus-shadow-color: ui.$g-form-focus-shadow-color !default;
+
+$c-select-background-color: ui.$g-form-background-color !default;
+$c-select-background-disabled: ui.$g-form-background-disabled !default;
+
+$c-select-icon: iv("select");
+
+$_c-select-el: ".c-form__select";
+$_c-select-el-feedback: ".c-form__feedback";
+
+.c-form {
+  $root: &;
+
+  &__select {
+    display: inline-block;
+    flex: 1 0 auto;
+    height: vr(1.5);
+    padding: (vr(0.5) / 2) vr(0.5);
+    color: $c-select-text-color;
+    font-size: $c-select-font-size;
+    line-height: $c-select-font-height;
+    background-color: $c-select-background-color;
+    border: $c-select-border-width solid $c-select-border-color;
+    border-radius: $c-select-border-radius;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+
+    &:hover:not(:disabled):not([readonly]):not([class*="is-"]) {
+      border-color: $c-select-focus-border-color;
+    }
+
+    &:focus {
+      border-color: $c-select-focus-border-color;
+      outline: 0;
+      box-shadow: 0 0 0 $c-select-focus-shadow-width
+        $c-select-focus-shadow-color;
+
+      &::-ms-value {
+        // For visual consistency with other platforms/browsers,
+        // suppress the default white text on blue background highlight given to
+        // the selected option text when the (still closed) <select> receives focus
+        // in IE and (under certain conditions) Edge.
+        // See https://github.com/twbs/bootstrap/issues/19398.
+        color: $c-select-text-color;
+        background-color: cv("white");
+      }
+    }
+
+    &:disabled {
+      background-color: $c-select-background-disabled;
+      cursor: not-allowed;
+    }
+
+    // Hides the default caret in IE11
+    &::-ms-expand {
+      display: none;
+    }
+
+    // Remove outline from select box in FF
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 $c-select-text-color;
+    }
+
+    // TODO multiple + size attribute
+    // Multiple select
+    &[size],
+    &[multiple] {
+      height: auto;
+      padding: (vr(0.5) - $c-select-border-width) vr(0.5);
+
+      option {
+        height: (vr(1) - 0.25rem);
+        padding: (0.25rem/2) 0.25rem;
+      }
+    }
+
+    &:not([multiple]):not([size]) {
+      padding-right: (0.75rem + 1rem);
+      background-image: url($c-select-icon);
+      background-repeat: no-repeat;
+      background-position: right 0.375rem center;
+      background-size: 1rem 0.75rem;
+    }
+  }
+}
+
+@include form.add-validation-states(
+  $_c-select-el,
+  $c-select-focus-shadow-width
+);

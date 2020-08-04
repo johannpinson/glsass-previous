@@ -1,0 +1,109 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Card
+
+  p Cards are made to be flexible, for example to be used with or without some children elements, and with different orders.
+
+  .u-mb-3
+    .o-row.c-cards
+      .o-col.u-12(class="u-3@md")
+        .c-card
+          .c-card__img
+            img(src="/assets/data/lake-1.jpg", alt="Photo by Adam Vradenburg on Unsplash")
+          .c-card__header
+            .c-card__title.u-h5.u-mb-0 Card title
+          .c-card__body
+            span Add some text inside the card.
+              br
+              | ok more text here.
+          .c-card__footer
+            button.c-button.c-button--primary Action
+      .o-col.u-12(class="u-3@md")
+        .c-card
+          .c-card__header
+            .c-card__title.u-h5.u-mb-0 Card title
+          .c-card__img
+            img(src="/assets/data/lake-2.jpg", alt="Photo by Tom Gainor on Unsplash")
+          .c-card__body
+            span Add some text inside the card.
+          .c-card__footer
+            button.c-button.c-button--primary Action
+      .o-col.u-12(class="u-3@md")
+        .c-card
+          .c-card__header
+            .c-card__title.u-h5.u-mb-0 Card title
+          .c-card__body
+            span Add some text inside the card.
+          .c-card__img
+            img(src="/assets/data/lake-3.jpg", alt="Photo by Juan Davila on Unsplash")
+          .c-card__footer
+            button.c-button.c-button--primary Action
+      .o-col.u-12(class="u-3@md")
+        .c-card
+          .c-card__header
+            .c-card__title.u-h5.u-mb-0 Card title
+          .c-card__body
+            span Add some text inside the card.
+          .c-card__footer
+            button.c-button.c-button--primary Action
+          .c-card__img
+            img(src="/assets/data/lake-4.jpg", alt="Photo by dirk von loen-wagner on Unsplash")
+
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="c-card">
+          <div class="c-card__img"><!-- can be moved from the first to the last position -->
+            <img src="..." alt="...">
+          </div>
+          <div class="c-card__header">
+            <div class="c-card__title u-h5 u-mb-0">Card title</div>
+          </div>
+          <div class="c-card__body">
+            <span>Add some text inside the card.</span>
+          </div>
+          <div class="c-card__footer">
+            <a class="c-button c-button--primary" href="#">Action</a>
+          </div>
+        </div>
+
+  p The class #[code c-cards] is also available to make the height identical for each card in the same row.
+
+  h2.u-mt-4(class="u-mt-5@md") Sass references
+
+  h3 Variables
+
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $c-card-border-width]
+        td Number unit
+        td #[code $g-border-width]
+        td Border size of card
+      tr
+        td #[code $c-card-border-color]
+        td Number unit
+        td #[code $g-border-color]
+        td Color of the border
+      tr
+        td #[code $c-card-border-radius]
+        td Number unit
+        td #[code $g-border-radius]
+        td Border-radius for cards
+      tr
+        td #[code $c-card-background-color]
+        td Color
+        td #[code cv(white)]
+        td Default background color
+      tr
+        td #[code $c-card-padding]
+        td Number unit
+        td #[code 1vr]
+        td Interal margin between elements inside the card

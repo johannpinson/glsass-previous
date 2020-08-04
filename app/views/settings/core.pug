@@ -1,0 +1,164 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Core
+
+  p The #[code core] file regroups the main variables used through all the codebase.
+    |  All of them are overridable when you import the file/folder.
+
+  p You will find inside settings for fonts, spacers, responsive breakpoints, etc.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // Keep the default settings
+        @use "~glsass/src/settings.core";
+
+        // Or add your own settings
+        @use "~glsass/src/settings.core" with (
+          $g-color-primary: #0000ff, // blue
+          $g-color-secondary: #800080, // purple
+        );
+
+  h2 Fonts
+  h3 Sass references
+  h4 Variables
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $g-fonts-google]
+        td List / String
+        td An empty list
+        td The Google font name and his style needed
+      tr
+        td #[code $g-font-family-map]
+        td List
+        td An empty list
+        td The name or the main font
+      tr
+        td #[code $g-font-size-base]
+        td Number unit
+        td #[code 16px]
+        td The default font-size in pixel
+      tr
+        td #[code $g-font-size-base-rem]
+        td Number unit
+        td #[code 1rem]
+        td The default font-size in rem
+      tr
+        td #[code $g-font-line-height-base]
+        td Number unitless
+        td #[code 1.5]
+        td The default line-height
+
+  h2 Spacing
+  h3 Sass references
+  h4 Variables
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $g-spacer]
+        td Number unit
+        td equal to #[code 24px]
+        td The default space calculated from the font-size and line-height
+      tr
+        td #[code $g-spacers]
+        td Map
+        td Calculated from the #[code $g-spacer]
+        td The five spaces "sizes" from 1 to 5
+      tr
+        td #[code $g-spacers-negative]
+        td Map
+        td Calculated from #[code $g-spacers]
+        td The spacers sizes with negative values.
+
+  h2 Heading
+  h3 Sass references
+  h4 Variables
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $g-headings-font-size-h*]
+        td Number unit
+        td Depending of the #[code hn] level
+        td The font-size of headings, from h1 to h6 variables
+      tr
+        td #[code $g-headings-margin-bottom]
+        td Number unit
+        td #[code $g-spacer / 2]
+        td The margin-bottom of headings
+      tr
+        td #[code $g-headings-color]
+        td Color
+        td #[code null]
+        td The default color
+      tr
+        td #[code $g-headings-font-family]
+        td String
+        td #[code null]
+        td The default font-family
+      tr
+        td #[code $g-headings-font-weight]
+        td String
+        td #[code 700]
+        td The default weight (set to 700 or bold)
+      tr
+        td #[code $g-headings-font-style]
+        td String
+        td #[code null]
+        td The default font-style (italic)
+      tr
+        td #[code $g-headings-styles]
+        td Map
+        td Predefined to respect the vertical rhythm
+        td A map with font-size and line-height for each #[code hn]
+
+  h2 Grid
+  h3 Sass references
+  h4 Variables
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $g-grid-breakpoints]
+        td Map
+        td 7 breakpoints, from #[code sm] to #[code xl]
+        td The default space calculated from the font-size and line-height
+      tr
+        td #[code $g-grid-container-max-widths]
+        td Map
+        td Depeding of #[coee $g-grid-breakpoints]
+        td The max-width of the container depending on the breakpoint
+      tr
+        td #[code $g-grid-columns]
+        td Number
+        td #[code 12]
+        td The number of columnns in the grid
+      tr
+        td #[code $g-grid-gutter-width]
+        td Number unit
+        td #[code 1rem]
+        td The gutter size (the space between each column)

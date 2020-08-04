@@ -1,0 +1,26 @@
+/*==========================================================================
+  #OVERFLOWS
+  ========================================================================== */
+
+@use "sass:map";
+
+@use "../tools/tools.generators" as generators;
+
+$u-overflows: () !default;
+
+$_utilities: (
+  overflow: (
+    responsive: true,
+    property: overflow,
+    class: ov,
+    values: (
+      auto: auto,
+      v: visible,
+      h: hidden,
+    ),
+  ),
+);
+
+$u-overflows: map.merge($_utilities, $u-overflows);
+
+@include generators.utilities($u-overflows);

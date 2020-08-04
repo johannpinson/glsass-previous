@@ -1,0 +1,15 @@
+@use "../../tools/tools.spacing" as spacing;
+
+.c-form {
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: spacing.add-space();
+  }
+
+  &__inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

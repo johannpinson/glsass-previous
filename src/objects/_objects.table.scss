@@ -1,0 +1,65 @@
+@use "../tools/tools.spacing" as spacing;
+@use "../tools/tools.unit" as unit;
+@use "../tools/tools.global" as *;
+
+/* ==========================================================================
+   #TABLE
+   ========================================================================== */
+
+$o-table-border-width: unit.convert(1px) !default;
+$o-table-border-color: cv("gray", 300) !default;
+
+$o-table-cell-gap: vr(0.5);
+$o-table-cell-gap-small: vr(0.5) / 2;
+$o-table-cell-gap-large: vr(1);
+
+/**
+ * A simple object for manipulating the structure of HTML `table`s.
+ */
+
+.o-table {
+  thead {
+    font-weight: 700;
+  }
+
+  tr {
+    border-bottom: $o-table-border-width solid $o-table-border-color;
+  }
+
+  th,
+  td {
+    padding: $o-table-cell-gap 0 ($o-table-cell-gap - $o-table-border-width);
+  }
+
+  // Size variants
+  &--small {
+    th,
+    td {
+      padding: $o-table-cell-gap-small 0
+        ($o-table-cell-gap-small - $o-table-border-width);
+    }
+  }
+
+  &--large {
+    th,
+    td {
+      padding: $o-table-cell-gap-large 0
+        ($o-table-cell-gap-large - $o-table-border-width);
+    }
+  }
+}
+
+/* Equal-width table cells
+   ========================================================================== */
+
+/**
+ * `table-layout: fixed` forces all cells within a table to occupy the same
+ * width as each other. This also has performance benefits: because the browser
+ * does not need to (re)calculate cell dimensions based on content it discovers,
+ * the table can be rendered very quickly. Further reading:
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
+ */
+
+.o-table--fixed {
+  table-layout: fixed;
+}

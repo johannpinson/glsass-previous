@@ -1,0 +1,11 @@
+@use "../tools/tools.global" as *;
+
+.o-link {
+  text-decoration: none;
+
+  @media (hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

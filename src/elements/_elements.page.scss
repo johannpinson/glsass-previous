@@ -1,0 +1,58 @@
+/*==========================================================================
+  #PAGE
+  ========================================================================== */
+
+@use "../settings/settings.core" as core;
+@use "../tools/tools.cv" as *;
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ */
+
+html {
+  min-height: 100%; /* [3] */
+  // overflow-y: scroll; /* [2] */ // Remove it to block scroll when open menu
+  font-family: core.$g-font-family-map;
+  font-size: core.$g-font-size-base; /* [1] */
+  line-height: core.$g-font-line-height-base; /* [1] */
+}
+
+// Body
+//
+// 1. Remove the margin in all browsers.
+// 2. As a best practice, apply a default `background-color`.
+// 3. Prevent adjustments of font size after orientation changes in iOS.
+// 4. Change the default tap highlight to be completely transparent in iOS.
+body {
+  margin: 0; // 1
+  color: cv("body");
+  background-color: cv("body", "bg"); // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba(cv("black"), 0); // 4
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+// TODO move it in utilities
+// Allow to hide an element from the display, but still available to an
+// assistant (a.k.a. a screen reader)
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}

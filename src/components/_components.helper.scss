@@ -1,0 +1,78 @@
+@use "../settings/settings.ui" as ui;
+
+@use "../tools/tools.color" as _color;
+@use "../tools/tools.spacing" as spacing;
+@use "../tools/tools.string" as str;
+@use "../tools/tools.global" as *;
+
+$c-helper-icon: iv("helper");
+$c-helper-icon-hover: iv("helper", "hover");
+
+$c-helper-border-radius: ui.$g-border-radius !default;
+
+.c-helper {
+  $root: &;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: vr();
+  height: vr();
+  background-image: url($c-helper-icon);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transition: all 0.35s ease-in-out;
+
+  .c-form__control:focus + &,
+  .c-form__select:focus + &,
+  // .c-form__file:focus-within > &, // TODO V2 try to optimize this with `.c-form__group`?
+  .c-form__file-input:focus ~ &,
+  &:hover {
+    background-image: url($c-helper-icon-hover);
+
+    #{$root}__content {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: -0.75rem;
+    right: -0.4rem;
+    display: none;
+    width: 75vw;
+    padding: spacing.add-space(2);
+    color: _color.yiq-contrast(cv("primary"));
+    background-color: cv("primary");
+    border-radius: $c-helper-border-radius;
+    transform: translateY(-100%);
+
+    @include mq {
+      width: 300px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0.5rem;
+      bottom: -0.5rem;
+      border-top: 0.5rem solid cv("primary");
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.75rem;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      height: 0.75rem;
+      background: transparent;
+    }
+  }
+}

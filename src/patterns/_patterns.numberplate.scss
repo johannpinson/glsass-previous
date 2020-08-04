@@ -1,0 +1,217 @@
+@use "settings/settings.core" as core;
+@use "settings/settings.ui" as ui;
+
+@use "tools/tools.spacing" as spacing;
+@use "tools/tools.global" as *;
+
+$p-numberplate-text-color: ui.$g-form-text-color !default;
+
+.p-numberplate {
+  $root-numberplate: &;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  padding: .25rem;
+  color: cv("text");
+  font-family: Arial Narrow, "Trebuchet MS", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: cv("white");
+  border-radius: .75rem;
+  box-shadow: 0 0 1.5rem rgba(cv("black"), .25);
+  user-select: none;
+
+  @include mq(tb) {
+    width: 18rem;
+  }
+
+  @include mq {
+    width: 20rem;
+    height: 5rem;
+    padding: .5rem;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 2rem;
+    height: calc(100% - .5rem);
+    overflow: hidden;
+    color: cv("white");
+    background-color: cv("primary");
+
+    @include mq {
+      top: .5rem;
+      width: 2.5rem;
+      height: calc(100% - 1rem);
+    }
+  }
+
+  &::before {
+    content: "F";
+    left: .25rem;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    background-image: url("/assets/medias/flag-eu.svg");
+    background-repeat: no-repeat;
+    background-position: center .5rem;
+    background-size: 50% auto;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+
+    @include mq() {
+      left: .5rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &::after {
+    content: "";
+    right: .25rem;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+
+    @include mq() {
+      right: .5rem;
+    }
+  }
+
+  &--huge {
+    width: 100%;
+
+    @include mq(tb) {
+      height: 7rem;
+    }
+
+    @include mq {
+      height: 9rem;
+    }
+
+    &::before,
+    &::after {
+      @include mq(tb) {
+        width: 3rem;
+      }
+
+      @include mq {
+        width: 4rem;
+      }
+    }
+
+    &::before {
+      @include mq(tb) {
+        font-size: 2rem;
+        background-position: center .75rem;
+      }
+
+      @include mq {
+        font-size: 2.5rem;
+      }
+    }
+
+    #{$root-numberplate}__input {
+      @include mq(tb) {
+        margin: 0 3.5rem;
+        font-size: 3rem;
+      }
+
+      @include mq {
+        height: 100%;
+        margin: 0 4.5rem;
+        font-size: 3.5rem;
+      }
+    }
+
+    .s-page-home & {
+      margin-top: -2rem;
+
+      @include mq(tb) {
+        margin-top: -3.5rem;
+      }
+
+      @include mq {
+        margin-top: -4.5rem;
+      }
+    }
+  }
+
+  &--modal {
+    @include mq(tb) {
+      width: 22.75rem;
+      height: 4.25rem;
+      padding: .25rem;
+
+      &::before,
+      &::after {
+        top: .25rem;
+        width: 2rem;
+        height: calc(100% - .5rem);
+      }
+
+      &::before {
+        left: .25rem;
+      }
+
+      &::after {
+        right: .25rem;
+      }
+    }
+
+    #{$root-numberplate}__input {
+      @include mq(tb) {
+        height: calc(100% - .5rem);
+        margin: 0 2.5rem;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: calc(100% - .5rem);
+    margin: 0 2.5rem;
+    color: $p-numberplate-text-color;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: .5rem;
+    transition: .35s all ui.$g-transition-timing-function;
+
+    @include mq {
+      height: 100%;
+      margin: 0 3rem;
+    }
+
+    &:focus {
+      // border-bottom-color: $p-numberplate-text-color;
+      outline: 0;
+      box-shadow: 0 0 0 .25rem rgba($p-numberplate-text-color, .25);
+    }
+  }
+
+  &__helper {
+    position: absolute;
+    top: .5rem;
+    left: 50%;
+    display: none;
+    color: cv("text", muted);
+    font-family: core.$g-font-family-map;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: normal;
+    transform: translateX(-50%);
+
+    @include mq(tb) {
+      display: block;
+    }
+  }
+}

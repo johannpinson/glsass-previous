@@ -1,0 +1,288 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Objects
+
+  p The #[code objects] layer contains class-based selectors to provide blocks with no aesthetics.
+    br
+    |  If components are UI blocks, you can consider than objects are UX blocks.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // OBJECTS
+        @forward "~glsass/src/objects/objects.divider";
+        @forward "~glsass/src/objects/objects.layout";
+        @forward "~glsass/src/objects/objects.link";
+        @forward "~glsass/src/objects/objects.list-bare";
+        @forward "~glsass/src/objects/objects.list-inline";
+        @forward "~glsass/src/objects/objects.media";
+        @forward "~glsass/src/objects/objects.overlay";
+        @forward "~glsass/src/objects/objects.table";
+
+        /* Or import all of objects */
+
+        // OBJECTS
+        @forward "~glsass/src/objects";
+
+  p Since objects are low CSS code, you can use all of them by importing the folder.
+    |  But you can improve your loading charge by use only which ones you need.
+
+  p The folder doesn't contain very simple objects like #[code box] or #[code block] like you can see
+    |  in others framework, since you can achieve these layouts by playing with utilities classes.
+
+  h2 Divider - #[em _objects.divider.scss]
+
+  p Since the #[code #{'<hr>'}] tag have a semantic value, the divider object
+    |  allows to add a separating element between blocks.
+
+  .p-example
+    .o-divider
+
+    .u-mb-3
+
+    .o-divider.o-divider--content you can add content inside
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-divider"></div>
+
+        <div class="o-divider o-divider--content">you can add content inside</div>
+
+  h2 Layout - #[em _objects.layout.scss]
+
+  p The grid layout system is explained in a #{''}
+    a(href="/layout/grid.html") dedicated page
+    | .
+
+  h2 Link - #[em _objects.link.scss]
+
+  p The link object can be used to have the opposite behavior compared to a default link
+    |  (it's not underlined by default, and it becomes on hover).
+
+  .p-example
+    p
+      a.o-link(href="/") Link to the home
+
+    a.o-link(href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer") Link to MDN homepage
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <a class="o-link" href="/">Link to the home</a>
+
+        <a class="o-link" href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Link to MDN homepage</a>
+
+  p This behavior cannot be reproduced easily with utilities classes, since it defines a unique state,
+    |  without interaction detection (hover, focus, etc.). And it can avoid you to create a component for a
+    |  footer menu (which contains a lot of links) for example.
+
+  h2 List bare - #[en _objects.list-bare.scss]
+
+  p The list bare object erase the #[em list style] to a list (bullet and indentation).
+    br
+    | Depending of the default list styling, the #[item] class might not be necessary.
+    |  Especially if you follow the reset from the #{''}
+    a(href="/base/elements.html") elements layer
+    | .
+
+  .p-example
+    ul.o-list-bare
+      li.o-list-bare__item Lorem ipsum dolor sit amet
+      li Consectetur adipiscing elit
+      li Sed do eiusmod tempor incididun
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <ul class="o-list-bare">
+          <li class="o-list-bare__item">Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipiscing elit</li>
+          <li>Sed do eiusmod tempor incididunt</li>
+        </ul>
+
+  h2 List inline - #[en _objects.list-inline.scss]
+
+  p Similar to the list bare, but it displays the list in one line.
+
+  .p-example
+    ul.o-list-inline
+      li.o-list-inline__item Lorem ipsum dolor sit amet
+      li.o-list-inline__item Consectetur adipiscing elit
+      li.o-list-inline__item Sed do eiusmod tempor incididunt
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+         <ul class="o-list-inline">
+          <li class="o-list-inline__item">Lorem ipsum dolor sit amet</li>
+          <li class="o-list-inline__item">Consectetur adipiscing elit</li>
+          <li class="o-list-inline__item">Sed do eiusmod tempor incididunt</li>
+        </ul>
+
+  h2 Media - #[em _objects.media.scss]
+
+  p The media object is a legacy of OOCSS, but the old syntax was made with a #[code float] display.
+    |  In Glsass, the display is managed with #[code flex].
+
+  .p-example
+    .o-row.u-mb-3
+      .o-col.u-12(class="u-6@md")
+        .o-media
+          .o-media__image
+            svg(width="70" height="70" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder image: 70x70" role="img" focusable="false" style="text-anchor:middle")
+              title Placeholder image
+              rect(width="100%" height="100%" fill="#212121")
+              text(x="50%" y="50%" fill="#dee2e6" dy=".3em") 70x70
+          .o-media__body
+            | #[b This is the default layout of the media object]. Lorem ipsum dolor sit amet,
+            |  consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+    .o-row.u-mb-3
+      .o-col.u-12(class="u-6@md")
+        .o-media.o-media--reverse
+          .o-media__image
+            svg(width="70" height="70" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder image: 70x70" role="img" focusable="false" style="text-anchor:middle")
+              title Placeholder image
+              rect(width="100%" height="100%" fill="#212121")
+              text(x="50%" y="50%" fill="#dee2e6" dy=".3em") 70x70
+          .o-media__body
+            | #[b But it also can been reversed]. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            |  Curabitur ac nisl quis massa vulputate adipiscing.
+    .o-row
+      .o-col.u-12(class="u-6@md")
+        .o-media.o-media--center
+          .o-media__image
+            svg(width="70" height="70" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder image: 70x70" role="img" focusable="false" style="text-anchor:middle")
+              title Placeholder image
+              rect(width="100%" height="100%" fill="#212121")
+              text(x="50%" y="50%" fill="#dee2e6" dy=".3em") 70x70
+          .o-media__body
+            | #[b Or the media can be vertically centered]. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            |  Curabitur ac nisl quis massa vulputate adipiscing. Vivamus sit amet risus ligula. Nunc eu pulvinar augue.
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-media">
+          <div class="o-media__image">
+            <img src="/assets/data/media-example.png" alt="media image">
+            <!-- Also work with a SVG tag -->
+            </div>
+          <div class="o-media__body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+          </div>
+        </div>
+
+        <div class="o-media o-media--reverse">
+          <div class="o-media__image">
+            <img src="/assets/data/media-example.png" alt="media image">
+            </div>
+          <div class="o-media__body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+          </div>
+        </div>
+
+        <div class="o-media o-media--center">
+          <div class="o-media__image">
+            <img src="/assets/data/media-example.png" alt="media image">
+            </div>
+          <div class="o-media__body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisl quis massa vulputate adipiscing.
+          </div>
+        </div>
+
+  h2 Overlay - #[em _objects.overlay.scss]
+
+  p This optional object can be used with a modal system. Some JavaScript is added for the demo below.
+
+  .p-example
+    p Click the button to enable the overlay, then with the escape or space key.
+    button.c-button.c-button--primary.js-overlay Toggle overlay
+    .o-overlay
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-overlay"></div>
+
+        <div class="o-overlay is-visible"></div>
+  script.
+    function handlerEscape(e, overlay) {
+      console.log('ok')
+      if (e.keyCode === 27) {
+        overlay.classList.remove('is-visible');
+        this.removeEventListener('keydown', handlerEscape);
+      }
+    }
+
+    if (document.querySelector('.js-overlay')) {
+      document.querySelector('.js-overlay').addEventListener(
+        'click',
+        (e) => {
+          e.preventDefault()
+          const overlay = e.target.nextElementSibling
+          overlay.classList.toggle('is-visible')
+          document.body.addEventListener('keydown', (e) => handlerEscape(e, overlay))
+        },
+      )
+    }
+
+
+  h2 Table - #[em _objects.table.scss]
+
+  p The table object might be consider as a component since it add some aesthetics, like borders, but that's all.
+    br
+    | If you need others options like a striped or hoverable rows, you can create your own component.
+
+  .p-example
+    table.o-table
+      thead
+        tr
+          th(scope="col") #
+          th(scope="col") Name
+          th(scope="col") Developer
+          th(scope="col") Release date
+      tbody
+        tr
+          th(scope="row") 1
+          td The Last of Us Part II
+          td Naughty Dog
+          td 19 June 2020
+        tr
+          th(scope="row") 2
+          td God of War
+          td Santa Monica Studio
+          td 20 April 2018
+        tr
+          th(scope="row") 3
+          td Death Stranding
+          td Kojima Productions
+          td 8 November 2019
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <table class="o-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Developer</th>
+              <th scope="col">Release date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>The Last of Us Part II</td>
+              <td>Naughty Dog</td>
+              <td>19 June 2020</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>God of War</td>
+              <td>Santa Monica Studio</td>
+              <td>20 April 2018</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Death Stranding</td>
+              <td>Kojima Productions</td>
+              <td>8 November 2019</td>
+            </tr>
+          </tbody>
+        </table>

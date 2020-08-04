@@ -1,0 +1,41 @@
+@use "settings/settings.ui" as ui;
+
+@use "tools/tools.global" as *;
+
+$p-inputplate-border-color: ui.$g-form-border-color;
+
+.p-inputplate {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  margin: 0 auto;
+
+  @include mq(tb) {
+    height: 100%;
+    margin-right: 0;
+  }
+
+  &__group {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid $p-inputplate-border-color;
+    border-radius: .5rem;
+
+    > input {
+      width: 20px;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: transparent;
+
+      &:not(:last-child) {
+        border-right: 1px solid $p-inputplate-border-color;
+      }
+    }
+  }
+
+  &__separator {
+    margin: 0 .5rem;
+  }
+}

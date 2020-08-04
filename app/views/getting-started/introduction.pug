@@ -1,0 +1,43 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Introduction
+
+  p Gl(s)ass (or Glass) is a Sass framework based on ITCSS for extensible and responsive front development.
+    br
+    | The framework provides generics/starter rules, a grid system, extensible
+    |  components and utilities classes, with a global project architecture.
+
+  p Since Glsass is focused on a #[code SCSS] environment, there is not download archive,
+    |  no CDN or compiled CSS file.
+
+  p
+    strong It's up to you to build you own Sass project by using only what you need!
+
+  .o-row
+
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 Installation
+        .c-card__footer
+          a.c-button.c-button--primary(href="/getting-started/installation.html") View
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 Architecture
+        .c-card__footer
+          a.c-button.c-button--primary(href="/getting-started/architecture.html") View
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 More about it
+        .c-card__footer
+          a.c-button.c-button--primary(href="/getting-started/about.html") View
+
+
+//-   Spectre.css is a lightweight, responsive and modern CSS framework for faster and extensible development.
+
+//- Spectre provides basic styles for typography and elements,
+//- flexbox based responsive layout system, pure CSS components and utilities
+//- with best practice coding and consistent design language.

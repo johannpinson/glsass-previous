@@ -1,0 +1,226 @@
+extends ../_layout/_docs.pug
+
+block variables
+  - slug = 'buttons'
+
+block docs
+  h1 Buttons
+  p Buttons include simple button styles for actions in different types and sizes.
+
+  .u-mb-3
+    button.c-button default button
+    button.c-button.c-button--primary primary button
+    button.c-button.c-button--link link button
+
+  p
+    | Add the #[code c-button] class to #{'<a>'}, #{'<input>'} or #{'<button>'} elements for a default button.
+    | There are classes #[code c-button--primary] and #[code c-button--link] for predefined primary and link buttons.
+
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <button class="c-button">default button</button>
+        <button class="c-button c-button--primary">primary button</button>
+        <button class="c-button c-button--link">link button</button>
+
+  h2 Colors variants
+
+  .u-mb-3
+    button.c-button.c-button--secondary secondary button
+    button.c-button.c-button--success success button
+    button.c-button.c-button--danger danger button
+    button.c-button.c-button--warning warning button
+    button.c-button.c-button--info info button
+    br
+    br
+    button.c-button.c-button--light light button
+    button.c-button.c-button--dark dark button
+    button.c-button.c-button--white white button
+
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <button class="c-button c-button--secondary">secondary button</button>
+        <button class="c-button c-button--success">success button</button>
+        <button class="c-button c-button--danger">danger button</button>
+        <button class="c-button c-button--warning">warning button</button>
+        <button class="c-button c-button--info">info button</button>
+        <button class="c-button c-button--light">light button</button>
+        <button class="c-button c-button--dark">dark button</button>
+        <button class="c-button c-button--white">white button</button>
+
+  h2 Shapes variants
+
+  p
+    | By default, buttons have rounded edges, but it's possible to keep straight edges by changing the #[code $c-button-round-default] Sass variable.
+    | If this variable is set to #[code false], it will automatically generate an additional class.
+
+  .u-mb-3
+    button.c-button.c-button--primary.c-button--rounded rounded button
+    button.c-button.c-button--primary.c-button--pill pill button
+    button.c-button.c-button--primary.c-button--block.u-mt-3 block button
+
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <button class="c-button c-button--primary c-button--rounded">rounded button</button>
+        <button class="c-button c-button--primary c-button--pill">pill button</button>
+        <button class="c-button c-button--primary c-button--block">block button</button>
+
+  h2 Outline variants
+
+  p Under consideration...
+
+  h2 States
+
+  //- p Add info about hover / focus / active / disabled states.
+  p More detail about states will be added soon.
+
+  h2 Sizes
+
+  p small + large
+
+  .u-mb-3
+    button.c-button.c-button--primary.c-button--small small button
+    button.c-button.c-button--primary normal/medium button
+    button.c-button.c-button--primary.c-button--large large button
+
+  h2 Icon and square variants
+
+  p Coming soon.
+
+
+  h2 Button group
+
+  p Create a stak of button and ajust border and margins.
+
+  .u-mb-3
+    .u-mb-2
+      .c-button--group
+        button.c-button.c-button--danger Cancel
+        button.c-button.c-button--success Confirm
+
+      .c-button--group
+        button.c-button.c-button--primary Left
+        button.c-button.c-button--primary Middle
+        button.c-button.c-button--primary Right
+
+    .c-button--group.c-button--group-vertical
+      button.c-button.c-button--light Top
+      button.c-button.c-button--dark Bottom
+
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="c-button--group">
+          <button class="c-button c-button--danger">Previous</button>
+          <button class="c-button c-button--success">Confirm</button>
+        </div>
+
+        <div class="c-button--group">
+          <button class="c-button c-button--primary">Left</button>
+          <button class="c-button c-button--primary">Middle</button>
+          <button class="c-button c-button--primary">Right</button>
+        </div>
+
+        <div class="c-button--group c-button--group-vertical">
+          <button class="c-button c-button--light">Top</button>
+          <button class="c-button c-button--dark">Bottom</button>
+        </div>
+
+  h2 Sass references
+
+  h3 Variables
+
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $c-button-border-width]
+        td Number unit
+        td #[code $g-border-width]
+        td Thickness of the border
+      tr
+        td #[code $c-button-round-default]
+        td Boolean
+        td #[code true]
+        td Allow to disable the default border-radius settings
+      tr
+        td #[code $c-button-radius]
+        td Number unit
+        td #[code $g-border-radius ]
+        td Border-radius for buttons
+      tr
+        td #[code $c-button-font-size]
+        td Number unit
+        td #[code $g-font-size-base-rem]
+        td Font-size of the content
+      tr
+        td #[code $c-button-font-ratio]
+        td Number
+        td #[code 1/8]
+        td The ratio to calculate smaller and larger size
+      tr
+        td #[code $c-button-font-size-small]
+        td Number unit
+        td Calculated from the ratio and the font size
+        td Font size for the small size
+      tr
+        td #[code $c-button-font-size-large]
+        td Number unit
+        td Calculated from the ratio and the font size
+        td Font size for the large size
+      tr
+        td #[code $c-button-line-height]
+        td Number
+        td #[code $g-font-line-height-base]
+        td Line-height for the content
+      tr
+        td #[code $c-button-focus-shadow-width]
+        td Number unit
+        td #[code $g-shadow-width]
+        td Size of the shadow used in some states
+      tr
+        td #[code $c-button-padding-y]
+        td Number unit
+        td #[code .75rem - $c-button-border-width]
+        td Vertical (block) padding
+      tr
+        td #[code $c-button-padding-x]
+        td Number unit
+        td #[code .75rem - $c-button-border-width]
+        td Horizontal (inline) padding
+      tr
+        td #[code $c-button-padding-x-small]
+        td Number unit
+        td Calculated from the ratio and the padding
+        td Horizontal padding for the small size
+      tr
+        td #[code $c-button-padding-x-large]
+        td Number unit
+        td Calculated from the ratio and the padding
+        td Horizontal padding for the large size
+      tr
+        td #[code $c-button-padding-y-small]
+        td Number unit
+        td Calculated from the ratio and the padding
+        td Vertical padding for the small size
+      tr
+        td #[code $c-button-padding-y-large]
+        td Number unit
+        td Calculated from the ratio and the padding
+        td Vertical padding for the large size
+      tr
+        td #[code $c-button-variants]
+        td List
+        td Generic theme colors
+        td Allow to add colors variants based on existing color name palette
+
+
+
+

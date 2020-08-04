@@ -1,0 +1,170 @@
+@use "../../../src/tools/tools.color" as _color;
+@use "../../../src/tools/tools.unit" as unit;
+@use "../../../src/tools/tools.global" as *;
+
+.p-docs {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &__sidebar {
+    @include mq() {
+      flex: 0 1 15rem;
+      min-height: 100vh;
+      padding: 0 0.5rem;
+      overflow-y: auto;
+    }
+
+    > :first-child {
+      position: fixed;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    padding: 0 1rem;
+
+    @include mq-max(md) {
+      width: 100%;
+    }
+  }
+}
+
+.p-example {
+  padding: (vr() - unit.convert(1px)) vr();
+  border: unit.convert(1px) solid cv(light);
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
+    monospace;
+  font-size: 1em;
+}
+
+code {
+  padding: 0.1rem 0.2rem;
+  color: #d73e48;
+  line-height: 1.25;
+  background: #fcf2f2;
+  border-radius: 0.1rem;
+}
+
+.code {
+  position: relative;
+  color: cv(body);
+
+  &::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    color: cv("gray");
+    font-size: 0.7rem;
+  }
+
+  code {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    overflow-x: auto;
+    color: inherit;
+    font-size: 0.875rem;
+    line-height: vr() / 0.875rem;
+    background: cv(light);
+  }
+
+  .hljs-tag {
+    color: lighten(cv(body), 10%);
+  }
+
+  .hljs-comment {
+    color: cv("gray");
+  }
+
+  .hljs-title,
+  .hljs-class,
+  .hljs-string,
+  .hljs-number,
+  .hljs-selector-class {
+    color: cv(primary);
+  }
+
+  $code-color: #d73e48 !default;
+
+  .hljs-name,
+  .hljs-attribute,
+  .hljs-variable,
+  .hljs-keyword,
+  .hljs-built_in {
+    color: $code-color;
+  }
+
+  .hljs-value,
+  .hljs-hexcolor {
+    color: lighten(cv("body"), 10%);
+  }
+}
+
+.p-swatch {
+  $_swatch-colors: (
+    "gray",
+    "primary",
+    "secondary",
+    "success",
+    "danger",
+    "warning",
+    "info"
+  );
+  $_swatch-variants: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+  @each $color in $_swatch-colors {
+    &__#{$color} {
+      @each $variant in $_swatch-variants {
+        &--#{$variant} {
+          color: _color.yiq-contrast(cv($color, $variant));
+          background-color: cv($color, $variant);
+        }
+      }
+    }
+  }
+
+  &__white {
+    color: _color.yiq-contrast(cv("white"));
+    background-color: cv("white");
+  }
+
+  &__black {
+    color: _color.yiq-contrast(cv("black"));
+    background-color: cv("black");
+  }
+
+  &__light {
+    color: _color.yiq-contrast(cv("light"));
+    background-color: cv("light");
+  }
+
+  &__dark {
+    color: _color.yiq-contrast(cv("dark"));
+    background-color: cv("dark");
+  }
+
+  &__text {
+    &--base {
+      color: cv("gray", 900);
+      background-color: cv("white");
+    }
+
+    &--muted {
+      color: cv("gray", 600);
+      background-color: cv("white");
+    }
+  }
+
+  &__link {
+    color: cv("link");
+    background-color: cv("white");
+  }
+}

@@ -1,0 +1,52 @@
+/*==========================================================================
+  #BORDERS
+  ========================================================================== */
+
+@use "sass:map";
+
+@use "../settings/settings.ui" as ui;
+
+@use "../tools/tools.generators" as generators;
+
+$u-borders: () !default;
+
+$_utilities: (
+  border: (
+    property: border,
+    class: bd,
+    values: (
+      null: ui.$g-border-width solid ui.$g-border-color,
+      0: 0,
+    ),
+  ),
+  border-radius: (
+    property: border-radius,
+    class: br,
+    values: (
+      null: ui.$g-border-radius,
+      pill: 50rem,
+      full: 50%,
+      0: 0,
+    ),
+  ),
+  box-shadow: (
+    property: box-shadow,
+    class: bs,
+    values: (
+      null: 0 0 0 ui.$g-border-width ui.$g-border-color,
+      0: none,
+    ),
+  ),
+  outline: (
+    property: outline,
+    class: ol,
+    values: (
+      null: ui.$g-border-width solid ui.$g-border-color,
+      0: 0,
+    ),
+  ),
+);
+
+$u-borders: map.merge($_utilities, $u-borders);
+
+@include generators.utilities($u-borders);

@@ -1,0 +1,46 @@
+block variables
+  //- - var ua = 'GTM-M99XRH5'
+  - var slug = 'docs'
+
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='robots' content='index, follow')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    //- meta(name='description' content= description)
+    //- meta(name='author' content='Johann Pinson')
+    //- meta(property='og:url' content= url)
+    //- meta(property='og:title' content= title)
+    //- meta(property='og:description' content= description)
+    //- meta(name='twitter:card' content='summary')
+    //- if slug != parent
+    //-   link(rel='shortcut icon' href='../img/favicons/favicon.ico')
+    //-   link(rel='icon' href='../img/favicons/favicon.png')
+    //- else
+    //-   link(rel='shortcut icon' href='img/favicons/favicon.ico')
+    //-   link(rel='icon' href='img/favicons/favicon.png')
+    //- link(rel='canonical' href= url)
+
+    //- link(rel='stylesheet' href='/assets/docs.css')
+    //- script(src="/assets/index.js")
+
+    // inject:css
+    // endinject
+    // inject:js
+    // endinject
+
+  body
+    //- include ./_analytics.pug
+
+    if slug != 'index'
+      .p-debug.c-button.c-button--primary.c-button--small.js-debug Toogle debug
+
+    block content
+
+
+    //- footer
+
+

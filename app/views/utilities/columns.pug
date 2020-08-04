@@ -1,0 +1,56 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Columns
+
+  p This file is diffrent from the other utilities files because it's a requirement
+    | for the #{''}
+    a(href="/layout/grid.html") grid system
+    | .
+    br
+    | It generates classes to specify the size of a column in responsive contexts.
+
+  .p-example
+    .o-row
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-light.u-p-1 a simple col
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-primary.u-p-1 a simple col
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-light.u-p-1 a simple col
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-primary.u-p-1 a simple col
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row">
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+        </div>
+
+  h2 Remove gutters
+
+  p The class #[code .u-no-gutters] can be applied to a #[code .o-row] to
+    |  remove gutters between columns
+
+  .p-example
+    .o-row.u-no-gutters
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-light.u-p-1 a simple col
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-primary.u-p-1 a simple col
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-light.u-p-1 a simple col
+      .o-col.u-12(class="u-6@tb u-3@lg")
+        .u-bg-primary.u-p-1 a simple col
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row u-no-gutters">
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+          <div class="o-col u-12 u-6@tb u-3@lg">a simple col</div>
+        </div>

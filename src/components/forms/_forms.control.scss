@@ -1,0 +1,89 @@
+@use "sass:selector";
+
+@use "../../settings/settings.ui" as ui;
+@use "../../settings/settings.core" as core;
+
+@use "../../tools/tools.form" as form;
+@use "../../tools/tools.spacing" as spacing;
+@use "../../tools/tools.string" as str;
+@use "../../tools/tools.global" as *;
+
+$c-control-border-radius: ui.$g-form-border-radius !default;
+$c-control-border-width: ui.$g-form-border-width !default;
+$c-control-border-color: ui.$g-form-border-color !default;
+
+$c-control-text-color: ui.$g-form-text-color !default;
+
+$c-control-placeholder-color: ui.$g-form-placeholder-color !default;
+
+$c-control-font-size: core.$g-font-size-base-rem !default;
+$c-control-font-height: core.$g-font-line-height-base !default;
+
+$c-control-focus-border-color: ui.$g-form-focus-border-color !default;
+$c-control-focus-shadow-width: ui.$g-form-focus-shadow-width !default;
+$c-control-focus-shadow-color: ui.$g-form-focus-shadow-color !default;
+
+$c-control-background-color: ui.$g-form-background-color !default;
+$c-control-background-disabled: ui.$g-form-background-disabled !default;
+
+$_c-control-el: ".c-form__control";
+$_c-control-el-feedback: ".c-form__feedback";
+
+.c-form {
+  &__control {
+    display: block;
+    flex: 1 0 auto;
+    height: vr(1.5);
+    padding: (vr(0.5) / 2) vr(0.5);
+    color: $c-control-text-color;
+    font-size: $c-control-font-size;
+    line-height: $c-control-font-height;
+    background-color: $c-control-background-color;
+    border: $c-control-border-width solid $c-control-border-color;
+    border-radius: $c-control-border-radius;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    // Since the :is() pseudo-class isn't supperted well
+    // make it works with SCSS
+    // &:is(textarea)
+    @at-root #{selector.unify(&, "textarea")} {
+      height: vr(3);
+      min-height: vr(3);
+    }
+
+    &::placeholder {
+      color: $c-control-placeholder-color;
+      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+      opacity: 1;
+    }
+
+    &:hover:not(:disabled):not([readonly]):not([class*="is-"]) {
+      border-color: $c-control-focus-border-color;
+    }
+
+    &:focus {
+      border-color: $c-control-focus-border-color;
+      outline: 0;
+      box-shadow: 0 0 0 $c-control-focus-shadow-width
+        $c-control-focus-shadow-color;
+    }
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    &:disabled,
+    &[readonly] {
+      background-color: $c-control-background-disabled;
+      cursor: not-allowed;
+      // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+      opacity: 1;
+    }
+  }
+}
+
+@include form.add-validation-states(
+  $_c-control-el,
+  $c-control-focus-shadow-width
+);

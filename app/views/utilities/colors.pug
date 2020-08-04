@@ -1,0 +1,144 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Colors
+
+  h2 Color
+
+  p Theses classes can be set on the text element or more global #[code div] to be applied
+    | to all children.
+    br
+    | Remember to check the color constrat when you change the color of the text
+    |  to be sure there is enough readable.
+
+  .p-example
+    p.u-mb-2.u-c-primary u-c-primary
+    p.u-mb-2.u-c-secondary u-c-secondary
+    p.u-mb-2.u-c-success u-c-success
+    p.u-mb-2.u-c-danger u-c-danger
+    p.u-mb-2.u-c-warning u-c-warning
+    p.u-mb-2.u-c-info u-c-info
+    p.u-mb-2.u-c-white.u-bg-black u-c-white
+    p.u-mb-2.u-c-black u-c-black
+    p.u-mb-2.u-c-light.u-bg-dark u-c-light
+    p.u-mb-2.u-c-dark u-c-dark
+    p.u-mb-2.u-c-text u-c-text
+    p.u-mb-2.u-c-muted u-c-muted
+    p.u-mb-2.u-c-black-50 u-c-black-50
+    p.u-mb-2.u-c-white-50.u-bg-black u-c-white-50
+    p.u-mb-2.u-c-reset u-c-reset
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <p class="u-c-primary">u-c-primary</p>
+        <p class="u-c-secondary">u-c-secondary</p>
+        <p class="u-c-success">u-c-success</p>
+        <p class="u-c-danger">u-c-danger</p>
+        <p class="u-c-warning">u-c-warning</p>
+        <p class="u-c-info">u-c-info</p>
+        <p class="u-c-white u-bg-black">u-c-white</p>
+        <p class="u-c-black">u-c-black</p>
+        <p class="u-c-light u-bg-dark">u-c-light</p>
+        <p class="u-c-dark">u-c-dark</p>
+        <p class="u-c-text">u-c-text</p>
+        <p class="u-c-muted">u-c-muted</p>
+        <p class="u-c-black-50">u-c-black-50</p>
+        <p class="u-c-white-50 u-bg-black">u-c-white-50</p>
+        <p class="u-c-reset">u-c-reset</p>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-colors: (
+          color: (
+            property: color,
+            class: c,
+            values:
+              map.merge(
+                colors.$g-color-theme-colors,
+                (
+                  muted: cv("text", "muted"),
+                  black-50: rgba(cv(black), 0.5),
+                  white-50: rgba(cv(white), 0.5),
+                  reset: inherit,
+                )
+              ),
+          ),
+        );
+
+  h2 Background color
+
+  p Similar to the text color, you can set the background of an element.
+    br
+    | Like for the color, you may need to change the color of the text to
+    |  have a minimal contrast ratio.
+
+  .p-example
+    .u-mb-2.u-p-2.u-bg-primary u-bg-primary
+    .u-mb-2.u-p-2.u-bg-secondary.u-c-white u-bg-secondary
+    .u-mb-2.u-p-2.u-bg-success u-bg-success
+    .u-mb-2.u-p-2.u-bg-danger.u-c-white u-bg-danger
+    .u-mb-2.u-p-2.u-bg-warning u-bg-warning
+    .u-mb-2.u-p-2.u-bg-info u-bg-info
+    .u-mb-2.u-p-2.u-bg-white u-bg-white
+    .u-mb-2.u-p-2.u-bg-black.u-c-white u-bg-black
+    .u-mb-2.u-p-2.u-bg-light u-bg-light
+    .u-mb-2.u-p-2.u-bg-dark.u-c-light u-bg-dark
+    .u-mb-2.u-p-2.u-bg-text.u-c-white u-bg-text
+    .u-mb-2.u-p-2.u-bg-transparent u-bg-transparent
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-bg-primary">u-bg-primary</div>
+        <div class="u-bg-secondary u-c-white">u-bg-secondary</div>
+        <div class="u-bg-success">u-bg-success</div>
+        <div class="u-bg-danger u-c-white">u-bg-danger</div>
+        <div class="u-bg-warning">u-bg-warning</div>
+        <div class="u-bg-info">u-bg-info</div>
+        <div class="u-bg-white">u-bg-white</div>
+        <div class="u-bg-black u-c-white">u-bg-black</div>
+        <div class="u-bg-light">u-bg-light</div>
+        <div class="u-bg-dark u-c-light">u-bg-dark</div>
+        <div class="u-bg-text u-c-white">u-bg-text</div>
+        <div class="u-bg-transparent">u-bg-transparent</div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-colors: (
+          background-color: (
+            property: background-color,
+            class: bg,
+            values:
+              map.merge(
+                colors.$g-color-theme-colors,
+                (
+                  transparent: transparent,
+                )
+              ),
+          ),
+        );
+
+  h2 Background image
+
+  p An additionnal class is available when you need to add an image as a background.
+    |  It's automatically add a dark transparent layout on top of the image
+    |  to increase text lisibility
+
+  .p-example
+    .u-bg-i(style="background-image:url('/assets/data/lake-1.jpg');").u-p-4
+      span.u-c-white Some text above the background
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="u-bg-i" style="background-image:url('/assets/data/lake-1.jpg');">
+          <span class="u-c-white">Some text on the image</span>
+        </div>
+
+  p Notice: this class isn't built from the generator, you can remove it by
+    |  setting at #[code false] the #[code $u-colors-background-image] variable.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @use "~glsass/src/utilities/utilities.colors" with (
+          $u-colors-background-image: false,
+        );

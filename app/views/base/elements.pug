@@ -1,0 +1,187 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Elements
+
+  p The #[code elements] folder add some styles for basic HTML elements.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // ELEMENTS
+        @forward "~glsass/src/elements/elements.headings";
+        @forward "~glsass/src/elements/elements.images";
+        @forward "~glsass/src/elements/elements.lists";
+        @forward "~glsass/src/elements/elements.links";
+        @forward "~glsass/src/elements/elements.page";
+        @forward "~glsass/src/elements/elements.tables";
+
+        /* Or import all of elements */
+
+        // ELEMENTS
+        @forward "~glsass/src/elements";
+
+  p You can notice that the order of file is alphabetic, even if "top" tags like #[code html]
+    |  and #[code body] are inside the #[code _elements.page.scss] file, because each file
+    |  includes its own elements.
+
+  h2 Headings - #[em _elements.headings.scss]
+
+  p All #[codd hn] (h1 to h6) styles are generated from the global settings.
+    |  This is why there is there is not configurable variables (and to maitain
+    |  some consistency with the utilities classes: #[code .u-hn]).
+    br
+    | About the #[code line-height] property, it's automatically calculated
+    |  to respect the vertical rhythm for headings.
+
+  .p-example
+    h1 Heading 1
+    h2 Heading 2
+    h3 Heading 3
+    h4 Heading 4
+    h5 Heading 5
+    h6 Heading 6
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+  h2 Images - #[em _elements.images.scss]
+
+  p It adds some default rules for alternative text or to remove the space that can appear unnder
+    |  the element.
+    br
+    | Images also have a #[code max-width] set to 100% to facilitate fluid responsive needs.
+    |  By default, even if images are generated with #[code width] and #[code height] attributes,
+    |  they still be fluid. This behavior can be changed by setting the variables #[code $e-images-static-size]
+    |  at #[code true].
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @forward "~glsass/src/elements/elements.images" with (
+          $e-images-static-size: true,
+        );
+
+  h2 Lists - #[em _elements.lists.scss]
+
+  p Lists are lightly modify to bring some space on the left and bottom.
+    br
+    | Since there is differents kind of list, we could have moved this rules in the #[code _generic.shared.scss] file.
+    |  But since there are some specificities between all of them, it's simpler to regroup it inside a unique place.
+
+  .p-example
+      ul
+        li Lorem ipsum dolor sit amet
+        li Consectetur adipiscing elit
+        li Sed do eiusmod tempor incididunt
+          ul
+            li Ut labore et dolore magna aliqua
+            li Ut enim ad minim veniam
+        li Quis nostrud exercitation ullamco laboris
+        li Nisi ut aliquip ex ea commodo consequat
+
+      ol
+        li Lorem ipsum dolor sit amet
+        li Consectetur adipiscing elit
+        li Sed do eiusmod tempor incididunt
+
+      dl
+        dt The ingredients:
+        dd
+          ul
+            li 100 g. flour
+            li 10 g. sugar
+            li 1 cup water
+            li 2 eggs
+            li salt, pepper
+        dt The procedure:
+        dd
+          ol
+            li Mix dry ingredients thoroughly.
+            li Pour in wet ingredients.
+            li Mix for 10 minutes.
+            li Bake for one hour at 300 degrees.
+        dt Notes:
+        dd The recipe may be improved by adding raisins.
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipiscing elit</li>
+          <li>Sed do eiusmod tempor incididunt
+            <ul>
+              <li>Ut labore et dolore magna aliqua</li>
+              <li>Ut enim ad minim veniam</li>
+            </ul>
+          </li>
+          <li>Quis nostrud exercitation ullamco laboris</li>
+          <li>Nisi ut aliquip ex ea commodo consequat</li>
+        </ul>
+
+        <ol>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipiscing elit</li>
+          <li>Sed do eiusmod tempor incididunt</li>
+        </ol>
+
+        <dl>
+          <dt>The ingredients:</dt>
+          <dd>
+            <ul>
+              <li>100 g. flour</li>
+              <li>10 g. sugar</li>
+              <li>1 cup water</li>
+              <li>2 eggs</li>
+              <li>salt, pepper</li>
+            </ul>
+          </dd>
+          <dt>The procedure:</dt>
+          <dd>
+            <ol>
+              <li>Mix dry ingredients thoroughly.</li>
+              <li>Pour in wet ingredients.</li>
+              <li>Mix for 10 minutes.</li>
+              <li>Bake for one hour at 300 degrees.</li>
+            </ol>
+          </dd>
+          <dt>Notes:</dt>
+          <dd>The recipe may be improved by adding raisins.</dd>
+        </dl>
+
+  h2 Links - #[em _elements.links.scss]
+
+  p We set the default color for link to preserve the current color of the text and add underlines.
+
+  .p-example
+    a(href="/") Link to the home
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <a href="/">Link to the home</a>
+
+  p By default, all external link (with a #[code target="_blank"]), will have append an arrow indicator (#[code ↗] or #[code #{'&nearr;'}] HTML entity).
+    br
+    |  This settings can be modified by setting the option #[code $e-links-external-indicator] at #[code false].
+
+  .p-example
+    a(href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer") Link to MDN homepage
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Link to MDN homepage</a>
+
+  h2 Page - #[em _elements.page.scss]
+
+  p This file contains main declarations for #[code html] and #[code body] tags. It's used to
+    |  set default #[code font-size], #[code line-height] or #[code color] and improvement for iOS.
+
+  h2 Tables - #[em _elements.tables.scss]
+
+  p We add an unique rule to ensure tables fill up as much space as possible.

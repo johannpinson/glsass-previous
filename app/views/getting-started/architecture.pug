@@ -1,0 +1,127 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Architecture
+
+  h2 ITCSS
+
+  p ITCSS is a project architecture designed by #{''}
+    a(href="https://csswizardry.com/" target="_blank" rel="noopener noreferrer") Harry Roberts
+    | . The goal is to ensure a good maintenance and scalabitily of the codebase,
+    |  by following some conventions and rules.
+
+  p ITCSS means #[em Inverted Triangle CSS], and represent the complexity graph how your code must be organired.
+
+  figure.u-ta-c
+    img(src="/assets/data/itcss-default.svg", alt="ITCSS schema" height=300).u-mb-2
+    figcaption.u-c-muted.u-fs-i
+      | Image from #{''}
+      a(href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/" target="_blank" rel="noopener noreferrer") Xfive blog
+
+  p The triangle represents the CSS selectors order : from generic to explicit,
+    |  from low-complexity to high-specificity or from global zones to localized ones.
+
+  h2 Glsass
+
+  p In #[strong Glsass], the ITCSS is slightly modified, to allow more flexibilty and because of Sass Module.
+    |  Since we don't have to import all file at the root file, there is not need for you to import #[tools]
+    |  in your #[code index.scss].
+
+  p.u-mb-0 This is the layer structure:
+
+  ul
+    li Core (Settings + Tools)
+    li Generic
+    li Vendors
+    li Elements
+    li Objects
+    li Layouts
+    li Components
+    li Patterns
+    li Scopes
+    li Themes
+    li Utilities
+
+  h3 Core
+
+  p The #[code Core] layer can is combination of the #[code Settings] and #[code Tools] folders.
+    br
+    |  The settings contains variables and definitions used in the framework. The tools is about
+    |  Sass mixins and functions.
+
+  h3 Generic
+
+  p This is the first layer which will generate "real" CSS. It contains reset and normalize styles,
+    |  box-sizing definitions and some shared styles (like default #[code margin-bottom] on some elements)
+
+  h3 Elements
+
+  p Also called #[em Base], there is rules for styling basic HTML elements
+    |  (#[em heading], #[em links], #[em lists], etc.) to adjust some default browser behavior/feeling.
+
+  h3 Objects - #[em .o-*]
+
+  p The first class-based selectors start here, it defines #[em undecorated] (or at least, as much as possible)
+    |  design patterns. Some objects like #[code o-media] are known from OOCSS and present in this layer.
+
+  h3 Layouts - #[em .l-*]
+
+  p Glsass doesn't provide layout classes because it will depend of your HTML structure.
+    |  You can add your own folder and files if you use this layer logic (header, main, nav, footer, etc.).
+
+  p  In some cases, you can also have a #[code pages] folder to manage some page behavior.
+    |  But you may avoid to use the #[code .p-*] class prefix because it's used for another layer.
+    |  If you need it, you can use the #[code .page-*] prefix (#[code .page-home], #[code .page-about], etc.)
+
+  h3 Components - #[em .c-*]
+
+  p In this layer, you have specific UI "components" (or UI blocks), so the majority of the work will go here.
+    |  A component is a well-designed piece of UI that can be reused in different needs and areas.
+    |  Glsass provide basic and customizable acomponents (alert, button, card, etc.), that you can use or not,
+    |  modify them from the Sass parameters or build your own.
+
+  h3 Patterns - #[em .p-*]
+
+  p Eventually called #[em Modules] (#[code .m-*]), a pattern is very similar to a component, because it's an UI block.
+    |  But if a component is create to be reusable anywhere, a pattern should be built for a unique need.
+    br
+    |  By convention, a component can be uses a lot of times, in different areas or contexts.
+    |  For a pattern, it's to create a block for a specific use. The goal is just to organize your UI folder
+    |  and indicate to the others developers, which ones is reusable and which are not.
+    br
+    |  Since this layer is specific of the design to build, Glsass didn't contain any pattern.
+    |  But it can be use to add a new behavior to an existing (external) component (ex: the top-right button of this website to enable the debug mode).
+
+  h3 Scopes - #[em .s-*]
+
+  p Scoped context in CSS should be used sparingly. The goal is to solve very specific and local problem.
+    |  The perfect example is when you use a CMS with a #[em WYSIWYG] editor. You can add a class like #[code .s-cms-content]
+    |  around the generated content, and then target HTML elements (#[code ul]/#[code li], #[code a], #[code hn]).
+    br
+    |  Before use it, be sure that you cannot achieve the expected result otherwise. And be careful about the weight/priorities of the new classes.
+
+  h3 Themes - #[em .t-*]
+
+  p This layer is similar to the previous one, because it must be used only for specific cases, especially if you work with #{''}
+    a(href="https://speakerdeck.com/csswizardry/4half-methods-for-theming-in-s-css?slide=30" target="_blank" rel="noopener noreferrer") Stateful Themes
+    | . But since with the Sass syntax you can use the parent selector #[code &], theming can be applied in components directly.
+    br
+    | The theming can also be used from the settings variables, so this layer shouldn't be used ofter.
+
+  h3 Utilities - #[em .u-*]
+
+  p Trumps, helpers or utilitities, this is the last layer of your stack.
+    br
+    | Glsass already contains a lot of utilities classes, mainly inherit from #{''}
+    a(href="https://getbootstrap.com/docs/4.5/utilities/borders/" target="_blank" rel="noopener noreferrer") Bootstrap
+    | , #{''}
+    a(href="https://tachyons.io/" target="_blank" rel="noopener noreferrer") Tachyon
+    | , #{''}
+    a(href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer") Tailwind
+    |  or other CSS frameworks.
+
+  p Because it can generate a lot of CSS rules, there is not #[code index.scss] file inside the folder, you must import and select what you need.
+    br
+    | In addition, you can use a tool like #{''}
+    a(href="https://purgecss.com/" target="_blank" rel="noopener noreferrer") PurgeCSS
+    |  to remove unused classes in your templates.

@@ -1,0 +1,9 @@
+/// A simple file to foward main et transerves mixin/function
+/// The goal is to load this file and use it at without a namespace
+/// like `@use "tools/tools.global" as *;`
+/// By convention, always load this tools file at last
+
+@forward "./tools.cv";
+@forward "./tools.icons";
+@forward "./tools.mq";
+@forward "./tools.spacing" show vr;

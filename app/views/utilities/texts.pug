@@ -1,0 +1,210 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Texts
+
+  p The texts utilities help you to add more control for lite style changing.
+
+  h2 Font-weight
+
+  .p-example
+    p.u-mb-2.u-fw-300 Light text
+    p.u-mb-2.u-fw-l Lighter text (relative to the parent)
+    p.u-mb-2.u-fw-400 Normal text
+    p.u-mb-2.u-fw-700 Bold text
+    p.u-mb-2.u-fw-b Bolder text (relative to the parent)
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <p class="u-fw-300">Light text</p>
+        <p class="u-fw-l">Lighter text (relative to the parent)</p>
+        <p class="u-fw-400">Normal text</p>
+        <p class="u-fw-700">Bold text</p>
+        <p class="u-fw-b">Bolder text (relative to the parent)</p>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-texts: (
+          font-weight: (
+            property: font-weight,
+            class: fw,
+            values: (
+              l: lighter,
+              b: bolder,
+              300: 300,
+              400: 400,
+              700: 700,
+            ),
+          ),
+        )
+
+  h2 Font-style
+
+  .p-example
+    p.u-mb-2.u-fs-i Italic text
+    p.u-mb-2.u-fs-n Normal text
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <p class="u-fs-i">Italic text</p>
+        <p class="u-fs-n">Normal text</p>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-texts: (
+          font-style: (
+            property: font-style,
+            class: fs,
+            values: (
+              n: normal,
+              i: italic,
+            ),
+          ),
+        )
+
+  h2 Text-align
+
+  .p-example
+    p.u-mb-2.u-ta-l Left aligned text
+    p.u-mb-2.u-ta-r Right aligned text
+    p.u-mb-2.u-ta-c Center aligned text
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <p class="u-ta-l">Left aligned text</p>
+        <p class="u-ta-r">Right aligned text</p>
+        <p class="u-ta-c">Center aligned text</p>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-texts: (
+          text-align: (
+            responsive: true,
+            property: text-align,
+            class: ta,
+            values: (
+              l: left,
+              r: right,
+              c: center,
+            ),
+          ),
+        )
+
+  h2 Text-decoration
+
+  .p-example
+    p.u-mb-2.u-td-u Underlined text
+    p.u-mb-2.u-td-l Line-through text
+    p.u-mb-2.u-td-n Normal text
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <p class="u-td-u">Underlined text</p>
+        <p class="u-td-l">Line-through text</p>
+        <p class="u-td-n">Normal text</p>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-texts: (
+          text-decoration: (
+            property: text-decoration,
+            class: td,
+            values: (
+              u: underline,
+              l: line-through,
+              n: none,
+            ),
+          ),
+        )
+
+  h2 Text-transform
+
+  .p-example
+    p.u-mb-2.u-tt-l Lowercased text
+    p.u-mb-2.u-tt-u Uppercased text
+    p.u-mb-2.u-tt-c Capitalized text
+    p.u-mb-2.u-tt-n Normal text
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <p class="u-tt-l">Lowercased text</p>
+        <p class="u-tt-u">Uppercased text</p>
+        <p class="u-tt-c">Capitalized text</p>
+        <p class="u-tt-n">Normal text</p>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-texts: (
+          text-transform: (
+            property: text-transform,
+            class: tt,
+            values: (
+              l: lowercase,
+              u: uppercase,
+              c: capitalize,
+              n: none,
+            ),
+          ),
+        )
+
+  h2 Font-size & line-height
+
+  p Even if we could have classes to manage #[code font-size] or #[code line-height],
+    |  it's not included to let you make your own class to control (or not) the
+    |  vertical rhythm.
+    br
+    | If you want to adjust font-size and preserve the vertical rhythm, you need to
+    |  calculate the line-height in a #[code SCSS function] or with the #[code CSS calc()] function.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // SCSS simple example
+        $font-size-expected: 1.25rem; // or 20px
+        $rhythm-unit: core.$g-spacer; // = 24px from the htlm font-size (16px) * line-height (1.5);
+        $calculated-line-height: $rhythm-unit / $font-size-expected; // = 1.2
+
+        .class {
+          font-size: $font-size-expected;
+          line-height: $calculated-line-height;
+        }
+
+        // SCSS function
+        @mixin rhythmic-font($font-size) {
+          font-size: $font-size;
+          line-height: core.$g-spacer / $font-size;
+        }
+
+        .class {
+          @include rhythmic-font(0.875rem);
+
+          // will output
+          font-size: 0.875rem;
+          line-height: 1.7142857143;
+        }
+
+        // CSS calc
+        .class {
+          font-size: 20px;
+          line-height: calc(24 / 20);
+        }
+
+  p If you want just some #[code line-height] utilities, to can add it to the
+    |  #[code $u-texts] variables with values which respect the vertical rhythm
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @use "~glsass/src/utilities/utilities.displays" with (
+          $u-texts: (
+            line-height: (
+              property: line-height,
+              class: lh,
+              values: (
+                small: 0.75, // 0.5vr
+                base: 1.5, // 1vr - default line-height
+                large: 2.25, // 1.5vr
+              )
+            )
+          )
+        )

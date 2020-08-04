@@ -1,0 +1,18 @@
+@use "../../tools/tools.spacing" as spacing;
+
+$c-label-font-weight: 700 !default;
+
+.c-form {
+  // Labels
+  &__label {
+    display: block;
+    flex-basis: 100%;
+    width: 100%;
+    margin-bottom: spacing.add-space(2);
+    font-weight: $c-label-font-weight;
+
+    &--required {
+      // TODO add red asterisk?
+    }
+  }
+}

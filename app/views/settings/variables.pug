@@ -1,0 +1,37 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Variables
+
+  p The #[code variables] file add #[strong custom properties] (or #[strong CSS variables]).
+    br
+    | It can be usefull if you want to manage some colors modifications from #[code JavaScript]
+    |  by modify the properties (or override them in an inline style tag).
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        :root {
+          --color-primary: #{cv("primary")};
+          --color-primary-rgb: #{red(cv("primary")) + ", " + green(cv("primary")) + ", " + blue(cv("primary"))};
+          --color-secondary: #{cv("secondary")};
+          --color-secondary-rgb: #{red(cv("secondary")) + ", " + green(cv("secondary")) + ", " + blue(cv("secondary"))};
+        }
+
+  p Since this support is limited if you need an IE compatibility, using CSS variables
+    |  is restricted to specific cases.
+    br
+    | That's why it's disabled by default, but you can change it by editing with the #[code $g-enable-variables] variable.
+
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // With global settings import
+        @use "~glsass/src/settings" with ($g-enable-variables: true);
+
+        // Or from the direct file import
+        @use "~glsass/src/settings/settings.variables" with ($g-enable-variables: true);
+
+  p In next versions of Glsass, more variables will be available (with #[code @mixins]
+    |  to generate others more easily).

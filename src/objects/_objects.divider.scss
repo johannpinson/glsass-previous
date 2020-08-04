@@ -1,0 +1,41 @@
+/*==========================================================================
+  #DIVIDER
+  ========================================================================== */
+
+@use "../tools/tools.spacing" as spacing;
+@use "../tools/tools.global" as *;
+
+$o-divider-height: 1px !default;
+$o-divider-border-color: cv("gray", 300) !default;
+$o-divider-text-color: cv("gray", 500) !default;
+
+.o-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: -$o-divider-height;
+  color: $o-divider-text-color;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    flex: 1 0 auto;
+    height: $o-divider-height;
+    background-color: $o-divider-border-color;
+  }
+
+  &--content {
+    margin-top: 0;
+
+    &::before {
+      margin-right: spacing.add-space();
+    }
+
+    &::after {
+      margin-left: spacing.add-space();
+    }
+  }
+}

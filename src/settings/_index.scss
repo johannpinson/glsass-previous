@@ -1,0 +1,11 @@
+/// This index file forward the all variables to allow
+/// a simple override management from the main style file
+/// instead of a one by one file configuration
+
+$g-enable-variables: true !default;
+
+@forward "settings.core";
+@forward "settings.colors";
+@forward "settings.icons";
+@forward "settings.ui";
+@forward "settings.variables" with ($g-enable-variables: $g-enable-variables);

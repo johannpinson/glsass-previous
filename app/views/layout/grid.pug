@@ -1,0 +1,435 @@
+extends ../_layout/_docs.pug
+
+//- block variables
+//-   - slug = 'buttons'
+
+block docs
+  h1 Grid
+
+  p The grid system of Glsass is heavily by the Bootstrap one and other frameworks.
+    | The layout is a 12 columns flexbox grid.
+
+  .p-example
+    .o-row.u-mb-3
+      .o-col.u-1
+        .u-p-1.u-bg-primary
+      .o-col.u-1
+        .u-p-1.u-bg-secondary
+      .o-col.u-1
+        .u-p-1.u-bg-primary
+      .o-col.u-1
+        .u-p-1.u-bg-secondary
+      .o-col.u-1
+        .u-p-1.u-bg-primary
+      .o-col.u-1
+        .u-p-1.u-bg-secondary
+      .o-col.u-1
+        .u-p-1.u-bg-primary
+      .o-col.u-1
+        .u-p-1.u-bg-secondary
+      .o-col.u-1
+        .u-p-1.u-bg-primary
+      .o-col.u-1
+        .u-p-1.u-bg-secondary
+      .o-col.u-1
+        .u-p-1.u-bg-primary
+      .o-col.u-1
+        .u-p-1.u-bg-secondary
+
+    .o-row.u-mb-2
+      .o-col.u-12
+        .u-bg-light.u-p-1 12 columns (100%)
+    .o-row.u-mb-2
+      .o-col.u-9
+        .u-bg-light.u-p-1 9 columns (75%)
+    .o-row.u-mb-2
+      .o-col.u-6
+        .u-bg-light.u-p-1 6 columns (50%)
+    .o-row
+      .o-col.u-3
+        .u-bg-light.u-p-1 3 columns (25%)
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <!-- Grid example -->
+        <div class="o-layout">
+          <div class="o-row">
+            <div class="o-col u-6">6 column</div>
+            <div class="o-col u-3">3 column</div>
+            <div class="o-col u-2">2 column</div>
+            <div class="o-col u-1">1 column</div>
+          </div>
+        </div>
+
+  h2 Breakpoints
+
+  p The grid system work mostly with the breakpoints system for responsive design purpose.
+
+  table.o-table
+    thead
+      tr
+        th(scope="col") Breakpoint
+        th(scope="col") Suffix
+        th(scope="col") Starting at
+    tbody
+      tr
+        td Extra small
+        td #[code xs]
+        td 0
+      tr
+        td Small
+        td #[code sm]
+        td 576px
+      tr
+        td Tablet
+        td #[code tb]
+        td 768px
+      tr
+        td Medium
+        td #[code md]
+        td 992px
+      tr
+        td Medium-large
+        td #[code ml]
+        td 1200px
+      tr
+        td Large
+        td #[code lg]
+        td 1400px
+      tr
+        td Extra large
+        td #[code xl]
+        td 1920px
+
+  p All the sizes and names are configurable from the #[code $g-grid-breakpoints] variable, for example:
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @use "~glsass/src/settings" with (
+          $g-grid-breakpoints: (
+            xs: 0
+            mobile: 320px,
+            tablet: 740px,
+            desk: 980px,
+            wide: 1300px,
+          ),
+        );
+
+  .c-callout.c-callout--danger
+    p.u-mb-0
+      strong Be careful when you modify the default breakpoints!
+      br
+      | Each key from the map passed will be used together with the container
+      |  sizes in the #[code $g-grid-container-max-widths] variables.
+      br
+      | It's also used by the utilities generator, so the suffix for responsive
+      |  design will follow the key used in the map.
+
+  h2 Layout container
+
+  p The first part of the grid system, is the layout object #[code .o-layout].
+    | It works as the main container to keep the layout in a defined max width.
+
+  p Three containers models are available:
+  ul
+    li #[code .o-layout] sets a #[code max-width] at each breakpoints
+    li #[code .o-layout@{breakpoint}] is #[code width: 100%] until the specified breakpoint
+    li #[code .o-layout--fluid] is #[code width: 100%] at all breakpoints
+
+
+  table.o-table
+    thead
+      tr
+        th(scope="col")
+        th(scope="col") XS
+        th(scope="col") SM
+        th(scope="col") TB
+        th(scope="col") MD
+        th(scope="col") ML
+        th(scope="col") LG
+        th(scope="col") XL
+    tbody
+      tr
+        td .o-layout
+        td #[span.u-c-muted 100%]
+        td 540px
+        td 720px
+        td 960px
+        td 1140px
+        td 1280px
+        td 1440px
+      tr
+        td .o-layout@sm
+        td #[span.u-c-muted 100%]
+        td 540px
+        td 720px
+        td 960px
+        td 1140px
+        td 1280px
+        td 1440px
+      tr
+        td .o-layout@tb
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td 540px
+        td 960px
+        td 1140px
+        td 1280px
+        td 1440px
+      tr
+        td .o-layout@md
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td 960px
+        td 1140px
+        td 1280px
+        td 1440px
+      tr
+        td .o-layout@ml
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td 1140px
+        td 1280px
+        td 1440px
+      tr
+        td .o-layout@lg
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td 1280px
+        td 1440px
+      tr
+        td .o-layout@xl
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td 1440px
+      tr
+        td .o-layout--fluid
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+        td #[span.u-c-muted 100%]
+
+  p As described before, these settings are configurable through the #[code $g-grid-container-max-widths] variable:
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @use "~glsass/src/settings" with (
+          $g-grid-breakpoints: (
+            xs: 0
+            mobile: 320px,
+            tablet: 740px,
+            desk: 980px,
+            wide: 1300px,
+          ),
+          $g-grid-container-max-widths: (
+            // xs is not required
+            // if mobile is not set, it expects to be a 100% width container from this breakpoint
+            tablet: 720px,
+            desk: 960px,
+            wide: 1140px,
+          )
+        );
+
+        // This will generate this classes:
+        // .o-layout
+        // .o-layout@tablet
+        // .o-layout@desk
+        // .o-layout@wide
+        // .o-layout--fluid
+
+  h2 Columns
+
+  p You can used the columns system inside any block of your code, you just
+    |  need to add the #[code .o-row] as root and then add between 1 and 12 #[code .o-col] blocks.
+
+  .p-example
+    .o-row
+      .o-col
+        .u-bg-light.u-p-1 a simple col
+      .o-col
+        .u-bg-light.u-p-1 a simple col
+      .o-col
+        .u-bg-light.u-p-1 a simple col
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row">
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+        </div>
+
+  p The column size can be adjusted with an utility class #[code .u-{number}], the number must be between 1 and 12.
+    br
+    | The responsive adaptation is handled with class suffixes.
+
+  .p-example
+    .o-row
+      .o-col.u-12.u-mb-3(class="u-4@md u-mb-0@md")
+        .u-bg-light.u-p-1 Will be full size in mobile, and a third of a column on desktop
+      .o-col.u-12.u-mb-3(class="u-4@md u-mb-0@md")
+        .u-bg-light.u-p-1 Will be full size in mobile, and a third of a column on desktop
+      .o-col.u-12.u-mb-3(class="u-4@md u-mb-0@md")
+        .u-bg-light.u-p-1 Will be full size in mobile, and a third of a column on desktop
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row">
+          <div class="o-col u-12 u-4@md">
+            Will be full size in mobile, and a third of a column on desktop
+          </div>
+          <div class="o-col u-12 u-4@md">
+            Will be full size in mobile, and a third of a column on desktop
+          </div>
+          <div class="o-col u-12 u-4@md">
+            Will be full size in mobile, and a third of a column on desktop
+          </div>
+        </div>
+
+  h3 Auto width
+
+  p Others utilities class are available to manage the grid system.
+    |  The #[code .u-auto] class allow to have a column with a auto width.
+
+  .p-example
+    .o-row.u-mb-3
+      .o-col.u-auto
+        .u-bg-primary.u-p-1 o-col u-auto
+      .o-col
+        .u-bg-light.u-p-1 o-col
+    .o-row
+      .o-col.u-3
+        .u-bg-light.u-p-1 o-col u-3
+      .o-col.u-auto
+        .u-bg-primary.u-p-1 o-col u-auto
+      .o-col
+        .u-bg-light.u-p-1 o-col
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row">
+          <div class="o-col u-auto">o-col u-auto</div>
+          <div class="o-col">o-col</div>
+        </div>
+
+        <div class="o-row">
+          <div class="o-col u-3">o-col u-3</div>
+          <div class="o-col u-auto">o-col u-auto</div>
+          <div class="o-col">o-col</div>
+        </div>
+  h3 Offset
+
+  p The grid system is managed with flexbox, the margin utilities classes can be used to set offset
+
+  .p-example
+    .o-row.u-mb-3
+      .o-col.u-4.u-mx-auto
+        .u-bg-primary.u-p-1 o-col u-4 u-mx-auto
+    .o-row.u-mb-3
+      .o-col.u-4.u-ml-auto
+        .u-bg-primary.u-p-1 o-col u-4 u-ml-auto
+    .o-row.u-mb-3
+      .o-col.u-4.u-mr-auto
+        .u-bg-primary.u-p-1 o-col u-4 u-mr-auto
+
+    .o-row
+      .o-col.u-2
+      .o-col.u-4.u-mr-auto
+        .u-bg-primary.u-p-1 o-col u-4 (empty u-2 before)
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row">
+          <div class="o-col u-4 u-mx-auto">o-col u-4 u-mx-auto</div>
+        </div>
+        <div class="o-row">
+          <div class="o-col u-4 u-ml-auto">o-col u-4 u-ml-auto</div>
+        </div>
+        <div class="o-row">
+          <div class="o-col u-4 u-mr-auto">o-col u-4 u-mr-auto</div>
+        </div>
+        <div class="o-row">
+          <div class="o-col u-2"></div>
+          <div class="o-col u-4 u-mr-auto">o-col u-4 (empty u-2 before)</div>
+        </div>
+
+  h3 Alignment
+
+  p The flex utilities classes can also be usefull to align horizontally and vertically elements.
+
+  .p-example
+    .o-row.u-ai-s.u-bg-light.u-mb-3(style="min-height:10rem")
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+
+    .o-row.u-ai-c.u-bg-light.u-mb-3(style="min-height:10rem")
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+
+    .o-row.u-ai-e.u-bg-light.u-mb-3(style="min-height:10rem")
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+      .o-col
+        .u-bg-primary.u-p-1 a simple col
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row u-ai-s">
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+        </div>
+        <div class="o-row u-ai-c">
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+        </div>
+        <div class="o-row u-ai-e">
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+          <div class="o-col">a simple col</div>
+        </div>
+
+  p The alignment can also be applied to a column direclty
+
+  .p-example
+    .o-row.u-bg-light.u-mb-3(style="min-height:10rem")
+      .o-col.u-as-s
+        .u-bg-primary.u-p-1 a simple col
+      .o-col.u-as-c
+        .u-bg-primary.u-p-1 a simple col
+      .o-col.u-as-e
+        .u-bg-primary.u-p-1 a simple col
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="o-row">
+          <div class="o-col u-as-s">a simple col</div>
+          <div class="o-col u-as-c">a simple col</div>
+          <div class="o-col u-as-e">a simple col</div>
+        </div>

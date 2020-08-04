@@ -1,0 +1,52 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Debug and testing
+
+  p This file contains some classes for helping debug and check the structure.
+    br
+    | All the classes present in the file must be added to the #[code body] tag.
+
+  pre.code(data-lang='CSS')
+    code
+      :highlight(lang="css")
+        /* Display a baseline grid on the page */
+        .debug:baseline
+
+        /* Outline all Object classes */
+        .debug:o
+
+        /* Outline all Component classes */
+        .debug:o
+
+        /* Outline all Pattern classes */
+        .debug:p
+
+        /* Outline all Theme classes */
+        .debug:t
+
+        /* Outline all Utility classes */
+        .debug:u
+
+        /* Outline all Hack classes */
+        .debug:_
+
+        /* Outline all previous classes listed */
+        .debug:all
+
+        /* Outline all Responsive classes */
+        .debug:a
+
+  .c-callout.c-callout--danger
+    p.u-mb-0 To enable these classes, you must set at #[code true] the #[code $u-debug] variable
+      |  when you import the file.
+      br
+      | It's a security to avoid the adding unnecessary CSS. Also, it must be used only
+      |  on a local or development environment for testing and debuging.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @forward "~glsass/src/utilities/utilities.debug" with (
+          $u-debug: true,
+        );

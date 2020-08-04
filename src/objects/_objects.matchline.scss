@@ -1,0 +1,41 @@
+@use "../tools/tools.global" as *;
+
+// TODO rename for leader ?
+// https://getuikit.com/docs/leader
+.o-matchline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  :first-child {
+    order: 1;
+
+    @include mq-max(sm) {
+      flex: 0 0 auto;
+    }
+  }
+
+  :last-child {
+    order: 3;
+
+    @include mq-max(sm) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    flex: 1 0 auto;
+    order: 2;
+    height: 0;
+    margin: 0 0.5rem;
+    padding: 0 0.25rem;
+    border-top: 2px dashed cv("gray", 300);
+
+    @include mq(tb) {
+      margin: 0 1rem;
+      padding: 0;
+    }
+  }
+}

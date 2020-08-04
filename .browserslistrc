@@ -1,0 +1,16 @@
+[production]
+last 2 versions and > .5% in alt-EU
+last 2 edge versions
+not ie < 11
+not dead
+not and_uc > 0
+
+[development]
+# BROWSERSLIST_ENV="development" npx browserslist
+last 1 chrome version
+# last 2 versions and > 2%
+# not ie > 0
+# not dead
+# not and_uc > 0
+# not op_mini all
+# not samsung > 0

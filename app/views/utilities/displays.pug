@@ -1,0 +1,63 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Displays
+
+  p You can control easily the display value of blocks, depending of the current breakpoint or not.
+
+  .p-example
+    .u-d-i.u-p-2.u-bg-primary.u-c-white u-d-i (inline)
+    .u-d-i.u-p-2.u-bg-dark.u-c-white u-d-i (inline)
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-i">u-d-i (inline)</div>
+        <div class="u-d-i">u-d-i (inline)</div>
+
+  .p-example
+    span.u-d-b.u-p-2.u-bg-primary.u-c-white u-d-b (block)
+    span.u-d-b.u-p-2.u-bg-dark.u-c-white u-d-b (block)
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <span class="u-d-b">u-d-b (block)</span>
+        <span class="u-d-b">u-d-b (block)</span>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-displays: (
+          display: (
+            responsive: true,
+            property: display,
+            class: d,
+            values: (
+              n: none,
+              i: inline,
+              ib: inline-block,
+              b: block,
+              f: flex,
+              "if": inline-flex, // the "if" key is escaped because it's a reserved keyword
+              g: grid,
+            ),
+          ),
+        )
+
+  h2 Hide elements
+
+  p By using the #[code .u-d-n] class, you can hide an element, and use a
+    |  responsive display class to show it in another resolution
+
+  p For example, a block with #[code class="u-d-n u-d-b@md"] will be hided on mobile,
+    |  but visible on desktop.
+    br
+    | But a block with #[code class="u-d-n@tb"] is showed only on mobile
+    |  (and become hided from a tablet resolution).
+
+  .p-example
+    div(class="u-d-n@md") hide on "md" and wide screens
+    .u-d-n(class="u-d-b@md") hide on screens smaller than "md"
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-n@md">hide on "md" and wider screens</div>
+        <div class="u-d-n u-d-b@md">hide on screens smaller than "md"</div>

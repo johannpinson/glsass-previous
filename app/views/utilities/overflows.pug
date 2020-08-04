@@ -1,0 +1,34 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Overflows
+
+  .p-example
+    div(class="u-d-f@md")
+      .u-ov-auto.u-p-2.u-mb-3.u-bg-light(class="u-mb-0@md u-mr-3@md" style="width:12rem;height:6rem")
+        | This is example using the #[code .u-ov-auto] class in a block with a lot of content.
+      .u-ov-v.u-p-2.u-mb-3.u-bg-light(class="u-mb-0@md u-mr-3@md" style="width:12rem;height:6rem")
+        | This is example using the #[code .u-ov-v] class in a block with a lot of content.
+      .u-ov-h.u-p-2.u-mb-3.u-bg-light(class="u-mb-0@md u-mr-3@md" style="width:12rem;height:6rem")
+        | This is example using the #[code .u-ov-h] class in a block with a lot of content.
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-ov-auto">This is example using...</div>
+        <div class="u-ov-v">This is example using...</div>
+        <div class="u-ov-h">This is example using...</div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-overflows: (
+          overflow: (
+            responsive: true,
+            property: overflow,
+            class: ov,
+            values: (
+              auto: auto,
+              v: visible,
+              h: hidden,
+            ),
+          ),
+        )

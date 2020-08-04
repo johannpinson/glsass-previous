@@ -1,0 +1,39 @@
+extends _layout/_layout.pug
+
+block variables
+  //- - var ua = 'GTM-M99XRH5'
+  - var slug = 'index'
+
+block content
+  .o-layout.u-pt-4(class="u-pt-5@md")
+    .o-row
+      .o-col.u-12.u-ta-c
+        h1 Gl(s)ass
+        p Or more formally called Glass
+      .o-col
+        .u-mb-3.u-d-f.u-jc-c
+          a.c-button.c-button--primary.u-mr-3(href="/getting-started/installation.html") Get start!
+          a.c-button.c-button--light(href="https://github.com/johannpinson/glsass" target="_blank" rel="noopener noreferrer") Github
+
+  .u-bg-primary.u-c-white
+    .o-layout.u-py-4
+      h2.u-ta-c Introduction
+      .o-row
+        div(class="o-col u-10@md u-mx-auto@md")
+          p #[strong Glsass] is a modern Sass framework which follow some of the best standard
+            |  to allow extensible and responsive development.
+          p Proudly based on #{''}
+            a(href="https://sass-lang.com/blog/the-module-system-is-launched" target="_blank" rel="noopener noreferrer") Sass Modules
+            | , inspired by the best and offers you an up to date stack for your front-end and CSS development.
+
+          .u-ta-c
+            a.c-button.c-button--white(href="getting-started/introduction.html") Documentation
+
+  .o-layout.u-pt-4
+    .o-row
+       div(class="o-col u-10@md u-mx-auto@md")
+        p.u-c-muted
+          a(href='https://github.com/johannpinson/glsass' target="_blank" rel="noopener noreferrer") GitHub
+          |  · Developed by #{''}
+          a(href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer") Johannn Pinson
+          |  · Version 0.0.2

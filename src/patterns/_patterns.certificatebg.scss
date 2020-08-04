@@ -1,0 +1,39 @@
+@use "tools/tools.global" as *;
+
+.p-certificatebg {
+  display: none;
+
+  @include mq(tb) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    width: 312px;
+    height: 228px;
+    transform: translateX(50%);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &--footer {
+    display: block;
+
+    @include mq-max(tb) {
+      position: absolute;
+      top: 2rem;
+      right: 1rem;
+      z-index: -1;
+      display: block;
+      width: calc(312px / 2);
+      height: auto;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @include mq(tb) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

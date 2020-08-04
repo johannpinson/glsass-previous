@@ -1,0 +1,130 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Borders
+
+  h2 Border
+
+  p The two classes allow to add a default border (which follow the configuration from #[code _settings.ui.scss])
+    |  or to remove it.
+
+  .p-example
+    .o-row.u-py-1.u-ai-c
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-bd
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-bd-0
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-bd"></div>
+        <div class="u-bd-0"></div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-borders: (
+          border: (
+            property: border,
+            class: bd,
+            values: (
+              null: ui.$g-border-width solid ui.$g-border-color,
+              0: 0,
+            ),
+          ),
+        )
+
+  h2 Border-radius
+
+  .p-example
+    .o-row
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-br
+      .o-col.u-auto
+        .u-py-3.u-px-4.u-bg-light.u-br-pill
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-br-full
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-br-0
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-br"></div>
+        <div class="u-br-pill"></div>
+        <div class="u-br-full"></div>
+        <div class="u-br-0"></div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-borders: (
+          border-radius: (
+            property: border-radius,
+            class: br,
+            values: (
+              null: ui.$g-border-radius,
+              pill: 50rem,
+              full: 50%,
+              0: 0,
+            ),
+          ),
+        )
+
+  h2 Box shadow
+
+  p The #[code box-shadow] utility doesn't display a shadow like in an elevation design.
+    |  The generated class can be used to add a similar border, but without break the
+    |  vertical rhythm.
+
+  .p-example
+    .o-row
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-bs
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-bs-0
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-bs"></div>
+        <div class="u-bs-0"></div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-borders: (
+          box-shadow: (
+            property: box-shadow,
+            class: bs,
+            values: (
+              null: 0 0 0 ui.$g-border-width ui.$g-border-color,
+              0: none,
+            ),
+          ),
+        )
+
+  h2 Outline
+
+  p Similar the #[code box-shadow] tips, the #[code outline] doesn't change the size
+    | of the element. But this property doesn't follow the radius if it applied.
+
+  .p-example
+    .o-row
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-ol
+      .o-col.u-auto
+        .u-p-3.u-bg-light.u-ol-0
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-ol"></div>
+        <div class="u-ol-0"></div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-borders: (
+          outline: (
+            property: outline,
+            class: ol,
+            value: (
+              null: ui.$g-border-width solid ui.$g-border-color,
+              0: 0,
+            ),
+          ),
+        )

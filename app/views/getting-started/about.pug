@@ -1,0 +1,80 @@
+extends ../_layout/_docs.pug
+
+//- block variables
+//-   - slug = 'buttons'
+
+block docs
+  h1 About
+
+  p
+    | The actual code is inspired by multiple concepts and base on the experience of real projects.
+    br
+    | The main goal is to offer a clear naming and optimized structure convention to facilitate working in a team
+    | of several developers.
+
+  h2 BEM
+
+  p The naming convention is mainly inspired by the BEM (Block-Element-Modifier) methodologie.
+  p It uses somes generic convention like #[code __] and #[code --] separators to identify elements and moodifiers.
+
+  h2 ITCSS
+
+  p ITCSS is another convention from CSS Wizardry to help organize CSS files
+    |  and code applying a architecure that determine the specificity of each "object".
+    br
+    | The framework is actually thought with this methodology, but it also takes
+    | some liberties to optimize it and adapt it to other constraints.
+
+  p
+
+
+  h2 SEM & BIO
+
+  p CSS-Tricks is at the origin of this acronym which resume well what is used in Glsass, the&nbsp;
+    a(href="https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/" target="_blank" rel="noopener noreferrer") original article can be found here
+    | .
+
+  p This CSS strategy stands for:
+    br
+    | #[strong S]calable
+    br
+    | #[strong E]xtensible
+    br
+    | #[strong M]aintainable
+    br
+    br
+    | #[strong B]EM
+    br
+    | #[strong I]TCSS
+    br
+    | #[strong O]OCSS
+
+  h2 Harry Roberts, Chris Pearce and others
+
+  p Other concepts are applied in the framework, based on works of Harry Roberts (
+    a(href="https://csswizardry.com/" target="_blank" rel="noopener noreferrer") CSS Wizardry
+    | , ITCSS) or Chris Pearce (
+    a(href="https://github.com/chris-pearce/css-guidelines#naming-conventions" target="_blank" rel="noopener noreferrer") CSS Guidelines
+    | ).
+    br
+    | As non-exhaustive examples :
+    br
+    | - Namespace naming (class, SASS variables, etc.) #[br]
+    | - States hooks #[br]
+    | - Size factors (flush, tiny, small, medium, large, huge) #[br]
+
+  p And other concepts are inspired by famous frameworks, like
+    |
+    |
+    a(href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer") Bootstrap
+    |  (specially the utilities generator),
+    |
+    a(href="https://picturepan2.github.io/spectre/" target="_blank" rel="noopener noreferrer") Spectre.css
+    | ,
+    |
+    a(href="https://tachyons.io/" target="_blank" rel="noopener noreferrer") Tachyons
+    |  or
+    |
+    a(href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer") Tailwinds
+    | .
+

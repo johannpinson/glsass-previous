@@ -1,0 +1,51 @@
+///*========================================================================
+/// #UI
+/// ======================================================================== */
+
+/// The global settings file contains any project-wide variables; things that
+/// need to be made available to the entire codebase.
+
+@use "../tools/tools.color" as _color;
+@use "../tools/tools.global" as *;
+
+// Standardise some UI treatments.
+$g-border-width: 1px !default;
+$g-border-color: cv("gray", 300) !default;
+$g-border-radius: 0.25rem !default;
+
+$g-shadow-width: 0.25rem !default;
+
+// Form common UI rules
+$g-form-border-width: $g-border-width !default;
+$g-form-border-color: $g-border-color !default;
+$g-form-border-radius: $g-border-radius !default;
+$g-form-text-color: _color.tint(cv(text)) !default;
+$g-form-placeholder-color: _color.tint(cv(text), 4) !default;
+
+$g-form-main-color: cv(primary) !default;
+
+$g-form-focus-border-color: cv(primary, 300) !default;
+$g-form-focus-shadow-width: $g-shadow-width !default;
+$g-form-focus-shadow-color: rgba(cv(primary), 0.25) !default;
+
+$g-form-background-color: cv(white) !default;
+$g-form-background-disabled: cv(light) !default;
+
+// Form states management
+$g-form-states: (
+  "valid": (
+    "color": cv(success),
+  ),
+  "invalid": (
+    "color": cv(danger),
+  ),
+) !default;
+
+/// Animation
+$g-transition-timing-function-cubic: cubic-bezier(
+  0.62,
+  0.28,
+  0.23,
+  0.99
+) !default;
+$g-transition-timing-function: $g-transition-timing-function-cubic !default;

@@ -1,0 +1,97 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Spacings
+
+  p Spacing utilities is a big piece of the generated classes because there is
+    |  a lot of combination to allow you to manage #[code margin] and #[code padding]
+    |  accoss you HTML.
+    br
+    | The majority of sizes of spacing comes from the #[code $g-spacers] variable
+    |  (which is configurable).
+
+  p The construction of class names follow this scheme: #[code .u-{prop}-{side}-{size}].
+
+  p.u-mb-2 The #[b property] can be:
+
+  ul
+    li #[code m] to set #[code margin]
+    li #[code p] to set #[code padding]
+
+  p.u-mb-2 The #[b side] can be:
+
+  ul
+    li "nothing" to set it on the four sides of an element
+    li #[code t] to set #[code {prop}-top]
+    li #[code r] to set #[code {prop}-right]
+    li #[code b] to set #[code {prop}-bottom]
+    li #[code l] to set #[code {prop}-left]
+    li #[code x] to set #[code {prop}-right] and #[code {prop}-left]
+    li #[code y] to set #[code {prop}-top] and #[code {prop}-bottom]
+
+  p.u-mb-2 the #[b size] can be:
+
+  ul
+    li #[code 0] to eleminate spacing on the prop
+    li #[code 1] corresponding to #[code $g-spacer * 0.25]
+    li #[code 2] corresponding to #[code $g-spacer * 0.5]
+    li #[code 3] corresponding to #[code $g-spacer] (also called #[code 1vr])
+    li #[code 4] corresponding to #[code $g-spacer * 2]
+    li #[code 5] corresponding to #[code $g-spacer * 3]
+    li #[code auto] to set (only) margins at #[code auto]
+
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-mb-3">margin-bottom: 1vr</div>
+
+        <div class="u-px-2">padding-left & padding-right: 0.5vr</div>
+
+        <div class="u-my-0">margin-top & margin-bottom: 0</div>
+
+        <div class="u-p-5">padding: 3vr</div>
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-spacings: (
+          margin: (
+            responsive: true,
+            property: margin,
+            class: m,
+            values:
+              map.merge(
+                core.$g-spacers,
+                (
+                  auto: auto,
+                )
+              ),
+          ),
+          // and anothers config for mx, my, mt
+
+          padding: (
+            responsive: true,
+            property: padding,
+            class: p,
+            values: core.$g-spacers,
+          ),
+          // and anothers config for px, py, pt...
+        )
+
+  h2 Negative margins
+
+  p The CSS property #[code margin] can use a negative values (#[code paddinng] don't).
+    br
+    | To use it, you need to enable the setting by passing the variable
+    |  #[code $u-spacings-negative-margins] at #[code true].
+    br
+    | Then, you just need to add a #[code n] before the size (between #[code 1] and #[code 5]).
+
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-mb-n3">margin-bottom: -1vr</div>
+
+        <div class="u-ml-n2">margin-left: -0.5vr</div>
+
+        <div class="u-my-1">margin-bottom: -0.25vr</div>

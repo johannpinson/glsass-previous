@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+// SETTINGS - override only what is needed
+@use "../../src/settings" with (
+  $g-fonts-google: "Raleway:300,400,400i,700",
+  $g-font-family-map: "Raleway",
+  $g-color-primary: #02aab0, // #ffb932
+  $g-color-secondary: #805ad5, // #243649, // #02aab0,
+);
+
+// TOOLS - no need to import
+// @use "tools/tools.global" as *;
+
+// GENERIC - Don't change the order for generic modules
+@forward "../../src/generic/generic.box-sizing";
+@forward "../../src/generic/generic.normalize";
+@forward "../../src/generic/generic.reset";
+@forward "../../src/generic/generic.fonts";
+@forward "../../src/generic/generic.shared";
+
+// VENDORS
+// @forward "vendors";
+
+// ELEMENTS
+@forward "../../src/elements/elements.headings";
+@forward "../../src/elements/elements.images";
+@forward "../../src/elements/elements.lists";
+@forward "../../src/elements/elements.links";
+@forward "../../src/elements/elements.page";
+@forward "../../src/elements/elements.tables";
+
+// OBJECTS
+@forward "../../src/objects/objects.divider";
+@forward "../../src/objects/objects.layout";
+@forward "../../src/objects/objects.link";
+@forward "../../src/objects/objects.list-bare";
+@forward "../../src/objects/objects.list-inline";
+@forward "../../src/objects/objects.media";
+@forward "../../src/objects/objects.overlay";
+@forward "../../src/objects/objects.table";
+
+// COMPONENTS
+// @forward "../../src/components/components.accordion";
+@forward "../../src/components/components.alert";
+@forward "../../src/components/components.badge";
+@forward "../../src/components/components.button";
+@forward "../../src/components/components.callout";
+@forward "../../src/components/components.card";
+@forward "../../src/components/components.form";
+@forward "../../src/components/components.helper";
+
+// PATTERNS
+@forward "patterns/patterns.docs";
+@forward "patterns/patterns.debug";
+
+// SCOPE
+
+// THEMES
+
+// UTILITIES
+@forward "../../src/utilities/utilities.borders";
+@forward "../../src/utilities/utilities.colors";
+@forward "../../src/utilities/utilities.columns";
+@forward "../../src/utilities/utilities.displays";
+@forward "../../src/utilities/utilities.flex";
+@forward "../../src/utilities/utilities.headings";
+@forward "../../src/utilities/utilities.overflow";
+@forward "../../src/utilities/utilities.sizings";
+@forward "../../src/utilities/utilities.spacings";
+@forward "../../src/utilities/utilities.texts";
+@forward "../../src/utilities/utilities.print"; // Keep it as last
+@forward "../../src//utilities//utilities.debug" with ( // Must be removed in a real production build
+  $u-debug: true,
+);
+
+// Custom overrides
+.c-card__img img {
+  width: 100%;
+  height: calc(1.5rem * 8);
+  object-fit: cover;
+}

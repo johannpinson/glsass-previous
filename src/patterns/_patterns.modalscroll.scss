@@ -1,0 +1,79 @@
+@use "settings/settings.ui" as ui;
+
+@use "tools/tools.global" as *;
+
+.p-modalscroll {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  margin: 0;
+  box-shadow: 0 0 1rem rgba(cv("black"), .15);
+  opacity: 0;
+  transform: translate3d(0, calc(100% + 2rem), 0);
+  transition: transform .7s ui.$g-transition-timing-function,
+    opacity .1s linear .7s;
+  pointer-events: none;
+
+  @include mq-max(tb) {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @include mq(tb) {
+    right: 1rem;
+    bottom: 1rem;
+    page-break-after: auto;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: transform .7s ui.$g-transition-timing-function .1s,
+      opacity .1s linear .0s;
+    pointer-events: auto;
+  }
+
+  &__inner {
+    padding: 1rem;
+
+    @include mq(tb) {
+      padding: 2rem 2.5rem 2.5rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq(tb) {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    margin-top: 1rem;
+    border-radius: .75rem;
+
+    @include mq-max(tb) {
+      display: block;
+      width: 100%;
+    }
+
+    @include mq(tb) {
+      margin-top: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+.p-modalleave {
+  &__inner {
+    padding: 1rem;
+
+    @include mq(tb) {
+      padding: 2rem 2.5rem 2.5rem;
+    }
+  }
+}

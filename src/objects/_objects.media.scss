@@ -1,0 +1,80 @@
+/* ==========================================================================
+   #MEDIA
+   ========================================================================== */
+
+@use "../tools/tools.global" as *;
+
+$o-media-content-gap: vr() !default;
+
+// Media object with new modern layout
+// https://philipwalton.github.io/solved-by-flexbox/demos/media-object/
+.o-media {
+  $root: &;
+
+  display: flex;
+  align-items: flex-start;
+
+  &--center {
+    align-items: center;
+  }
+
+  &--reverse {
+    > #{$root}__image {
+      order: 1;
+      margin: 0 0 0 $o-media-content-gap;
+    }
+  }
+
+  &__image {
+    margin-right: $o-media-content-gap;
+
+    > img,
+    > svg {
+      display: block;
+    }
+  }
+
+  &__body {
+    flex: 1;
+
+    &,
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ! Old syntax form the OOCSS logic
+// .o-media {
+//   display: block;
+//   padding: spacing.add-space();
+
+//   &::after {
+//     content: "" !important;
+//     display: block !important;
+//     clear: both !important;
+//   }
+
+//   &__img {
+//     float: left;
+//     margin-right: $o-media-content-gap;
+
+//     @include mq(tb) {
+//       margin-right: spacing.add-space(4);
+//     }
+
+//     > img {
+//       display: block;
+//     }
+//   }
+
+//   &__body {
+//     display: block;
+//     overflow: hidden;
+
+//     &,
+//     > :last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+// }

@@ -1,0 +1,24 @@
+@use "../settings/settings.core" as core;
+
+// Media queries
+@mixin mq($size: md, $max: false) {
+  @each $breakpoint, $breakpoint-size in core.$g-grid-breakpoints {
+    @if ($size == $breakpoint) {
+      @if $max {
+        @media (max-width: ($breakpoint-size - 1)) {
+          @content;
+        }
+      } @else {
+        @media (min-width: $breakpoint-size) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin mq-max($size: md) {
+  @include mq($size, true) {
+    @content;
+  }
+}

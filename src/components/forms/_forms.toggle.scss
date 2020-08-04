@@ -1,0 +1,79 @@
+@use "../../settings/settings.ui" as ui;
+
+@use "../../tools/tools.color" as _color;
+@use "../../tools/tools.spacing" as spacing;
+@use "../../tools/tools.global" as *;
+
+$c-toggle-border-radius: ui.$g-form-border-radius !default;
+
+$c-toggle-text-color: ui.$g-form-text-color !default;
+
+$c-toggle-bg: ui.$g-form-background-disabled;
+$c-toggle-bg-active: ui.$g-form-main-color !default;
+
+$c-toggle-focus-shadow-width: ui.$g-form-focus-shadow-width !default;
+$c-toggle-focus-shadow-color: ui.$g-form-focus-shadow-color !default;
+
+.c-form {
+  $root-toggle: &;
+
+  &__toggle {
+    $root-toggle: &;
+
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  &__toggle-input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+
+    &:focus {
+      + #{$root-toggle}-label {
+        z-index: 1;
+        outline: 0;
+        box-shadow: 0 0 0 $c-toggle-focus-shadow-width
+          $c-toggle-focus-shadow-color;
+      }
+    }
+
+    &:active:not(:disabled):not(.disabled) {
+      + #{$root-toggle}-label {
+        filter: brightness(90%);
+      }
+    }
+
+    &:checked {
+      + #{$root-toggle}-label {
+        color: _color.yiq-contrast($c-toggle-bg-active);
+        background-color: $c-toggle-bg-active;
+      }
+    }
+  }
+
+  &__toggle-label {
+    display: inline-block;
+    padding: vr(0.5) spacing.add-space();
+    color: $c-toggle-text-color;
+    font-weight: 700;
+    background-color: $c-toggle-bg;
+    user-select: none;
+
+    &:first-of-type {
+      border-top-left-radius: $c-toggle-border-radius;
+      border-bottom-left-radius: $c-toggle-border-radius;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: $c-toggle-border-radius;
+      border-bottom-right-radius: $c-toggle-border-radius;
+    }
+
+    &:hover {
+      color: _color.yiq-contrast($c-toggle-bg);
+      background-color: _color.shade($c-toggle-bg);
+    }
+  }
+}

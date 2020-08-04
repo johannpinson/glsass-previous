@@ -1,0 +1,70 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Generic
+
+  p The #[code generic] folder has the first "real" code, because the previous layers don't ouput any CSS.
+    | It comes with similar concept from reset, normalize and reboot.
+
+  h2 CSS resets
+
+  p The goal is not to tell the history about CSS resets, but Glsass is inspires by three methods:
+
+  ul
+    li
+      a(href="https://necolas.github.io/normalize.css/" target="_blank" rel="noopener noreferrer") Normalize.css
+    li
+      a(href="https://meyerweb.com/eric/tools/css/reset/reset.css" target="_blank" rel="noopener noreferrer") Meyer reset
+    li
+      a(href="https://github.com/twbs/bootstrap/blob/main/scss/_reboot.scss" target="_blank" rel="noopener noreferrer") Bootstrap Reboot
+
+  p
+    |  One of the first tools is  #[code Normalize.css] to homogenize some behaviors.
+    |  Then, with the Meyer reset, we remove default styling from browser (or Normalize).
+    |  Next, like the Reboot from Bootstrap, we had some opinionated rules
+    |  to prepare some elements to work with the rest of the framework.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // GENERIC - Don't change the order for generic modules
+        @forward "~glsass/src/generic/generic.box-sizing";
+        @forward "~glsass/src/generic/generic.normalize";
+        @forward "~glsass/src/generic/generic.reset";
+        @forward "~glsass/src/generic/generic.fonts";
+        @forward "~glsass/src/generic/generic.shared";
+
+        /* Or import all of generics files */
+
+        // GENERIC
+        @forward "~glsass/src/generic";
+
+  h3 Box-sizing
+
+  p This litlle file ensire the default #[code box-sizing] property for all elements.
+
+  h3 Normalize
+
+  p Glsass includes direclty the last version of #[code Normalize.css].
+
+  h3 Reset
+
+  p Similar to the Mayer Reset, it resets some properties on top of #[code Normalize.css].
+    br
+    | For example, it removes extra margin and padding on some elements or nested lists.
+
+  h3 Fonts
+
+  p If you want to use a Google Font, it will import necessary styles before to use it in next layer
+    | (especially in #[em Elements] to set the default font of the stylesheet).
+
+  h4 Shared
+
+  p There are the first opinionated rules to standardize some elements behavior. It's used in particular
+    |  to declare margins in the same direction. It's more similar to Reboot.css from Bootstrap,
+    |  which "
+    em correct inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.
+    | ".
+
+  p Some rules available here can be contradictory with those present in the #[code elements] folder, but it's "normal".
+    | In the next layer, you will find styles for HTML tags #[em one by one], so it's avoid to create one file by element category.

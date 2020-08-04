@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "sass:math";
+
+@use "../settings/settings.core" as core;
+
+@use "./tools.unit" as unit;
+
+@function add-space($unit-factor: 3) {
+  $result: core.$g-spacer;
+
+  @each $index in map.keys(core.$g-spacers) {
+    @if ($index == $unit-factor) {
+      $result: map.get(core.$g-spacers, $index);
+    }
+  }
+
+  @return $result;
+}
+
+// Return a vertical rythm value with a 0.5 precision
+@function vr($unit-factor: 1) {
+  @if ($unit-factor * 2 == math.ceil($unit-factor * 2)) {
+    @return core.$g-spacer * $unit-factor;
+  }
+
+  @return core.$g-spacer;
+}
+
+@function adjust-vr($vertical-rhythm: 1, $font-size, $spacings) {
+  $vertical-size: core.$g-spacer;
+
+  @if ($vertical-rhythm * 2 == math.ceil($vertical-rhythm * 2)) {
+    $vertical-size: core.$g-spacer * $vertical-rhythm;
+  }
+
+  @return ($vertical-size - unit.convert-rem($spacings)) /
+    unit.convert-rem($font-size);
+}

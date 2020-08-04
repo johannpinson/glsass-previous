@@ -1,0 +1,18 @@
+@use "../settings/settings.ui" as ui;
+
+@use "../tools/tools.color" as _color;
+@use "../tools/tools.global" as *;
+
+$c-badge-border-radius: ui.$g-border-radius !default;
+
+$c-badge-background-color: cv(light) !default;
+$c-badge-text-color: _color.yiq-contrast($c-badge-background-color) !default;
+
+.c-badge {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  color: $c-badge-text-color;
+  font-size: 0.75em;
+  background-color: $c-badge-background-color;
+  border-radius: $c-badge-border-radius;
+}

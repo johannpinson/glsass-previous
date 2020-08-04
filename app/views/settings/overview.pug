@@ -1,0 +1,52 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Settings
+
+  p The settings are the "core" of the framework, because changing one unique variable
+    |  can affect a lot of classes and rules.
+    br
+    | The variables are separated in several files to organize by "categories". When
+    |  you import it, there is the files in the folder:
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // ~glsass/src/settings/_index.scss
+        @forward "settings.core";
+        @forward "settings.colors";
+        @forward "settings.icons";
+        @forward "settings.ui";
+        @forward "settings.variables";
+
+  .o-row
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 Core
+        .c-card__footer
+          a.c-button.c-button--primary(href="/settings/core.html") View
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 Colors
+        .c-card__footer
+          a.c-button.c-button--primary(href="/settings/colors.html") View
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 Icons
+        .c-card__footer
+          a.c-button.c-button--primary(href="/settings/icons.html") View
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 UI
+        .c-card__footer
+          a.c-button.c-button--primary(href="/settings/ui.html") View
+    .o-col.u-12(class="u-4@md").u-mb-3
+      .c-card
+        .c-card__header
+          .c-card__title.u-h5.u-mb-0 Variables
+        .c-card__footer
+          a.c-button.c-button--primary(href="/settings/variables.html") View

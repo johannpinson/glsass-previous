@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "sass:meta";
+
+@use "../settings/settings.colors";
+
+@use "../tools/tools.map" as _map;
+
+@function cv($color, $variation: "base", $strict: true, $debug: false) {
+  @if ($debug) {
+    @debug meta.type-of($color);
+    @debug meta.type-of($variation);
+  }
+
+  @if (meta.type-of($color) == "color") {
+    $color: meta.inspect($color);
+  }
+
+  @if (meta.type-of($variation) == "number") {
+    $variation: meta.inspect($variation);
+  }
+
+  @if not map.has-key(settings.$g-colors-database, $color) {
+    @if ($strict) {
+      @error "Invalid color name: `#{$color}`.";
+    }
+  }
+
+  // @debug settings.$g-colors-database;
+
+  $variant: _map.deep-get(settings.$g-colors-database, $color, $variation);
+
+  @if not $variant {
+    @if ($strict) {
+      @error "Invalid variation: `#{$variation}` for `#{$color}` color.";
+    }
+
+    @return null;
+  }
+
+  @return $variant;
+}

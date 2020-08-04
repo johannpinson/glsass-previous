@@ -1,0 +1,609 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Flex
+
+  p With the grid system based on flex, and the possibility to use the utility
+    | class #[code .u-d-f], you are able to manage the layout simply.
+
+  h2 Fill and grow
+
+  p The #[fill] option will try to allocate the maximum width available between blocks.
+    | For the #[grow] class, it make the element as wide as possible.
+
+  .p-example
+    .u-d-f
+      .u-bg-light.u-p-1.u-bs a flex item
+      .u-bg-light.u-p-1.u-bs a flex item
+      .u-bg-light.u-p-1.u-bs a flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          <div>a flex item</div>
+        </div>
+
+  .p-example
+    .u-d-f
+      .u-fx-fill.u-bg-light.u-p-1.u-bs a flex item with more content
+      .u-fx-fill.u-bg-light.u-p-1.u-bs a flex item
+      .u-fx-fill.u-bg-light.u-p-1.u-bs a flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f">
+          <div class="u-fx-fill">a flex item</div>
+          <div class="u-fx-fill">a flex item</div>
+          <div class="u-fx-fill">a flex item</div>
+        </div>
+
+  .p-example
+    .u-d-f
+      .u-fx-grow.u-bg-light.u-p-1.u-bs a flex item
+      .u-bg-light.u-p-1.u-bs a flex item
+      .u-bg-light.u-p-1.u-bs a flex item
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="u-d-f">
+          <div class="u-fx-grow">a flex item</div>
+          <div>a flex item</div>
+          <div>a flex item</div>
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          flex: (
+            responsive: true,
+            property: flex,
+            class: fx,
+            values: (
+              fill: 1 1 auto,
+              grow: 1 0 auto,
+            ),
+          ),
+        );
+
+  h2 Directions
+
+  .p-example
+    .u-d-f.u-fd-r.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-fd-rr.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-fd-c.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-fd-cr
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f u-fd-r">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-fd-rr">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-fd-c">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-fd-cr">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          flex-direction: (
+            responsive: true,
+            property: flex-direction,
+            class: fd,
+            values: (
+              r: row,
+              rr: row-reverse,
+              c: column,
+              cr: column-reverse,
+            ),
+          ),
+        );
+
+  h2 Wrap
+
+  .p-example
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-4@md")
+        .u-d-f.u-fw-n.u-bg-light(style="width:10rem")
+          .u-m-1.u-p-1.u-bs 1st flex item
+          .u-m-1.u-p-1.u-bs 2nd flex item
+          .u-m-1.u-p-1.u-bs 3rd flex item
+          .u-m-1.u-p-1.u-bs 4th flex item
+          .u-m-1.u-p-1.u-bs 5th flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-bg-light
+          .u-m-1.u-p-1.u-bs 1st flex item
+          .u-m-1.u-p-1.u-bs 2nd flex item
+          .u-m-1.u-p-1.u-bs 3rd flex item
+          .u-m-1.u-p-1.u-bs 4th flex item
+          .u-m-1.u-p-1.u-bs 5th flex item
+          .u-m-1.u-p-1.u-bs 6th flex item
+          .u-m-1.u-p-1.u-bs 7th flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-wr.u-bg-light
+          .u-m-1.u-p-1.u-bs 1st flex item
+          .u-m-1.u-p-1.u-bs 2nd flex item
+          .u-m-1.u-p-1.u-bs 3rd flex item
+          .u-m-1.u-p-1.u-bs 4th flex item
+          .u-m-1.u-p-1.u-bs 5th flex item
+          .u-m-1.u-p-1.u-bs 6th flex item
+          .u-m-1.u-p-1.u-bs 7th flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f u-fw-n">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-w u-bg-light">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-wr u-bg-light">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+          ...
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          flex-wrap: (
+            responsive: true,
+            property: flex-wrap,
+            class: fw,
+            values: (
+              n: nowrap,
+              w: wrap,
+              wr: wrap-reverse,
+            ),
+          ),
+        );
+
+  h2 Aligments
+
+  p For aligning items in a flex container, the utilities classes take the same logic
+    | like #[code justify-content] or #[code align-items] property.
+
+  h3 Justify content
+
+  .p-example
+    .u-d-f.u-jc-c.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-jc-fs.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-jc-fe.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-jc-sb.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-jc-sa.u-mb-3
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-jc-se
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f u-jc-c">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-jc-fs">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-jc-fe">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-jc-sb">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-jc-sa">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+         <div class="u-d-f u-jc-se">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          justify-content: (
+            responsive: true,
+            property: justify-content,
+            class: jc,
+            values: (
+              c: center,
+              fs: flex-start,
+              fe: flex-end,
+              sb: space-between,
+              sa: space-around,
+              se: space-evenly,
+            ),
+          ),
+        );
+
+  h3 Align items
+
+  .p-example
+    .u-d-f.u-ai-fs.u-bg-light.u-mb-3(style="min-height: 6rem")
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-ai-fe.u-bg-light.u-mb-3(style="min-height: 6rem")
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-ai-c.u-bg-light.u-mb-3(style="min-height: 6rem")
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-ai-b.u-bg-light.u-mb-3(style="min-height: 6rem")
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+
+    .u-d-f.u-ai-s.u-bg-light(style="min-height: 6rem")
+      .u-bg-light.u-p-1.u-bs 1st flex item
+      .u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-bg-light.u-p-1.u-bs 3rd flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f u-ai-fs">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-ai-fe">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-ai-c">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-ai-b">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+
+        <div class="u-d-f u-ai-s">
+          <div>1st flex item</div>
+          <div>2nd flex item</div>
+          <div>3rd flex item</div>
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          align-items: (
+            responsive: true,
+            property: align-items,
+            class: ai,
+            values: (
+              fs: flex-start,
+              fe: flex-end,
+              c: center,
+              b: baseline,
+              s: stretch,
+            ),
+          ),
+        );
+
+  h3 Align content
+
+  p Remember, this property has no effect on single line flex containers
+    |  (i.e. ones with #[code flex-wrap: nowrap]).
+
+  .p-example
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-ac-fs.u-bg-light(style="height: 9rem")
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-ac-fe.u-bg-light(style="height: 9rem")
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-ac-c.u-bg-light(style="height: 9rem")
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-ac-sb.u-bg-light(style="height: 9rem")
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-ac-sa.u-bg-light(style="height: 9rem")
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-ac-se.u-bg-light(style="height: 9rem")
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+    .o-row.u-mb-2
+      .o-col.u-12(class="u-6@md")
+        .u-d-f.u-fw-w.u-ac-s.u-bg-light(style="height: 9rem")
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+          .u-bg-light.u-p-1.u-bs a flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f u-fw-w u-ac-fs">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-w u-ac-fe">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-w u-ac-c">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-w u-ac-sb">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-w u-ac-sa">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-w u-ac-se">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          ...
+        </div>
+
+        <div class="u-d-f u-fw-w u-ac-s">
+          <div>a flex item</div>
+          <div>a flex item</div>
+          ...
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          align-content: (
+            responsive: true,
+            property: align-content,
+            class: ac,
+            values: (
+              fs: flex-start,
+              fe: flex-end,
+              c: center,
+              sb: space-between,
+              sa: space-around,
+              se: space-evenly,
+              s: stretch,
+            ),
+          ),
+        );
+
+  h3 Align self
+
+  p The #[code auto] option can be usefull if you want to reset the #[code align-self]
+    |  property and follow the parent setting. Because if you use the #[code normal] value,
+    |  it's will override the inherit value.
+
+  .p-example
+    .u-d-f.u-ai-c.u-bg-light.u-mb-3(style="min-height: 6rem")
+      .u-as-fs.u-bg-light.u-p-1.u-mx-2.u-bs a flex item
+      .u-as-c.u-bg-light.u-p-1.u-mx-2.u-bs a flex item
+      .u-as-fe.u-bg-light.u-p-1.u-mx-2.u-bs a flex item
+      .u-as-b.u-bg-light.u-p-1.u-mx-2.u-bs a flex item
+      .u-as-s.u-bg-light.u-p-1.u-mx-2.u-bs a flex item
+      .u-as-fs.u-bg-light.u-p-1.u-mx-2.u-bs(class="u-as-auto@sm") a flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f u-ai-c">
+          <div class="u-as-fs">a flex item</div>
+          <div class="u-as-c">a flex item</div>
+          <div class="u-as-fe">a flex item</div>
+          <div class="u-as-b">a flex item</div>
+          <div class="u-as-s">a flex item</div>
+          <div class="u-as-fs u-as-auto@sm">a flex item</div>
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          align-self: (
+            responsive: true,
+            property: align-self,
+            class: as,
+            values: (
+              auto: auto,
+              fs: flex-start,
+              fe: flex-end,
+              c: center,
+              b: baseline,
+              s: stretch,
+            ),
+          ),
+        );
+
+  h2 Order
+
+  p The order of items can be set between #[code 0] and #[code 5].
+    br
+    | There is special classes #[code .u-o-first] (to set it #[code -1])
+    |  and #[code .u-o-last] (for the #[code 6]).
+    br
+    | The #[code initial] option can reset the default order for an element.
+
+  .p-example
+    .u-d-f.u-mb-3
+      .u-o-3.u-bg-light.u-p-1.u-bs 1st flex item
+      .u-o-2.u-bg-light.u-p-1.u-bs 2nd flex item
+      .u-o-1.u-bg-light.u-p-1.u-bs 3rd flex item
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-d-f ">
+          <div class="u-o-3">1st flex item</div>
+          <div class="u-o-2">2nd flex item</div>
+          <div class="u-o-1">3rd flex item</div>
+        </div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-flex: (
+          order: (
+            responsive: true,
+            property: order,
+            class: o,
+            values: (
+              i: initial,
+              first: -1,
+              0: 0,
+              1: 1,
+              2: 2,
+              3: 3,
+              4: 4,
+              5: 5,
+              last: 6,
+            ),
+          ),
+        );

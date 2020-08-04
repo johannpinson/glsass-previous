@@ -1,0 +1,9 @@
+/// This index file forward the all files
+/// It also allows a simple override management from the main style file
+/// instead of a one by one file configuration
+
+@forward "../../src/generic/generic.box-sizing";
+@forward "../../src/generic/generic.normalize";
+@forward "../../src/generic/generic.reset";
+@forward "../../src/generic/generic.fonts";
+@forward "../../src/generic/generic.shared";

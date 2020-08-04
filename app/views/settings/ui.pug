@@ -1,0 +1,128 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 UI
+
+  p The #[code ui] file is similar to the #[core], but it's only
+    |  about aesthetics settings.
+
+  h2 Sass references
+  h3 Variables - General
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $g-border-width]
+        td Number unit
+        td #[code 1px]
+        td The default thickness of borders
+      tr
+        td #[code $g-border-color]
+        td Color
+        td #[code cv("gray", 300)]
+        td The default color of borders
+      tr
+        td #[code $g-border-radius]
+        td Number unit
+        td #[code 0.25rem]
+        td The default border-radius
+      tr
+        td #[code $g-shadow-width]
+        td Number unit
+        td #[code 1px]
+        td The default size of the shadow box
+
+  h3 Variables - Form
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $g-form-border-width]
+        td Number unit
+        td #[code $g-border-width]
+        td Thickness of the border
+      tr
+        td #[code $g-form-border-color]
+        td Color
+        td #[code $g-border-color]
+        td Border color of element
+      tr
+        td #[code $g-form-border-radius]
+        td Number unit
+        td #[code $g-border-radius]
+        td Border-radius of element
+      tr
+        td #[code $g-form-text-color]
+        td Color
+        td #[code _color.tint(cv(text)) - #333]
+        td Color of text
+      tr
+        td #[code $g-form-placeholder-color]
+        td Color
+        td #[code _color.tint(cv(text), 4) - #686868]
+        td Color of text for placeholder
+      tr
+        td #[code $g-form-main-color]
+        td Color
+        td #[code cv(primary)]
+        td Main color for focus/active states
+      tr
+        td #[code $g-form-focus-border-color]
+        td Color
+        td #[code cv(primary, 300)]
+        td Color of border when the field is focused
+      tr
+        td #[code $g-form-focus-shadow-width]
+        td Number unit
+        td #[code $g-shadow-width]
+        td Size of the shadow box
+      tr
+        td #[code $g-form-focus-shadow-color]
+        td Color
+        td #[code rgba(cv(primary), 0.25)]
+        td Color of the shadow box
+      tr
+        td #[code $g-form-background-color]
+        td Color
+        td #[code cv(white)]
+        td Background color for fields
+      tr
+        td #[code $g-form-background-disabled]
+        td Color
+        td #[code cv(light)]
+        td Background color for disabled state
+      tr
+        td #[code $g-form-states]
+        td Map
+        td A color for "valid" and "invalid" states
+        td Default color for managed states
+
+  h3 Variables - Animation
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $g-transition-timing-function-cubic]
+        td String
+        td #[code cubic-bezier(0.62, 0.28, 0.23, 0.99)]
+        td The default #[cubic-bezier] timing function
+      tr
+        td #[code $g-transition-timing-function]
+        td String
+        td #[code $g-transition-timing-function-cubic]
+        td The default timing function for transitions

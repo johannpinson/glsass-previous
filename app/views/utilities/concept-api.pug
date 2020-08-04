@@ -1,0 +1,200 @@
+extends ../_layout/_docs.pug
+
+//- block variables
+//-   - slug = 'buttons'
+
+block docs
+  h1 Concept & API
+
+  p This layer contains the parameters use by the API (mixins) to generate the utilities classes.
+    br
+    | All classes are built with the #[code utitilities] mixin from the #[code generators] tools.
+
+  p By convention, all utilities classes start with the #[code .u-*] prefix.
+    br
+    | Moreover, to minimize and simplify the naming, most classes follow a logic similar from the #{''}
+    a(href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener noreferrer") Emmet abbreviations shortcuts
+    | .
+
+  pre.code(data-lang='SCSS').u-mb-0
+    code
+      :highlight(lang="scss")
+        $utilities: (
+          display: (
+            property: display,
+            class: d,
+            values: (
+              n: none,
+              i: inline,
+              ib: inline-block,
+              b: block,
+              f: flex,
+              "if": inline-flex, // the "if" key is escaped because it's a reserved keyword
+              g: grid,
+            ),
+          ),
+        );
+
+        @include generators.utilities($utilities);
+  pre.code(data-lang='CSS')
+    code
+      :highlight(lang="css")
+        /* Output */
+        .u-d-n {
+          display: none;
+        }
+        .u-d-i {
+          display: inline;
+        }
+        .u-d-ib {
+          display: inline-block;
+        }
+        .u-d-b {
+          display: block;
+        }
+        .u-d-f {
+          display: flex;
+        }
+        .u-d-if {
+          display: inline-flex;
+        }
+        .u-d-g {
+          display: grid;
+        }
+
+  p.u-mb-2 The map passed as argument allows several options to generate the most appropriate CSS rules.
+
+  ul
+    li.u-mb-2 #[code name]: this is the key for the group of utilities classes which will be created.
+      |  This reference can be used to modify the parameters when you import the file.
+    li.u-mb-2 #[code property]: must be a name (string) of a real CSS property.
+      |  It can be a list to generate multiple rules for one class (example for margins/paddings).
+    li.u-mb-2 #[code class] (optional): works as an alias to change the futur class name if you don't want
+      |  to use the same as the property.
+    li.u-mb-2 #[code responsive] (optional): boolean indicating if classes with the responsive suffix will be generated.
+      |  The parameters is set to #[code false] by default.
+    li.u-mb-2 #[code values]: it can be a list or map. If a list is provided, each entry will be the
+      |  the class name and the value. If it's a map, the key will be used as name.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $utilities: (
+          "name": (
+            property: string or list,
+            class: string,
+            responsive: boolean,
+            values: list or map,
+          )
+        )
+
+  h2 Custom configurations
+
+  p When you import a utility file, you can pass your own configuration to modify the classes generated.
+
+  h3 Add utilities
+
+  p You can easily add and generate your own utilities classes by using the generator.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @use "~glsass/src/tools/tools.generators" as generators;
+
+        $custom-utilities: (
+          // add your code here
+        );
+
+        @include generators.utilities($custom-utilities);
+
+  h3 Override existing utilities.
+
+  p It's possible to modify an existing utility by passing a map with the same
+    |  key when you import the file corresponding.
+    br
+    |
+    strong Be careful when you pass the values,
+    |  because it will replace the existing. If you want to keep some of them,
+    |  you must add it to the new values list/map.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @use "~glsass/src/utilities/utilities.displays" with (
+          $u-displays: (
+            display: (
+              property: display,
+              responsive: false,
+              class: d,
+              values: (
+                g: grid,
+                t: table,
+              ),
+            )
+          ),
+        );
+
+        // Output only the values passed, not the existing
+        .u-d-g {
+          display: grid;
+        }
+
+        .u-d-t {
+          display: table;
+        }
+
+  h3 Remove utilities
+
+  p When you import an utility file, but you don't need all of them, you can remove the ones aren't useful to you.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        @use "~glsass/src/utilities/utilities.borders" with (
+          $u-borders: (
+            border-radius: null,
+          ),
+        );
+
+  h2 Create a card with utilities
+
+  p This is an example about how to create a card "component" with only utilities classes.
+
+  .p-example
+    .o-row
+      .o-col.u-12(class="u-3@md")
+        .u-bs.u-br.u-ov-h
+          img.u-d-b.u-w-100(src="/assets/data/lake-1.jpg", alt="Photo by Adam Vradenburg on Unsplash" style="height:12rem")
+          .u-p-3.u-h5 Card title
+          .u-px-3
+            p.u-mb-0 Add some text inside the card.
+          .u-p-3
+            a.u-d-ib.u-p-2.u-br.u-bg-primary.u-c-white.u-td-n(href="/components/card.html") Go the card component
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <div class="u-bs u-br">
+          <img class="u-d-b u-w-100" src="/assets/data/lake-1.jpg" alt="Photo by Adam Vradenburg on Unsplash" style="height:12rem">
+          <div class="u-p-3 u-h5">
+            Card title
+          </div>
+          <div class="u-px-3">
+            <p class="u-mb-0">Add some text inside the card.</p>
+          </div>
+          <div class="u-p-3"><a class="u-d-ib u-p-2 u-br u-bg-primary u-c-white u-td-n" href="components/card.html">Go the card component</a></div>
+        </div>
+
+  h2 Perfomance and controlling file size
+
+  p Even if these classes can be usefull, be carefull about the "weight" price of
+    |  your future CSS file.
+
+  p Depending of your stack, using a solution like #{''}
+    a(href="https://purgecss.com/" target="_blank" rel="noopener noreferrer") PurceCSS
+    |  can be a good alternative by removing unused (so useless) CSS classes.
+    br
+    | You may win a lot of #[code Ko], especially when you remove responsive classes
+    |  (like #[code .u-mb-3@xl]) if you don't use it.
+
+  p Another solution can also to remove unused breakpoints from the
+    |  #[code $g-grid-breakpoints] variable.

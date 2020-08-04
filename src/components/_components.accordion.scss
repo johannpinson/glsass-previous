@@ -1,0 +1,8 @@
+@use "../settings/settings.ui" as ui;
+
+@use "../tools/tools.global" as *;
+
+$c-accordion-radius: ui.$g-border-radius !default;
+
+.c-accordion {
+}

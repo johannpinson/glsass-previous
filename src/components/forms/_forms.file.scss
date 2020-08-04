@@ -1,0 +1,106 @@
+@use "../../settings/settings.ui" as ui;
+
+@use "../../tools/tools.form" as form;
+@use "../../tools/tools.global" as *;
+
+$c-file-border-radius: ui.$g-form-border-radius !default;
+$c-file-border-width: ui.$g-form-border-width !default;
+$c-file-border-color: ui.$g-form-border-color !default;
+
+$c-file-label-color: ui.$g-form-text-color !default;
+$c-file-label-bg: ui.$g-form-main-color !default;
+
+$c-file-focus-border-color: ui.$g-form-focus-border-color !default;
+$c-file-focus-shadow-width: ui.$g-form-focus-shadow-width !default;
+$c-file-focus-shadow-color: ui.$g-form-focus-shadow-color !default;
+
+$c-file-background-color: ui.$g-form-background-color !default;
+$c-file-background-label: cv(light) !default;
+
+$_c-file-el: ".c-form__file-input";
+$_c-file-el-feedback: ".c-form__feedback";
+
+.c-form {
+  $root-file: &;
+
+  &__file {
+    $root-file: &;
+
+    &:focus-within {
+      // margin-top: 2rem;
+      // background: yellow;
+    }
+
+    &-input {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      pointer-events: none;
+
+      &:hover {
+        border-color: $c-file-focus-border-color;
+      }
+
+      &:focus {
+        ~ #{$root-file}-label {
+          border-color: $c-file-focus-border-color;
+          outline: 0;
+          box-shadow: 0 0 0 $c-file-focus-shadow-width
+            $c-file-focus-shadow-color;
+
+          /* stylelint-disable max-nesting-depth */
+          strong {
+            border-color: $c-file-focus-border-color;
+          }
+
+          /* stylelint-enable */
+        }
+      }
+    }
+
+    &-label {
+      display: flex;
+      flex: 1 0 auto;
+      align-items: center;
+      height: vr(1.5);
+      overflow: hidden;
+      color: $c-file-label-color;
+      border: $c-file-border-width solid $c-file-border-color;
+      border-radius: $c-file-border-radius;
+
+      &:hover,
+      &:hover strong {
+        border-color: $c-file-focus-border-color;
+      }
+
+      strong,
+      span {
+        padding: (vr(0.5) / 2) vr(0.5);
+        pointer-events: none;
+      }
+
+      strong {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        height: 100%;
+        font-weight: 400;
+        background-color: $c-file-background-label;
+        border-right: $c-file-border-width solid $c-file-border-color;
+      }
+
+      span {
+        min-width: 2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background-color: $c-file-background-color;
+      }
+    }
+  }
+}
+
+@include form.add-validation-states(
+  $_c-file-el,
+  $c-file-focus-shadow-width,
+  $is-file: true
+);

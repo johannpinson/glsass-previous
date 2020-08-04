@@ -1,0 +1,20 @@
+@use "../tools/tools.cv" as *;
+
+$g-enable-variables: false !default;
+
+@if ($g-enable-variables) {
+  :root {
+    --color-primary: #{cv("primary")};
+    --color-primary-rgb: #{red(cv("primary")) +
+      ", " +
+      green(cv("primary")) +
+      ", " +
+      blue(cv("primary"))};
+    --color-secondary: #{cv("secondary")};
+    --color-secondary-rgb: #{red(cv("secondary")) +
+      ", " +
+      green(cv("secondary")) +
+      ", " +
+      blue(cv("secondary"))};
+  }
+}

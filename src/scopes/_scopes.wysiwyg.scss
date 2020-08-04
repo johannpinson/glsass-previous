@@ -1,0 +1,21 @@
+@use "../settings/settings.ui" as ui;
+
+@use "../tools/tools.global" as *;
+
+.s-wysiwyg {
+  line-height: 1.5;
+
+  img {
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: ui.$g-border-radius;
+
+    @include mq(tb) {
+      margin: 2rem auto 1rem;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

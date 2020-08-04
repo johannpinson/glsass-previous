@@ -1,0 +1,9 @@
+/*==========================================================================
+  #FONTS
+  ========================================================================== */
+
+@use "../settings/settings.core" as core;
+
+@use "../tools/tools.fonts" as fonts;
+
+@include fonts.import-google-fonts(core.$g-fonts-google);

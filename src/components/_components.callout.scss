@@ -1,0 +1,54 @@
+/* ==========================================================================
+   #CALLOUT
+   ========================================================================== */
+
+@use "sass:map";
+@use "sass:list";
+
+@use "../settings/settings.colors" as colors;
+@use "../settings/settings.ui" as ui;
+
+@use "../tools/tools.unit" as unit;
+@use "../tools/tools.global" as *;
+
+$c-callout-border-width: unit.convert(ui.$g-border-width) !default;
+$c-callout-border-color: ui.$g-border-color !default;
+$c-callout-border-radius: ui.$g-border-radius !default;
+
+$c-callout-margin-bottom: vr() !default;
+$c-callout-padding: vr(0.5) !default;
+
+// The light variant is removed because it's considered as the default design
+$c-callout-variants: () !default;
+$c-callout-variants: list.join(
+  (
+    "primary",
+    "secondary",
+    "success",
+    "danger",
+    "warning",
+    "info",
+    "dark",
+    "white"
+  ),
+  $c-callout-variants
+);
+
+.c-callout {
+  margin-bottom: $c-callout-margin-bottom;
+  padding: ($c-callout-padding - $c-callout-border-width) $c-callout-padding;
+  border: $c-callout-border-width solid $c-callout-border-color;
+  border-left-width: 0.25rem;
+  border-radius: $c-callout-border-radius;
+}
+
+// Generate modifiers class for colors variant
+@each $color in $c-callout-variants {
+  @if map.get(colors.$g-color-theme-colors, $color) {
+    $_color: map.get(colors.$g-color-theme-colors, $color);
+
+    .c-callout--#{$color} {
+      border-left-color: $_color;
+    }
+  }
+}

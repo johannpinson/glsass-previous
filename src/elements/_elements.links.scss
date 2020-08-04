@@ -1,0 +1,23 @@
+/*==========================================================================
+  #LINKS
+  ========================================================================== */
+
+$e-links-external-indicator: true !default;
+
+a {
+  color: inherit;
+  text-decoration: underline;
+
+  // stylelint-disable-next-line order/order
+  @if ($e-links-external-indicator == true) {
+    &[target="_blank"]::after {
+      content: " \2197";
+    }
+  }
+
+  @media (hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
