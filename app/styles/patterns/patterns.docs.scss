@@ -35,6 +35,7 @@
   border: unit.convert(1px) solid cv(light);
 }
 
+/*! purgecss start ignore */
 code,
 kbd,
 pre,
@@ -107,6 +108,8 @@ code {
     color: lighten(cv("body"), 10%);
   }
 }
+
+/*! purgecss end ignore */
 
 .p-swatch {
   $_swatch-colors: (
