@@ -19,7 +19,7 @@ block docs
       .c-form__group
         label.c-form__label(for="test") Test
         input.c-form__control(type="text" id="test" name="test" required)
-        span.c-form__help-text This field is required
+        span.c-form__text This field is required
   .o-row
     .o-col.u-6
       fieldset.c-form__group
@@ -37,7 +37,7 @@ block docs
         <div class="c-form__group">
           <label class="c-form__label" for="test">Test</label>
           <input class="c-form__control" type="text" id="test" name="test" required>
-          <span class="c-form__help-text">This field is required</span>
+          <span class="c-form__text">This field is required</span>
         </div>
 
         <fieldset class="c-form__group">
@@ -398,7 +398,7 @@ block docs
       .c-form__group
         label.c-form__label(for="username-help") Username
         input.c-form__control(type="text" id="username-help" name="username-help" aria-describedby="usernameHelpText" required)
-        span.c-form__help-text#usernameHelpText This field is required
+        span.c-form__text#usernameHelpText This field is required
 
   pre.code(data-lang='HTML')
     code
@@ -406,7 +406,7 @@ block docs
         <div class="c-form__group">
           <label class="c-form__label" for="username">Username</label>
           <input class="c-form__control" type="text" id="username" name="username" aria-describedby="usernameHelpText" required>
-          <span class="c-form__help-text" id="usernameHelpText">This field is required</span>
+          <span class="c-form__text" id="usernameHelpText">This field is required</span>
         </div>
 
   p An other possibility is to use the "helper" component to display more content inside a tooltip.
@@ -475,7 +475,7 @@ block docs
                   event.stopPropagation()
                 }
 
-                form.classList.add('was-validated')
+                form.classList.add('is-validated')
               }, false)
             })
         </script>
@@ -557,6 +557,21 @@ block docs
         td Color
         td #[code $g-form-background-disabled]
         td Background color for disabled state
+      tr
+        td #[code $c-control-height]
+        td Number unit
+        td #[code 1.5vr]
+        td Height of the field
+      tr
+        td #[code $c-control-padding]
+        td Number unnit
+        td #[code 0.25vr 0.5vr]
+        td Padding inside the field
+      tr
+        td #[code $c-control-add-validation-states]
+        td Boolean
+        td #[code true]
+        td Enable the classes for validation states
 
   h3 Variables - Select
   table.o-table
@@ -622,6 +637,21 @@ block docs
         td Color
         td #[code $g-form-background-disabled]
         td Background color for disabled state
+      tr
+        td #[code $c-select-height]
+        td Number unit
+        td #[code 1.5vr]
+        td Height of the field
+      tr
+        td #[code $c-select-padding]
+        td Number unnit
+        td #[code 0.25vr 0.5vr]
+        td Padding inside the field
+      tr
+        td #[code $c-select-add-validation-states]
+        td Boolean
+        td #[code true]
+        td Enable the classes for validation states
 
   h3 Variables - Radio/Checkbox
   table.o-table
@@ -682,6 +712,11 @@ block docs
         td String (as URL)
         td #[code iv("radio")]
         td URL of the image for radio (as path or Base64)
+      tr
+        td #[code $c-check-add-validation-states]
+        td Boolean
+        td #[code true]
+        td Enable the classes for validation states
 
   h3 Variables - Toggle
   table.o-table
@@ -782,3 +817,13 @@ block docs
         td Color
         td #[code $g-form-focus-background-label]
         td Background color for the left part
+      tr
+        td #[code $c-file-height]
+        td Number unit
+        td #[code 1.5vr]
+        td Height of the field
+      tr
+        td #[code $c-file-add-validation-states]
+        td Boolean
+        td #[code true]
+        td Enable the classes for validation states

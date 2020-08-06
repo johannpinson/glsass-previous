@@ -3,7 +3,16 @@ extends ../_layout/_docs.pug
 block docs
   h1 UI
 
-  p The #[code ui] file is similar to the #[core], but it's only
+  .c-alert.c-alert--danger
+    | #[strong Reminder:]
+    |  the #[code settings.ui] file is forwarded from the index file present in its folder.
+    br
+    | To override the variables, you must import it separatly, as indicated in the #{''}
+    a(href="../settings/overview.html") overview section
+    | .
+
+
+  p The #[code ui] file is similar to the other settings files, but it's only
     |  about aesthetics settings.
 
   h2 Sass references

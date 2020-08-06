@@ -17,6 +17,9 @@ $c-file-focus-shadow-color: ui.$g-form-focus-shadow-color !default;
 $c-file-background-color: ui.$g-form-background-color !default;
 $c-file-background-label: cv(light) !default;
 
+$c-file-height: vr(1.5) !default;
+
+$c-file-add-validation-states: true !default;
 $_c-file-el: ".c-form__file-input";
 $_c-file-el-feedback: ".c-form__feedback";
 
@@ -61,7 +64,7 @@ $_c-file-el-feedback: ".c-form__feedback";
       display: flex;
       flex: 1 0 auto;
       align-items: center;
-      height: vr(1.5);
+      height: $c-file-height;
       overflow: hidden;
       color: $c-file-label-color;
       border: $c-file-border-width solid $c-file-border-color;
@@ -99,8 +102,10 @@ $_c-file-el-feedback: ".c-form__feedback";
   }
 }
 
-@include form.add-validation-states(
-  $_c-file-el,
-  $c-file-focus-shadow-width,
-  $is-file: true
-);
+@if $c-file-add-validation-states {
+  @include form.add-validation-states(
+    $_c-file-el,
+    $c-file-focus-shadow-width,
+    $is-file: true
+  );
+}

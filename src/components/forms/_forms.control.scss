@@ -13,7 +13,6 @@ $c-control-border-width: ui.$g-form-border-width !default;
 $c-control-border-color: ui.$g-form-border-color !default;
 
 $c-control-text-color: ui.$g-form-text-color !default;
-
 $c-control-placeholder-color: ui.$g-form-placeholder-color !default;
 
 $c-control-font-size: core.$g-font-size-base-rem !default;
@@ -26,6 +25,10 @@ $c-control-focus-shadow-color: ui.$g-form-focus-shadow-color !default;
 $c-control-background-color: ui.$g-form-background-color !default;
 $c-control-background-disabled: ui.$g-form-background-disabled !default;
 
+$c-control-height: vr(1.5) !default;
+$c-control-padding: (vr(0.5) / 2) vr(0.5) !default;
+
+$c-control-add-validation-states: true !default;
 $_c-control-el: ".c-form__control";
 $_c-control-el-feedback: ".c-form__feedback";
 
@@ -33,8 +36,8 @@ $_c-control-el-feedback: ".c-form__feedback";
   &__control {
     display: block;
     flex: 1 0 auto;
-    height: vr(1.5);
-    padding: (vr(0.5) / 2) vr(0.5);
+    height: $c-control-height;
+    padding: $c-control-padding;
     color: $c-control-text-color;
     font-size: $c-control-font-size;
     line-height: $c-control-font-height;
@@ -83,7 +86,9 @@ $_c-control-el-feedback: ".c-form__feedback";
   }
 }
 
-@include form.add-validation-states(
-  $_c-control-el,
-  $c-control-focus-shadow-width
-);
+@if $c-control-add-validation-states {
+  @include form.add-validation-states(
+    $_c-control-el,
+    $c-control-focus-shadow-width
+  );
+}

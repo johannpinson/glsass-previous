@@ -1,19 +1,19 @@
 @use "../../tools/tools.spacing" as spacing;
 @use "../../tools/tools.global" as *;
 
-$c-help-margin-top: spacing.add-space(1) !default;
+$c-text-margin-top: spacing.add-space(1) !default;
 
-$c-help-font-color: cv(text, muted) !default;
-$c-help-font-size: 0.875rem !default;
+$c-text-font-color: cv(text, muted) !default;
+$c-text-font-size: 0.875rem !default;
 
 .c-form {
-  &__help-text,
+  &__text,
   &__feedback {
     width: 100%;
-    margin-top: $c-help-margin-top;
-    color: $c-help-font-color;
-    font-size: $c-help-font-size;
-    line-height: spacing.adjust-vr(1, $c-help-font-size, $c-help-margin-top);
+    margin-top: $c-text-margin-top;
+    color: $c-text-font-color;
+    font-size: $c-text-font-size;
+    line-height: spacing.adjust-vr(1, $c-text-font-size, $c-text-margin-top);
   }
 
   &__feedback {

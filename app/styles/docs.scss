@@ -9,7 +9,7 @@
 );
 
 // TOOLS - no need to import
-// @use "tools/tools.global" as *;
+// @use "../../src/tools/tools.global" as *;
 
 // GENERIC - Don't change the order for generic modules
 @forward "../../src/generic/generic.box-sizing";

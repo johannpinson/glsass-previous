@@ -13,11 +13,50 @@ block docs
     code
       :highlight(lang="scss")
         // ~glsass/src/settings/_index.scss
+        $g-enable-variables: true !default;
+
         @forward "settings.core";
         @forward "settings.colors";
         @forward "settings.icons";
-        @forward "settings.ui";
-        @forward "settings.variables";
+        @forward "settings.variables" with ($g-enable-variables: $g-enable-variables);
+
+  .c-callout.c-callout--danger
+    h2.u-h5 Why the #[code settings.ui] is not forwarded?
+
+    p
+      | Since the UI file contains variables depending of the others settings and some functions from tools,
+      |  it cannot be set with functions that not exist yet.
+      br
+      | You cannot use the function #[code meta.call()] from the built-in modules of Sass, because the function
+      |  is executed at the call, not yen the variables are set (it will result as an error).
+
+    p.u-mb-0 For the release of the v1 of Glsass, it's still possible that UI settings are moved elsewhere
+      |  or need to be set differently.
+
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        // If every settings files was forwarded, it will result to have
+        // a variable with a string value equal to `cv(black)`, not the color `#000`
+        @use "~glsass/src/settings" with (
+          $g-color-black: #111,
+          $g-form-background-color: cv(black) // × wrong, will equal to `cv(black)`
+        );
+
+
+        // The variables overriding must be done in two times
+        @use "~glsass/src/settings" with (
+          // add your core/colors/icons settings
+          $g-color-black: #111,
+          ...
+        )
+
+        // Import only the tools that you need to set the variables
+        @use "~glsass/src/tools/tools.global" as *;
+        @use "~glsass/src/settings/settings.ui" with (
+          $g-form-background-color: cv(black) // ✓ correct, will equal to `#111`
+        );
+
 
   .o-row
     .o-col.u-12(class="u-4@md").u-mb-3

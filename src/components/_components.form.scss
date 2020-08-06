@@ -1,6 +1,8 @@
+// Containers and texts
 @forward "forms/forms.main";
 @forward "forms/forms.label";
-@forward "forms/forms.help";
+@forward "forms/forms.text";
+// Fields
 @forward "forms/forms.control";
 @forward "forms/forms.select";
 @forward "forms/forms.check";

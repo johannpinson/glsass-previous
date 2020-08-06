@@ -20,6 +20,7 @@ $c-check-background-color: ui.$g-form-background-color !default;
 $c-check-icon-checkbox: iv("checkbox") !default;
 $c-check-icon-radio: iv("radio") !default;
 
+$c-check-add-validation-states: true !default;
 $_c-check-el: ".c-form__check-input";
 $_c-check-el-feedback: ".c-form__feedback";
 
@@ -109,8 +110,10 @@ $_c-check-el-feedback: ".c-form__feedback";
   }
 }
 
-@include form.add-validation-states(
-  $_c-check-el,
-  $c-check-focus-shadow-width,
-  $is-check: true
-);
+@if $c-check-add-validation-states {
+  @include form.add-validation-states(
+    $_c-check-el,
+    $c-check-focus-shadow-width,
+    $is-check: true
+  );
+}

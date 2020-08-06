@@ -26,6 +26,10 @@ $c-select-background-disabled: ui.$g-form-background-disabled !default;
 
 $c-select-icon: iv("select");
 
+$c-select-height: vr(1.5) !default;
+$c-select-padding: (vr(0.5) / 2) vr(0.5) !default;
+
+$c-select-add-validation-states: true !default;
 $_c-select-el: ".c-form__select";
 $_c-select-el-feedback: ".c-form__feedback";
 
@@ -35,8 +39,8 @@ $_c-select-el-feedback: ".c-form__feedback";
   &__select {
     display: inline-block;
     flex: 1 0 auto;
-    height: vr(1.5);
-    padding: (vr(0.5) / 2) vr(0.5);
+    height: $c-select-height;
+    padding: $c-select-padding;
     color: $c-select-text-color;
     font-size: $c-select-font-size;
     line-height: $c-select-font-height;
@@ -106,7 +110,9 @@ $_c-select-el-feedback: ".c-form__feedback";
   }
 }
 
-@include form.add-validation-states(
-  $_c-select-el,
-  $c-select-focus-shadow-width
-);
+@if $c-select-add-validation-states {
+  @include form.add-validation-states(
+    $_c-select-el,
+    $c-select-focus-shadow-width
+  );
+}

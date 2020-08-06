@@ -7,5 +7,4 @@ $g-enable-variables: true !default;
 @forward "settings.core";
 @forward "settings.colors";
 @forward "settings.icons";
-@forward "settings.ui";
 @forward "settings.variables" with ($g-enable-variables: $g-enable-variables);

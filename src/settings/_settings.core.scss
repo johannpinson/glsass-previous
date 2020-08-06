@@ -33,7 +33,7 @@ $g-font-family-map: list.join(
 
 // Default (body) rules
 $g-font-size-base: 16px !default; // Assumes the browser default, typically `16px`
-$g-font-size-base-rem: 1rem !default;
+$g-font-size-base-rem: 1rem !default; // Will be equal to `16px`
 $g-font-line-height-base: 1.5 !default;
 
 // Spacing
@@ -41,32 +41,26 @@ $g-font-line-height-base: 1.5 !default;
 // Control the default styling of most UI elements by modifying these
 // variables. Mostly focused on spacing.
 // You can add more entries to the $g-spacers map, should you need more variation.
-$g-spacer: $g-font-size-base-rem * $g-font-line-height-base !default; // 24
+$g-spacer: $g-font-size-base-rem * $g-font-line-height-base !default; // 24px or 1.5rem
+
+// https://speckyboy.com/naming-conventions-sizes-scalable-cs
+// 0: 0  - flush
+// 1: 6  - tiny   or `xs`
+// 2: 12 - small  or `s`
+// 3: 24 - medium or `m`
+// 4: 48 - large  or `l`
+// 5: 72 - huge   or `xl`
+// + micro / mega
 $g-spacers: (
   0: 0,
-  // 0 - flush
-    1: $g-spacer * 0.25,
-  // 6 - tiny or xs
-    2: $g-spacer * 0.5,
-  // 12 - small or s
-    3: $g-spacer,
-  // 24 - medium or m
-    4: $g-spacer * 2,
-  // 48 - large or l
-    5: $g-spacer * 3,
-  // 72 - huge or xl
+  1: $g-spacer * 0.25,
+  2: $g-spacer * 0.5,
+  3: $g-spacer,
+  4: $g-spacer * 2,
+  5: $g-spacer * 3,
 );
 
 $g-spacers-negative: _map.negativify-map($g-spacers) !default;
-
-// $g-spacing-unit-factor-tiny:   1 !default;   // 6px
-// $g-spacing-unit-factor-small:  2 !default;   // 12px
-// $g-spacing-unit-factor:        4 !default;   // 24px
-// $g-spacing-unit-factor-large:  8 !default;   // 48px
-// $g-spacing-unit-factor-huge:   16 !default;  // 96px
-// + micro / mega
-
-// https://speckyboy.com/naming-conventions-sizes-scalable-cs
 
 // Heading rules
 $g-headings-font-size-h1: $g-font-size-base-rem * 3 !default; // 48
@@ -139,4 +133,4 @@ $g-grid-container-max-widths: (
 
 // Grid columns
 $g-grid-columns: 12 !default;
-$g-grid-gutter-width: 1rem !default;
+$g-grid-gutter-width: $g-font-size-base-rem !default;

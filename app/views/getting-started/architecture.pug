@@ -14,7 +14,7 @@ block docs
 
   figure.u-ta-c
     img(src="../assets/data/itcss-default.svg", alt="ITCSS schema" height=300).u-mb-2
-    figcaption.u-c-muted.u-fs-i
+    figcaption.u-c-muted
       | Image from #{''}
       a(href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/" target="_blank" rel="noopener noreferrer") Xfive blog
 
@@ -24,13 +24,13 @@ block docs
   h2 Glsass
 
   p In #[strong Glsass], the ITCSS is slightly modified, to allow more flexibilty and because of Sass Module.
-    |  Since we don't have to import all file at the root file, there is not need for you to import #[tools]
+    |  Since we don't have to import all file at the root file, there is not need for you to import #[code tools]
     |  in your #[code index.scss].
 
   p.u-mb-0 This is the layer structure:
 
   ul
-    li Core (Settings + Tools)
+    li Root (Settings + Tools)
     li Generic
     li Vendors
     li Elements
@@ -42,9 +42,9 @@ block docs
     li Themes
     li Utilities
 
-  h3 Core
+  h3 Root
 
-  p The #[code Core] layer can is combination of the #[code Settings] and #[code Tools] folders.
+  p The #[code Root] layer can is combination of the #[code Settings] and #[code Tools] folders.
     br
     |  The settings contains variables and definitions used in the framework. The tools is about
     |  Sass mixins and functions.
@@ -102,11 +102,14 @@ block docs
 
   h3 Themes - #[em .t-*]
 
-  p This layer is similar to the previous one, because it must be used only for specific cases, especially if you work with #{''}
+  p This layer is similar to the previous one, because it must be used only for
+    |  specific cases, especially if you work with #{''}
     a(href="https://speakerdeck.com/csswizardry/4half-methods-for-theming-in-s-css?slide=30" target="_blank" rel="noopener noreferrer") Stateful Themes
-    | . But since with the Sass syntax you can use the parent selector #[code &], theming can be applied in components directly.
+    | . But since with the Sass syntax you can use the parent selector #[code &],
+    |  theming can be applied in components directly.
     br
-    | The theming can also be used from the settings variables, so this layer shouldn't be used ofter.
+    | The theming can also be set from the settings variables, so this layer can
+    |  be used (or not) depeding of your code organization.
 
   h3 Utilities - #[em .u-*]
 

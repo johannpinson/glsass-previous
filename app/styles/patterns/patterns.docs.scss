@@ -9,7 +9,7 @@
 
   &__sidebar {
     @include mq() {
-      flex: 0 1 15rem;
+      flex: 0 0 15rem;
       min-height: 100vh;
       padding: 0 0.5rem;
       overflow-y: auto;
@@ -22,10 +22,11 @@
 
   &__content {
     flex: 1 1 auto;
+    width: 100%;
     padding: 0 1rem;
 
-    @include mq-max(md) {
-      width: 100%;
+    @include mq(md) {
+      width: calc(100vw - 17rem);
     }
   }
 }
