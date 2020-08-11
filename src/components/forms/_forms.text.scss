@@ -1,3 +1,8 @@
+@use "sass:map";
+@use "sass:list";
+
+@use "../../settings/settings.ui" as ui;
+
 @use "../../tools/tools.spacing" as spacing;
 @use "../../tools/tools.global" as *;
 
@@ -18,19 +23,22 @@ $c-text-font-size: 0.875rem !default;
 
   &__feedback {
     display: none;
-    padding-left: spacing.add-space();
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 0.75rem;
 
-    &--valid {
-      color: cv("success");
-      background-image: url(iv("valid"));
-    }
+    @each $state, $data in ui.$g-form-states {
+      $color: map.get($data, color);
+      $icon: map.get($data, icon);
 
-    &--invalid {
-      color: cv("danger");
-      background-image: url(iv("invalid"));
+      @if (list.index(ui.$g-form-states, $state $data) == 1 and $icon != null) {
+        padding-left: spacing.add-space();
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 0.75rem;
+      }
+
+      &--#{$state} {
+        color: $color;
+        background-image: url($icon);
+      }
     }
   }
 }

@@ -87,7 +87,6 @@ $_c-select-el-feedback: ".c-form__feedback";
       text-shadow: 0 0 0 $c-select-text-color;
     }
 
-    // TODO multiple + size attribute
     // Multiple select
     &[size],
     &[multiple] {

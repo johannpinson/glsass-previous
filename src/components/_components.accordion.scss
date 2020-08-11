@@ -2,7 +2,39 @@
 
 @use "../tools/tools.global" as *;
 
-$c-accordion-radius: ui.$g-border-radius !default;
+$c-accordion-icon: iv(select) !default;
+$c-accordion-icon-size: 1rem !default;
 
 .c-accordion {
+  $root: &;
+
+  &[open] {
+    #{$root}__header::before {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: $c-accordion-icon-size;
+      height: $c-accordion-icon-size;
+      margin-right: (vr() - $c-accordion-icon-size);
+      background-image: url($c-accordion-icon);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 1rem;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__body {
+  }
 }

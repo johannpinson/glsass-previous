@@ -36,10 +36,12 @@ $g-form-states: (
   "valid": (
     "color": cv(success),
     "background": rgba(cv(success), 0.05),
+    "icon": iv(valid),
   ),
   "invalid": (
     "color": cv(danger),
     "background": rgba(cv(danger), 0.05),
+    "icon": iv(invalid),
   ),
 ) !default;
 

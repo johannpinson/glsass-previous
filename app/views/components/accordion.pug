@@ -1,0 +1,99 @@
+extends ../_layout/_docs.pug
+
+block docs
+  h1 Accordion
+  p Accordions toggle the visibility of content.
+
+  p For avoiding to add a script, the open/close behavior is direclty managed from the
+    |  #[code &lt;details&gt;] element.
+    br
+    | By adding the #[code open] attribute on the main element, the component will
+    |  be opened by default.
+
+  .p-example
+    details.c-accordion.u-mb-2(open)
+      summary.c-accordion__header Section 1
+      .c-accordion__body
+        ul.o-list-bare.u-mb-0
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 1.1
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 1.2
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 1.3
+    details.c-accordion.u-mb-2
+      summary.c-accordion__header Section 2
+      .c-accordion__body
+        ul.o-list-bare.u-mb-0
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 2.1
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 2.2
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 2.3
+    details.c-accordion
+      summary.c-accordion__header Section 3
+      .c-accordion__body
+        ul.o-list-bare.u-mb-0
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 3.1
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 3.2
+          li.u-py-1.u-pl-3
+            a(href="#") Subsectionn 3.3
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <details class="c-accordion u-mb-2" open>
+          <summary class="c-accordion__header">Section 1</summary>
+          <div class="c-accordion__body">
+            <ul class="o-list-bare u-mb-0">
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 1.1</a></li>
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 1.2</a></li>
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 1.3</a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="c-accordion u-mb-2">
+          <summary class="c-accordion__header">Section 2</summary>
+          <div class="c-accordion__body">
+            <ul class="o-list-bare u-mb-0">
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 2.1</a></li>
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 2.2</a></li>
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 2.3</a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="c-accordion">
+          <summary class="c-accordion__header">Section 3</summary>
+          <div class="c-accordion__body">
+            <ul class="o-list-bare u-mb-0">
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 3.1</a></li>
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 3.2</a></li>
+              <li class="u-py-1 u-pl-3"><a href="#">Subsectionn 3.3</a></li>
+            </ul>
+          </div>
+        </details>
+
+  h2 Sass references
+
+  h3 Variables
+
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $c-accordion-icon]
+        td Icon
+        td #[code iv(select)]
+        td Indicator of open/close status
+      tr
+        td #[code $c-accordion-icon-size]
+        td Number unit
+        td #[code 1rem]
+        td Size of the indicator icon
