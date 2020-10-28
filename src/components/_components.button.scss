@@ -104,7 +104,7 @@ $c-button-variants: list.join(
   user-select: none;
 
   &:not(:disabled):not(.disabled):not(.is-inactive):hover {
-    color: cv("text");
+    color: cv(text);
     text-decoration: none;
     cursor: pointer;
   }
@@ -112,7 +112,7 @@ $c-button-variants: list.join(
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: 0 0 0 $c-button-focus-shadow-width rgba(cv("primary"), 0.25);
+    box-shadow: 0 0 0 $c-button-focus-shadow-width rgba(cv(primary), 0.25);
   }
 
   &:disabled,

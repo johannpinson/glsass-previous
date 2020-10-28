@@ -1,0 +1,36 @@
+extends ../_layout/_docs.pug
+
+block variables
+  - var slug = 'positions'
+  - var parent = 'utilities'
+
+block docs
+  h1 Positions
+
+  p You can configure the position of an element or component easily.
+
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="u-pos-r">...</div>
+        <div class="u-pos-s">...</div>
+        <div class="u-pos-a">...</div>
+        <div class="u-pos-st">...</div>
+        <div class="u-pos-f">...</div>
+  pre.code(data-lang='SCSS')
+    code
+      :highlight(lang="scss")
+        $u-positions: (
+          position: (
+            response: true,
+            property: position,
+            class: pos,
+            values: (
+              r: relative,
+              s: static,
+              a: absolute,
+              st: sticky,
+              f: fixed,
+            ),
+          ),
+        )

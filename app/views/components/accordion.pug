@@ -1,5 +1,9 @@
 extends ../_layout/_docs.pug
 
+block variables
+  - var slug = 'accordion'
+  - var parent = 'components'
+
 block docs
   h1 Accordion
   p Accordions toggle the visibility of content.
@@ -97,3 +101,18 @@ block docs
         td Number unit
         td #[code 1rem]
         td Size of the indicator icon
+      tr
+        td #[code $c-accordion-focus-shadow-width]
+        td Number unit
+        td #[code $g-shadow-width]
+        td Size of the shadow box
+      tr
+        td #[code $c-accordion-focus-shadow-color]
+        td Color
+        td #[code rgba(cv(primary), 0.25)]
+        td Color of the shadow box
+      tr
+        td #[code $c-accordion-header-radius]
+        td Number unit
+        td #[code $g-border-radius]
+        td Border-radius of header, used for focus state

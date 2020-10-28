@@ -1,22 +1,37 @@
 @use "../settings/settings.ui" as ui;
 
+@use "../tools/tools.spacing" as spacing;
 @use "../tools/tools.global" as *;
 
 $c-accordion-icon: iv(select) !default;
 $c-accordion-icon-size: 1rem !default;
+
+$c-accordion-focus-shadow-width: ui.$g-shadow-width !default;
+$c-accordion-focus-shadow-color: rgba(cv(primary), 0.25) !default;
+
+$c-accordion-header-radius: ui.$g-border-radius !default;
 
 .c-accordion {
   $root: &;
 
   &[open] {
     #{$root}__header::before {
-      transform: rotate(-90deg);
+      transform: rotate(0);
     }
   }
 
   &__header {
     display: flex;
     align-items: center;
+    padding: vr(0.5) / 2;
+    border-radius: $c-accordion-header-radius;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 $c-accordion-focus-shadow-width
+        $c-accordion-focus-shadow-color;
+    }
 
     &::before {
       content: "";
@@ -27,7 +42,8 @@ $c-accordion-icon-size: 1rem !default;
       background-image: url($c-accordion-icon);
       background-repeat: no-repeat;
       background-position: left center;
-      background-size: 1rem;
+      background-size: $c-accordion-icon-size;
+      transform: rotate(-90deg);
     }
 
     &::-webkit-details-marker {

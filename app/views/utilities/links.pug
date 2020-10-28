@@ -1,0 +1,49 @@
+extends ../_layout/_docs.pug
+
+block variables
+  - var slug = 'links'
+  - var parent = 'utilities'
+
+block docs
+  h1 Links
+
+  p By adding the #[code .u-stretched-link] class to a link, it make the "block"
+    |  clickable via a pseudo-element.
+    br
+    | To acheive it, the pseudo-element is #[em stretched] to recover the nearest
+    |  parent with #[code position: relative] property.
+
+  p For the next example, the Card component already have a position set by default,
+    |  but if it's not the case, you can add the #[code .u-pos-r] utility class.
+
+  .p-example
+    .o-row
+      .o-col.u-12(class="u-3@md")
+        .c-card
+          .c-card__img
+            img(src="../assets/data/lake-1.jpg", alt="Photo by Adam Vradenburg on Unsplash")
+          .c-card__header
+            .c-card__title.u-h5.u-mb-0 Card title
+          .c-card__body
+            span Add some text inside the card.
+              br
+              | ok more text here.
+          .c-card__footer
+            a(href="#").c-button.c-button--primary.u-stretched-link Action
+  pre.code(data-lang="HTML").u-mb-2
+    code
+      :highlight(lang="html")
+        <div class="c-card"><!-- the .u-pos-r is not required with the card component -->
+          <div class="c-card__img">
+            <img src="../assets/data/lake-1.jpg" alt="Photo by Adam Vradenburg on Unsplash">
+          </div>
+          <div class="c-card__header">
+            <div class="c-card__title u-h5 u-mb-0">Card title</div>
+          </div>
+          <div class="c-card__body">
+            <span>Add some text inside the card.<br>ok more text here.</span>
+          </div>
+          <div class="c-card__footer">
+            <a class="c-button c-button--primary u-stretched-link" href="#">Link</a>
+          </div>
+        </div>

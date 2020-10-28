@@ -1,9 +1,13 @@
 extends ../_layout/_docs.pug
 
+block variables
+  - var slug = 'introduction'
+  - var parent = 'getting-started'
+
 block docs
   h1 Introduction
 
-  p Gl(s)ass (or Glass) is a Sass framework based on ITCSS for extensible and responsive front development.
+  p Glsass (spell it simply Glass) is a Sass framework based on ITCSS for extensible and responsive front development.
     br
     | The framework provides generics/starter rules, a grid system, extensible
     |  components and utilities classes, with a global project architecture.
@@ -34,10 +38,3 @@ block docs
           .c-card__title.u-h5.u-mb-0 More about it
         .c-card__footer
           a.c-button.c-button--primary(href="about.html") View
-
-
-//-   Spectre.css is a lightweight, responsive and modern CSS framework for faster and extensible development.
-
-//- Spectre provides basic styles for typography and elements,
-//- flexbox based responsive layout system, pure CSS components and utilities
-//- with best practice coding and consistent design language.

@@ -1,5 +1,9 @@
 extends ../_layout/_docs.pug
 
+block variables
+  - var slug = 'debug'
+  - var parent = 'utilities'
+
 block docs
   h1 Debug and testing
 
@@ -17,7 +21,7 @@ block docs
         .debug:o
 
         /* Outline all Component classes */
-        .debug:o
+        .debug:c
 
         /* Outline all Pattern classes */
         .debug:p
@@ -31,11 +35,30 @@ block docs
         /* Outline all Hack classes */
         .debug:_
 
+        /* Outline all Responsive classes */
+        .debug:a
+
         /* Outline all previous classes listed */
         .debug:all
 
-        /* Outline all Responsive classes */
-        .debug:a
+  .p-example.u-mb-2
+    .o-row
+      .o-col.u-12(class="u-8@md")
+        p Demo:
+        p
+          .c-button.c-button--primary.js-debug-baseline Display baseline grid
+        p
+          .c-button.c-button--primary.js-debug-o Outline all Object classes
+        p
+          .c-button.c-button--primary.js-debug-c Outline all Component classes
+        p
+          .c-button.c-button--primary.js-debug-p Outline all Pattern classes
+        p
+          .c-button.c-button--primary.js-debug-u Outline all Utility classes
+        p
+          .c-button.c-button--primary.js-debug-a Outline all Responsive classes
+        p
+          .c-button.c-button--primary.js-debug-all Outline all classes
 
   .c-callout.c-callout--danger
     p.u-mb-0 To enable these classes, you must set at #[code true] the #[code $u-debug] variable

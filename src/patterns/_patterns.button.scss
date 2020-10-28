@@ -1,9 +1,0 @@
-@use "tools/tools.color" as _color;
-@use "tools/tools.global" as *;
-
-// Custom override
-.p-button--border {
-  color: cv("gray", 800);
-  background-color: #fbfbfb;
-  border-color: _color.shade(cv(light), 2)
-}

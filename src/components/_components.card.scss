@@ -25,6 +25,7 @@ $c-card-step-bg: cv(primary) !default;
  * 1. Preserve the vertical rhythm by using box-shadow instead of border
  */
 #{$c-card-name} {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: $c-card-background-color;

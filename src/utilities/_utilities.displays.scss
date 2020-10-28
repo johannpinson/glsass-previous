@@ -27,4 +27,4 @@ $_utilities: (
 
 $u-displays: map.merge($_utilities, $u-displays);
 
-@include generators.utilities($u_displays);
+@include generators.utilities($u-displays);

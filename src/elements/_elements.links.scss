@@ -2,6 +2,8 @@
   #LINKS
   ========================================================================== */
 
+@use "../tools/tools.global" as *;
+
 $e-links-external-indicator: true !default;
 
 a {
@@ -19,5 +21,10 @@ a {
     &:hover {
       text-decoration: none;
     }
+  }
+
+  &:focus {
+    text-decoration: none;
+    outline-color: rgba(cv(primary), 0.25);
   }
 }

@@ -1,7 +1,8 @@
 extends ../_layout/_docs.pug
 
-//- block variables
-//-   - slug = 'buttons'
+block variables
+  - var slug = 'installation'
+  - var parent = 'getting-started'
 
 block docs
   h1 Installation
@@ -119,9 +120,10 @@ block docs
         @forward "~glsass/src/utilities/utilities.spacings";
         @forward "~glsass/src/utilities/utilities.texts";
         @forward "~glsass/src/utilities/utilities.print"; // Must keep it as last
-        // The file must only be used for testing
-        // It adds debug classes to the <body> element
-        // Must be removed or set to false for a production build
+
+        // WARNING: This file must only be used for testing
+        // It used "debug" classes from the <body> element
+        // Must be removed or set to false for a production build!
         @forward "~glsass/src/utilities/utilities.debug" with (
           // The $u-debug variable must be set at `true` as a security
           $u-debug: true,
