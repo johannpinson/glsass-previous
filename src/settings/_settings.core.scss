@@ -32,8 +32,9 @@ $g-font-family-map: list.join(
 );
 
 // Default (body) rules
+$g-font-size-html: 16px !default;
 $g-font-size-base: 16px !default; // Assumes the browser default, typically `16px`
-$g-font-size-base-rem: 1rem !default; // Will be equal to `16px`
+$g-font-size-base-rem: $g-font-size-base / $g-font-size-html * 1rem !default; // Will be equal to `16px`
 $g-font-line-height-base: 1.5 !default;
 
 // Spacing
@@ -79,32 +80,32 @@ $g-headings-font-style: null !default;
 $g-headings-styles: (
   1: (
     // baseline 2.5vr - 60px
-      font-size: $g-headings-font-size-h1,
+    font-size: $g-headings-font-size-h1,
     line-height: $g-spacer * 2.5 / $g-headings-font-size-h1,
   ),
   2: (
     // baseline 2vr - 48px
-      font-size: $g-headings-font-size-h2,
+    font-size: $g-headings-font-size-h2,
     line-height: $g-spacer * 2 / $g-headings-font-size-h2,
   ),
   3: (
     // baseline 1.5vr - 36px
-      font-size: $g-headings-font-size-h3,
+    font-size: $g-headings-font-size-h3,
     line-height: $g-spacer * 1.5 / $g-headings-font-size-h3,
   ),
   4: (
     // baseline 1.5vr - 36px
-      font-size: $g-headings-font-size-h4,
+    font-size: $g-headings-font-size-h4,
     line-height: $g-spacer * 1.5 / $g-headings-font-size-h4,
   ),
   5: (
     // baseline 1vr - 24px
-      font-size: $g-headings-font-size-h5,
+    font-size: $g-headings-font-size-h5,
     line-height: $g-spacer / $g-headings-font-size-h5,
   ),
   6: (
     // baseline 1vr - 24px
-      font-size: $g-headings-font-size-h6,
+    font-size: $g-headings-font-size-h6,
     line-height: $g-spacer / $g-headings-font-size-h6,
   ),
 ) !default;

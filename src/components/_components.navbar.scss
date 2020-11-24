@@ -1,0 +1,150 @@
+@use "../settings/settings.ui" as ui;
+
+@use "../tools/tools.color" as _color;
+@use "../tools/tools.vhd" as vhd;
+@use "../tools/tools.spacing" as spacing;
+@use "../tools/tools.global" as *;
+
+$c-navbar-background: cv(light);
+
+$c-navbar-burger-radius: ui.$g-border-radius !default;
+$c-navbar-burger-focus-shadow-width: ui.$g-shadow-width !default;
+
+%_burger-active-state {
+  outline: 0;
+  box-shadow: 0 0 0 $c-navbar-burger-focus-shadow-width rgba(cv(primary), 0.25);
+
+  svg,
+  svg path {
+    stroke: cv(primary);
+  }
+}
+
+.c-navbar {
+  $root: &;
+
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: vr(0.5);
+  background-color: $c-navbar-background;
+
+  @include mq {
+    flex-wrap: inherit;
+  }
+
+  &-layout {
+    display: flex;
+    flex-wrap: inherit;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-control {
+    @include vhd.visually-hidden();
+
+    @include mq-max {
+      &:checked {
+        ~ #{$root}-burger {
+          svg {
+            transform: rotate(45deg);
+          }
+
+          path {
+            &:first-child,
+            &:last-child {
+              stroke-dashoffset: -68px;
+            }
+          }
+        }
+
+        ~ #{$root}-panel {
+          max-height: calc(100vh - #{vr(3)});
+        }
+      }
+    }
+
+    &:focus {
+      ~ #{$root}-burger {
+        @extend %_burger-active-state;
+      }
+    }
+  }
+
+  &-burger {
+    display: flex;
+    border-radius: $c-navbar-burger-radius;
+    cursor: pointer;
+    transition: transform 0.35s ui.$g-transition-timing-function;
+    user-select: none;
+
+    @include mq {
+      display: none;
+    }
+
+    &:hover {
+      @extend %_burger-active-state;
+    }
+
+    path {
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      fill: none;
+      stroke: #000;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+
+      &:first-child,
+      &:last-child {
+        stroke-dasharray: 40 121;
+      }
+    }
+  }
+
+  &-logo {
+    @include mq {
+      margin-right: 1rem;
+    }
+  }
+
+  &-panel {
+    width: 100%;
+
+    @include mq-max {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ui.$g-transition-timing-function;
+    }
+
+    @include mq {
+      display: flex;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    @include mq {
+      flex-direction: row;
+      padding-top: 0;
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    padding: vr(0.5);
+    color: rgba(_color.yiq-contrast($c-navbar-background), 0.75);
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      color: _color.yiq-contrast($c-navbar-background);
+    }
+  }
+}

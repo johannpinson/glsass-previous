@@ -11,10 +11,19 @@ $c-accordion-focus-shadow-color: rgba(cv(primary), 0.25) !default;
 
 $c-accordion-header-radius: ui.$g-border-radius !default;
 
+$c-accordion-with-open-animation: true !default;
+$c-accordion-animation-initial-gap: -1rem !default;
+
 .c-accordion {
   $root: &;
 
   &[open] {
+    @if $c-accordion-with-open-animation {
+      #{$root}__body {
+        animation: sweep 0.35s ui.$g-transition-timing-function none;
+      }
+    }
+
     #{$root}__header::before {
       transform: rotate(0);
     }
@@ -26,6 +35,7 @@ $c-accordion-header-radius: ui.$g-border-radius !default;
     padding: vr(0.5) / 2;
     border-radius: $c-accordion-header-radius;
     cursor: pointer;
+    user-select: none;
 
     &:focus {
       outline: 0;
@@ -44,6 +54,7 @@ $c-accordion-header-radius: ui.$g-border-radius !default;
       background-position: left center;
       background-size: $c-accordion-icon-size;
       transform: rotate(-90deg);
+      transition: transform 0.35s ui.$g-transition-timing-function;
     }
 
     &::-webkit-details-marker {
@@ -52,5 +63,19 @@ $c-accordion-header-radius: ui.$g-border-radius !default;
   }
 
   &__body {
+  }
+}
+
+@if $c-accordion-with-open-animation {
+  @keyframes sweep {
+    0% {
+      opacity: 0;
+      transform: translateX($c-accordion-animation-initial-gap);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }

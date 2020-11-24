@@ -1,0 +1,8 @@
+@use "../tools/tools.vhd" as vhd;
+
+// Allow to hide an element from the display, but still available to an
+// assistant (a.k.a. a screen reader)
+.u-vhd,
+.u-vhd-focusable:not(:focus) {
+  @include vhd.visually-hidden();
+}
