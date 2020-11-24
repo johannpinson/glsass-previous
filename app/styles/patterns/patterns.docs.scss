@@ -11,12 +11,15 @@
     @include mq() {
       flex: 0 0 15rem;
       min-height: 100vh;
-      padding: 0 0.5rem;
-      overflow-y: auto;
     }
 
     > :first-child {
       position: fixed;
+      top: 1.5rem;
+      bottom: 1rem;
+      width: 15rem;
+      padding: 0 0.5rem;
+      overflow-y: scroll;
     }
   }
 
@@ -32,8 +35,12 @@
 }
 
 .p-example {
-  padding: (vr() - unit.convert(1px)) vr();
+  padding: (vr(0.5) - unit.convert(1px)) vr(0.5);
   border: unit.convert(1px) solid cv(light);
+
+  @include mq() {
+    padding: (vr() - unit.convert(1px)) vr();
+  }
 }
 
 /*! purgecss start ignore */

@@ -48,6 +48,7 @@
 @forward "../../src/components/components.card";
 @forward "../../src/components/components.form";
 @forward "../../src/components/components.helper";
+@forward "../../src/components/components.navbar";
 
 // PATTERNS
 @forward "patterns/patterns.docs";
@@ -70,6 +71,7 @@
 @forward "../../src/utilities/utilities.sizings";
 @forward "../../src/utilities/utilities.spacings";
 @forward "../../src/utilities/utilities.texts";
+@forward "../../src/utilities/utilities.vhd";
 @forward "../../src/utilities/utilities.print"; // Keep it as last
 @forward "../../src//utilities//utilities.debug" with ( // Must be removed in a real production build
   $u-debug: true,
