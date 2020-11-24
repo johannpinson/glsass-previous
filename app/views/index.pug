@@ -1,7 +1,8 @@
 extends _layout/_layout.pug
 
 block variables
-  //- - var ua = 'GTM-M99XRH5'
+  - var title = 'Glsass - the Sass framework'
+  - var description = 'Sass centric framework, customizable and proudly based on Sass Modules. You can also call me Glass 🥃 😉'
   - var slug = 'index'
   - var parent = 'index'
 
@@ -38,4 +39,4 @@ block content
           a(href='https://github.com/johannpinson/glsass' target="_blank" rel="noopener noreferrer") GitHub
           |  · Developed by #{''}
           a(href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer") Johannn Pinson
-          |  · Version 0.0.5
+          |  · Version #{version}

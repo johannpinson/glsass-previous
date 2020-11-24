@@ -1,6 +1,8 @@
 extends ../_layout/_docs.pug
 
 block variables
+  - var title = 'Glsass - the Sass framework'
+  - var description = 'Sass centric framework, customizable and proudly based on Sass Modules. You can also call me Glass 🥃 😉'
   - var slug = 'accordion'
   - var parent = 'components'
 
@@ -79,7 +81,32 @@ block docs
           </div>
         </details>
 
-  h2 Sass references
+  p The accordion module also can be combined with other component, like the card for example:
+
+  .p-example
+    details.c-card.c-accordion.u-mb-3
+      summary.c-card__header.c-accordion__header.u-py-2 You have a question?
+      .c-card__body.c-accordion__body We an a super answer for you!
+    details.c-card.c-accordion
+      summary.c-card__header.c-accordion__header.u-py-2 Want to know more?
+      .c-card__body.c-accordion__body Install the package and try by yourself 😉
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <details class="c-card c-accordion u-mb-3">
+          <summary class="c-card__header c-accordion__header u-py-2">
+            You have a question?
+          </summary>
+          <div class="c-card__body c-accordion__body">We an a super answer for you!</div>
+        </details>
+      </details>
+
+  h2.u-mt-4(class="u-mt-5@md")
+    a(
+      href="https://github.com/johannpinson/glsass/blob/master/src/components/_components.accordion.scss"
+      target="_blank"
+      rel="noopener noreferrer"
+    ) Sass references
 
   h3 Variables
 
@@ -116,3 +143,15 @@ block docs
         td Number unit
         td #[code $g-border-radius]
         td Border-radius of header, used for focus state
+      tr
+        td #[code $c-accordion-with-open-animation]
+        td Boolean
+        td #[code true]
+        td Enable animation on opening
+      tr
+        td #[code $c-accordion-animation-initial-gap]
+        td Number unit
+        td #[code -1rem]
+        td Initial gap for the moving transition
+          br
+          |  (change it to #[code 0] to keep only the opacity transition)

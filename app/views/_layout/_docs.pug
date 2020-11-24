@@ -2,7 +2,7 @@ extends _layout.pug
 
 block content
   .p-docs
-    .p-docs__sidebar.u-bg-light.u-pt-3
+    .p-docs__sidebar.u-bg-light
       div
         a(href="/glsass")
           img(src="../assets/medias/logo-reverse.svg", alt="Glsass logo" width=72).u-mb-2
@@ -68,8 +68,10 @@ block content
                   a(href="../components/callout.html") Callout
                 li.o-list-bare__item
                   a(href="../components/card.html") Card
-                lo.o-list-bare__item
+                li.o-list-bare__item
                   a(href="../components/form.html") Form
+                li.o-list-bare__item
+                  a(href="../components/navbar.html") Navbar
           li.o-list-bare__item
             details.c-accordion.u-mb-2(open=(parent === 'tools' ? true : false))
               summary.c-accordion__header Tools
@@ -107,6 +109,8 @@ block content
                 li.o-list-bare__item
                   a(href="../utilities/texts.html") Texts
                 li.o-list-bare__item
+                  a(href="../utilities/visually-hidden.html") Visually hidden
+                li.o-list-bare__item
                   a(href="../utilities/print.html") Print
                 li.o-list-bare__item
                   a(href="../utilities/debug.html") Debug
@@ -120,4 +124,4 @@ block content
           a(href='https://github.com/johannpinson/glsass' target="_blank" rel="noopener noreferrer") GitHub
           |  · Developed by #{''}
           a(href="https://twitter.com/johannpinson" target="_blank" rel="noopener noreferrer") Johannn Pinson
-          |  · Version 0.0.5
+          |  · Version #{version}

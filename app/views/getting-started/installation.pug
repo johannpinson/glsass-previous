@@ -1,6 +1,8 @@
 extends ../_layout/_docs.pug
 
 block variables
+  - var title = 'Glsass - the Sass framework'
+  - var description = 'Sass centric framework, customizable and proudly based on Sass Modules. You can also call me Glass 🥃 😉'
   - var slug = 'installation'
   - var parent = 'getting-started'
 
@@ -119,6 +121,7 @@ block docs
         @forward "~glsass/src/utilities/utilities.sizings";
         @forward "~glsass/src/utilities/utilities.spacings";
         @forward "~glsass/src/utilities/utilities.texts";
+        @forward "~glsass/src/utilities/utilities.vhd";
         @forward "~glsass/src/utilities/utilities.print"; // Must keep it as last
 
         // WARNING: This file must only be used for testing

@@ -1,6 +1,22 @@
+block global
+  - var domain = 'https://johannpinson.github.io/glsass/'
+  - var url = domain
+  - var version = '0.0.5'
+
 block variables
+  - var title = 'Glsass - the Sass framework'
+  - var description = 'Sass centric framework, customizable and proudly based on Sass Modules. You can also call me Glass 🥃 😉'
   //- - var ua = 'GTM-M99XRH5'
-  - var slug = 'docs'
+  - var slug = ''
+  - var parent = ''
+
+if slug == parent
+  if slug == 'index'
+    - var url = domain
+  else
+    - var url = domain + slug + '.html'
+else
+  - var url = domain + parent + '/' + slug + '.html'
 
 doctype html
 html(lang='en')
@@ -10,12 +26,11 @@ html(lang='en')
     meta(name='robots' content='index, follow')
     meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
     meta(http-equiv='x-ua-compatible' content='ie=edge')
-    //- meta(name='description' content= description)
-    //- meta(name='author' content='Johann Pinson')
-    //- meta(property='og:url' content= url)
-    //- meta(property='og:title' content= title)
-    //- meta(property='og:description' content= description)
-    //- meta(name='twitter:card' content='summary')
+    meta(name='author' content='Johann Pinson')
+    meta(name='description' content= description)
+    meta(property='og:url' content= url)
+    meta(property='og:title' content= title)
+    meta(property='og:description' content= description)
     if slug != parent
       <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">

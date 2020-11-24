@@ -1,0 +1,165 @@
+extends ../_layout/_docs.pug
+
+block variables
+  - var title = 'Glsass - the Sass framework'
+  - var description = 'Sass centric framework, customizable and proudly based on Sass Modules. You can also call me Glass 🥃 😉'
+  - var slug = 'navbar'
+  - var parent = 'components'
+
+block docs
+  h1 Navbar
+
+  p Navigation menus are complexe, but the navbar component can make it simply to add an header
+    | with a brand logo, navigation links and text.
+
+  .c-callout.c-callout--info
+    p.u-mb-0
+      | Of course, this component is lighter and offer less possibilities than others CSS framework,
+      |  but it's desired to keep it simple. And generally, if you want specific layouts, different
+      |  responsive behavior, or anything else, you may create your own navigation component, and make
+      |  it as accessible as possible.
+
+  .p-example
+    nav.c-navbar(role="navigation" aria-label="Main navigation")
+      input.c-navbar-control#c-navbar-menu-example-1(type="checkbox")
+      label(for="c-navbar-menu-example-1").c-navbar-burger
+        svg(viewBox="0 0 100 100" width="48")
+          path(d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20")
+          path(d="m 70,50 h -40")
+          path(d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20")
+      a(href="#").c-navbar-logo
+        img(src="../assets/medias/logo-reverse.svg", alt="Glsass logo" height=36)
+      div.c-navbar-panel
+        ul.c-navbar-nav
+          li
+            a.c-navbar-link(href="#") Home
+          li
+            a.c-navbar-link(href="#") Docs
+          li
+            a.c-navbar-link(href="#") Login
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <nav class="c-navbar" role="navigation" aria-label="Main navigation">
+          <input class="c-navbar-control" id="c-navbar-menu-example-1" type="checkbox">
+          <label class="c-navbar-burger" for="c-navbar-menu-example-1">
+            <svg viewBox="0 0 100 100" width="48">
+              <path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"></path>
+              <path d="m 70,50 h -40"></path>
+              <path d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"></path>
+            </svg>
+          </label><a class="c-navbar-logo" href="#"><img src="logo.svg" alt="Glsass logo" height="36"></a>
+          <div class="c-navbar-panel">
+            <ul class="c-navbar-nav">
+              <li><a class="c-navbar-link" href="#">Home</a></li>
+              <li><a class="c-navbar-link" href="#">Docs</a></li>
+              <li><a class="c-navbar-link" href="#">Login</a></li>
+            </ul>
+          </div>
+        </nav>
+
+  .c-callout.c-callout--danger
+    p.u-mb-0
+      | Since the component use the "checkbox hack" to manage the open/close state
+      |  on mobile, be careful about the #[code id/for] attributes for the #[code input]
+      |  and #[code label] element.
+
+  p You can also use utilities classes to create new behavior and layouts.
+    br
+    | Resize your window to test the mobile version
+
+  .p-example
+    nav.c-navbar(role="navigation" aria-label="Main navigation")
+      input.c-navbar-control#c-navbar-menu-example-2(type="checkbox")
+      label(for="c-navbar-menu-example-2").c-navbar-burger
+        svg(viewBox="0 0 100 100" width="48")
+          path(d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20")
+          path(d="m 70,50 h -40")
+          path(d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20")
+      a(href="#").c-navbar-logo
+        img(src="../assets/medias/logo-reverse.svg", alt="Glsass logo" height=36)
+      div.c-navbar-panel
+        ul.c-navbar-nav.u-fd-r.u-fw-w.u-no-gutters
+          li.o-col.u-4(class="u-auto@md")
+            a.c-navbar-link(href="#") Home
+          li.o-col.u-4(class="u-auto@md")
+            a.c-navbar-link(href="#") Docs
+          li.o-col.u-4(class="u-auto@md")
+            a.c-navbar-link(href="#") Login
+        hr.u-c-dark(class="u-d-n@md")
+        ul.c-navbar-nav.u-fd-r.u-fw-w.u-no-gutters(class="u-ml-auto@md")
+          li.o-col.u-auto
+            a.c-navbar-link(href="#") Home
+          li.o-col.u-auto
+            a.c-navbar-link(href="#") Docs
+          li.o-col.u-auto
+            a.c-navbar-link(href="#") Login
+  pre.code(data-lang='HTML')
+    code
+      :highlight(lang="html")
+        <nav class="c-navbar" role="navigation" aria-label="Main navigation">
+          <input class="c-navbar-control" id="c-navbar-menu-example-2" type="checkbox">
+          <label class="c-navbar-burger" for="c-navbar-menu-example-2">
+            <svg viewBox="0 0 100 100" width="48">
+              <path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"></path>
+              <path d="m 70,50 h -40"></path>
+              <path d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"></path>
+            </svg>
+          </label><a class="c-navbar-logo" href="#"><img src="logo.svg" alt="Glsass logo" height="36"></a>
+          <div class="c-navbar-panel">
+            <ul class="c-navbar-nav u-fd-r u-fw-w u-no-gutters">
+              <li class="o-col u-4 u-auto@md"><a class="c-navbar-link" href="#">Home</a></li>
+              <li class="o-col u-4 u-auto@md"><a class="c-navbar-link" href="#">Docs</a></li>
+              <li class="o-col u-4 u-auto@md"><a class="c-navbar-link" href="#">Login</a></li>
+            </ul>
+            <hr class="u-c-dark u-d-n@md">
+            <ul class="c-navbar-nav u-fd-r u-fw-w u-no-gutters u-ml-auto@md">
+              <li class="o-col u-auto"><a class="c-navbar-link" href="#">Home</a></li>
+              <li class="o-col u-auto"><a class="c-navbar-link" href="#">Docs</a></li>
+              <li class="o-col u-auto"><a class="c-navbar-link" href="#">Login</a></li>
+            </ul>
+          </div>
+        </nav>
+
+  .c-callout.c-callout--info
+    p.u-mb-0
+      | To constrain the max-width or the navbar, you can add a div as the first
+      |  child of the #[code .c-navbar] element with the #[code .c-navbar-layout]
+      |  class.
+      br
+      | Then, also add the #[code .o-layout] object to the new container element.
+
+  h2.u-mt-4(class="u-mt-5@md")
+    a(
+      href="https://github.com/johannpinson/glsass/blob/master/src/components/_components.navbar.scss"
+      target="_blank"
+      rel="noopener noreferrer"
+    ) Sass references
+
+  h3 Variables
+
+  table.o-table
+    thead
+      tr
+        th(scope=col) Name
+        th(scope=col) Type
+        th(scope=col) Default value
+        th(scope=col) Description
+    tbody
+      tr
+        td #[code $c-navbar-background]
+        td Color
+        td #[code cv(light)]
+        td Color of the background
+          br
+          |  also used to define the color of links
+      tr
+        td #[code $c-navbar-burger-radius]
+        td Number unit
+        td #[code $g-border-radius]
+        td Border radius of burger button
+      tr
+        td #[code $c-navbar-burger-focus-shadow-width]
+        td Number unit
+        td #[code $g-shadow-width]
+        td Size of the shadow used for focus/hover states

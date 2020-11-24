@@ -1,0 +1,18 @@
+extends ../_layout/_docs.pug
+
+block variables
+  - var title = 'Glsass - the Sass framework'
+  - var description = 'Sass centric framework, customizable and proudly based on Sass Modules. You can also call me Glass 🥃 😉'
+  - var slug = 'visually-hidden'
+  - var parent = 'utilities'
+
+block docs
+  h1 Visually hidden
+
+  p Simply hide an element to screen, but still exposed to assistive technologies
+    |  (such as screen readers) with the #[code .u-vhd] class.
+
+  pre.code(data-lang='HTML').u-mb-2
+    code
+      :highlight(lang="html")
+        <p class="u-vhd">Title for screen readers</p>
