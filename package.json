@@ -1,6 +1,6 @@
 {
   "name": "glsass",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Sass centric framework, customizable and proudly based on Sass Modules. You can also call me Glass 🥃 😉",
   "main": "index.js",
   "scripts": {
