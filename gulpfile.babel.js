@@ -142,7 +142,7 @@ export const views = () =>
         {
           removeTags: true,
           addRootSlash: env.production,
-          addPrefix: env.production ? 'glsass' : false,
+          addPrefix: env.production ? 'glsass-previous' : false,
         },
       ),
     )
